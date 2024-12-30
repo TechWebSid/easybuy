@@ -136,16 +136,7 @@ const Navbar = () => {
                       </Link>
                     </li>
 
-                    <li className="nav-item">
-                      <Link
-                        href="/news/news-right-sidebar/"
-                        className={`nav-link ${
-                          currentPath == "/news/news-right-sidebar/" && "active"
-                        }`}
-                      >
-                        News Right Sidebar
-                      </Link>
-                    </li>
+                  
 
                     <li className="nav-item">
                       <Link
