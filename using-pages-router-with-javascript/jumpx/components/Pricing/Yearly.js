@@ -46,8 +46,9 @@ const Yearly = () => {
               </li>
             </ul>
 
-            <Link href="/contact" className="default-btn">
-              Get Started
+            {/* Correct usage of Link component without <a> tag */}
+            <Link href="/payment">
+              <button className="default-btn">Get Started</button>
             </Link>
           </div>
         </div>
@@ -93,8 +94,9 @@ const Yearly = () => {
               </li>
             </ul>
 
-            <Link href="/contact" className="default-btn">
-              Get Started
+            {/* Correct usage of Link component without <a> tag */}
+            <Link href="/payment">
+              <button className="default-btn">Get Started</button>
             </Link>
 
             <strong className="popular">Popular</strong>
@@ -142,8 +144,9 @@ const Yearly = () => {
               </li>
             </ul>
 
-            <Link href="/contact" className="default-btn">
-              Get Started
+            {/* Correct usage of Link component without <a> tag */}
+            <Link href="/payment">
+              <button className="default-btn">Get Started</button>
             </Link>
           </div>
         </div>

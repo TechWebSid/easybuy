@@ -46,7 +46,7 @@ const Monthly = () => {
               </li>
             </ul>
 
-            <Link href="/contact" className="default-btn">
+            <Link href="/payment" className="default-btn">
               Get Started
             </Link>
           </div>
