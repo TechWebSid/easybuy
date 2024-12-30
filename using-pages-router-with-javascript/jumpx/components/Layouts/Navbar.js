@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import logo from "../../public/images/white-logo.png";
+import easy from "../../public/images/easy2buyhub.png";
 
 const Navbar = () => {
   const [currentPath, setCurrentPath] = useState("");
@@ -47,7 +48,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-md navbar-light">
           <div className="container">
             <Link href="/" className="navbar-brand">
-              <Image src={logo} alt="logo" width={150} height={37} />
+              <Image src={easy} alt="logo" width={150} height={37} />
             </Link>
 
             {/* Toggle navigation */}
@@ -69,49 +70,15 @@ const Navbar = () => {
             <div className={classOne} id="navbarSupportedContent">
               <ul className="navbar-nav m-auto">
                 <li className="nav-item">
-                  <Link
-                    href="#"
-                    className="nav-link"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    Home 
+                  <Link href="/index-2/" className="nav-link">
+                    Home
                   </Link>
-
-                  
                 </li>
 
                 <li className="nav-item">
-                  <Link
-                    href="#"
-                    className="nav-link"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    About <i className="bx bx-chevron-down"></i>
+                  <Link href="/about-2/" className="nav-link">
+                    About
                   </Link>
-
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link
-                        href="/about/"
-                        className={`nav-link ${
-                          currentPath == "/about/" && "active"
-                        }`}
-                      >
-                        About Style One
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/about-2/"
-                        className={`nav-link ${
-                          currentPath == "/about-2/" && "active"
-                        }`}
-                      >
-                        About Style Two
-                      </Link>
-                    </li>
-                  </ul>
                 </li>
 
                 <li className="nav-item">
@@ -126,45 +93,12 @@ const Navbar = () => {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="/services/"
-                        className={`nav-link ${
-                          currentPath == "/services/" && "active"
-                        }`}
-                      >
-                        Services Style One
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
                         href="/services/style-2/"
                         className={`nav-link ${
                           currentPath == "/services/style-2/" && "active"
                         }`}
                       >
-                        Services Style Two
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/services/style-3/"
-                        className={`nav-link ${
-                          currentPath == "/services/style-3/" && "active"
-                        }`}
-                      >
-                        Services Style Three
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/services/style-4/"
-                        className={`nav-link ${
-                          currentPath == "/services/style-4/" && "active"
-                        }`}
-                      >
-                        Services Style Four
+                        Our Services
                       </Link>
                     </li>
 
@@ -176,124 +110,6 @@ const Navbar = () => {
                         }`}
                       >
                         Service Details
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-
-                <li className="nav-item">
-                  <Link href="#" onClick={(e) => e.preventDefault()}>
-                    Pages <i className="bx bx-chevron-down"></i>
-                  </Link>
-
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link
-                        href="/pricing/"
-                        className={`nav-link ${
-                          currentPath == "/pricing/" && "active"
-                        }`}
-                      >
-                        Pricing
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/team/"
-                        className={`nav-link ${
-                          currentPath == "/team/" && "active"
-                        }`}
-                      >
-                        Team
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/testimonials/"
-                        className={`nav-link ${
-                          currentPath == "/testimonials/" && "active"
-                        }`}
-                      >
-                        Testimonials
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/faq/"
-                        className={`nav-link ${
-                          currentPath == "/faq/" && "active"
-                        }`}
-                      >
-                        Faq
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/auth/login/"
-                        className={`nav-link ${
-                          currentPath == "/auth/login/" && "active"
-                        }`}
-                      >
-                        Login
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/auth/sign-up/"
-                        className={`nav-link ${
-                          currentPath == "/auth/sign-up/" && "active"
-                        }`}
-                      >
-                        Sign Up
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/terms-conditions/"
-                        className={`nav-link ${
-                          currentPath == "/terms-conditions/" && "active"
-                        }`}
-                      >
-                        Terms & Conditions
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/privacy-policy/"
-                        className={`nav-link ${
-                          currentPath == "/privacy-policy/" && "active"
-                        }`}
-                      >
-                        Privacy Policy
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/coming-soon/"
-                        className={`nav-link ${
-                          currentPath == "/coming-soon/" && "active"
-                        }`}
-                      >
-                        Coming Soon
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/404/"
-                        className={`nav-link ${
-                          currentPath == "/404/" && "active"
-                        }`}
-                      >
-                        404 error
                       </Link>
                     </li>
                   </ul>
@@ -344,38 +160,16 @@ const Navbar = () => {
                   </ul>
                 </li>
 
+                {/* Removed dropdown from Contact */}
                 <li className="nav-item">
                   <Link
-                    href="#"
-                    className="nav-link"
-                    onClick={(e) => e.preventDefault()}
+                    href="/contact-2/"
+                    className={`nav-link ${
+                      currentPath == "/contact-2/" && "active"
+                    }`}
                   >
-                    Contact <i className="bx bx-chevron-down"></i>
+                    Contact
                   </Link>
-
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link
-                        href="/contact/"
-                        className={`nav-link ${
-                          currentPath == "/contact/" && "active"
-                        }`}
-                      >
-                        Contact Style One
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/contact-2/"
-                        className={`nav-link ${
-                          currentPath == "/contact-2/" && "active"
-                        }`}
-                      >
-                        Contact Style Two
-                      </Link>
-                    </li>
-                  </ul>
                 </li>
               </ul>
 

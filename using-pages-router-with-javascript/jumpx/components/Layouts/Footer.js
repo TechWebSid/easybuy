@@ -5,6 +5,7 @@ import Image from "next/image";
 import logo from "../../public/images/white-logo.png";
 import shape1 from "../../public/images/shape/footer-shape-one.png";
 import shape2 from "../../public/images/shape/footer-shape-two.png";
+import easy from "../../public/images/easy2buyhub.png"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,7 +22,7 @@ const Footer = () => {
                 data-aos-delay="200"
               >
                 <Link href="/" className="logo">
-                  <Image src={logo} alt="logo" width={150} height={37} />
+                  <Image src={easy} alt="logo" width={150} height={37} />
                 </Link>
 
                 <p>

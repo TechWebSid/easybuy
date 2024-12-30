@@ -30,7 +30,7 @@ const testimonialsData = [
     ],
   },
   {
-    image: "/images/clients/client2.jpg",
+    image: "https://images.pexels.com/photos/5528969/pexels-photo-5528969.jpeg?auto=compress&cs=tinysrgb&w=600",
     name: "Praharsh Singh",
     designation: "Happy Client",
     feedbackText:
@@ -57,7 +57,7 @@ const testimonialsData = [
     ],
   },
   {
-    image: "/images/clients/client3.jpg",
+    image: "https://images.pexels.com/photos/4295983/pexels-photo-4295983.jpeg?auto=compress&cs=tinysrgb&w=600",
     name: "Shivam Rai",
     designation: "Happy Client",
     feedbackText:
@@ -82,7 +82,7 @@ const testimonialsData = [
     ],
   },
   {
-    image: "/images/clients/client4.jpg",
+    image: "https://images.pexels.com/photos/27972368/pexels-photo-27972368/free-photo-of-a-man-in-a-suit-and-tie-is-drinking-coffee.jpeg?auto=compress&cs=tinysrgb&w=600",
     name: "Siddhartha Srivastava",
     designation: "Happy Client",
     feedbackText:
