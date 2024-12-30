@@ -48,12 +48,13 @@ const NewsGridCard = () => {
                   </ul>
 
                   <Link href="/news/news-details">
-                    <h3>Is Machine Learning Right For You</h3>
+                    <h3>Web Development: Exploring New Technologies</h3>
                   </Link>
 
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                    Discover the latest advancements in web development that are
+                    revolutionizing how websites are created, designed, and
+                    maintained.
                   </p>
 
                   <Link href="/news/news-details" className="read-more">
@@ -93,12 +94,13 @@ const NewsGridCard = () => {
                   </ul>
 
                   <Link href="/news/news-details">
-                    <h3>The State Of Artificial Intelligence</h3>
+                    <h3>App Development Trends in 2024</h3>
                   </Link>
 
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                    The mobile app development landscape is rapidly evolving
+                    with new frameworks and tools that make app creation faster
+                    and more efficient than ever before.
                   </p>
 
                   <Link href="/news/news-details" className="read-more">
@@ -138,12 +140,12 @@ const NewsGridCard = () => {
                   </ul>
 
                   <Link href="/news/news-details">
-                    <h3>Our Company Machine Learning </h3>
+                    <h3>Digital Marketing: Trends and Strategies</h3>
                   </Link>
 
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                    Learn how digital marketing strategies have evolved in the
+                    past year and what approaches will dominate in 2024.
                   </p>
 
                   <Link href="/news/news-details" className="read-more">
@@ -183,12 +185,13 @@ const NewsGridCard = () => {
                   </ul>
 
                   <Link href="/news/news-details">
-                    <h3>The Security Risks Of Changing Package Owners</h3>
+                    <h3>E-Commerce: Boosting Sales with the Right Strategy</h3>
                   </Link>
 
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                    Explore how e-commerce platforms are evolving, and learn
+                    strategies that can help boost sales and improve customer
+                    retention.
                   </p>
 
                   <Link href="/news/news-details" className="read-more">
@@ -228,12 +231,13 @@ const NewsGridCard = () => {
                   </ul>
 
                   <Link href="/news/news-details">
-                    <h3>Tips To Protecting Your Business And Family</h3>
+                    <h3>API Integration for Seamless User Experience</h3>
                   </Link>
 
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                    Discover the importance of API integration in modern web
+                    and app development, and how it enhances user experiences
+                    by enabling smooth data transfer and functionality.
                   </p>
 
                   <Link href="/news/news-details" className="read-more">
@@ -273,12 +277,13 @@ const NewsGridCard = () => {
                   </ul>
 
                   <Link href="/news/news-details">
-                    <h3>Protect Your Workplace From Cyber Attacks</h3>
+                    <h3>Securing Your Business: A Digital Strategy</h3>
                   </Link>
 
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                    Learn how to secure your business through a combination of
+                    cybersecurity, cloud solutions, and best practices to keep
+                    your data safe.
                   </p>
 
                   <Link href="/news/news-details" className="read-more">
@@ -318,14 +323,13 @@ const NewsGridCard = () => {
                   </ul>
 
                   <Link href="/news/news-details">
-                    <h3>
-                      Making Peace With The Feast Or Famine Of Freelancing
-                    </h3>
+                    <h3>Freelancing: Navigating the Digital Marketplace</h3>
                   </Link>
 
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                    Freelancing is growing rapidly. Learn how to build a
+                    sustainable career by navigating the digital marketplace
+                    and establishing your brand.
                   </p>
 
                   <Link href="/news/news-details" className="read-more">
@@ -348,7 +352,7 @@ const NewsGridCard = () => {
                   </Link>
 
                   <div className="dates">
-                    <span>27 February</span>
+                    <span>26 February</span>
                   </div>
                 </div>
 
@@ -360,17 +364,18 @@ const NewsGridCard = () => {
                       </Link>
                     </li>
                     <li>
-                      <i className="flaticon-conversation"></i> 2 Comments
+                      <i className="flaticon-conversation"></i> 5 Comments
                     </li>
                   </ul>
 
                   <Link href="/news/news-details">
-                    <h3>I Used The Web For A Day On A 50 MB Budget</h3>
+                    <h3>Artificial Intelligence: The Future of Technology</h3>
                   </Link>
 
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                    AI is transforming industries. Explore how businesses are
+                    using AI to improve efficiencies, reduce costs, and create
+                    new opportunities.
                   </p>
 
                   <Link href="/news/news-details" className="read-more">
@@ -380,7 +385,7 @@ const NewsGridCard = () => {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
+            <div className="col-lg-4 col-md-6">
               <div className="single-news">
                 <div className="blog-img">
                   <Link href="/news/news-details">
@@ -393,7 +398,7 @@ const NewsGridCard = () => {
                   </Link>
 
                   <div className="dates">
-                    <span>28 February</span>
+                    <span>27 February</span>
                   </div>
                 </div>
 
@@ -405,34 +410,24 @@ const NewsGridCard = () => {
                       </Link>
                     </li>
                     <li>
-                      <i className="flaticon-conversation"></i> 2 Comments
+                      <i className="flaticon-conversation"></i> 6 Comments
                     </li>
                   </ul>
 
                   <Link href="/news/news-details">
-                    <h3>
-                      Here Are The 5 Most Telling Signs Of Micromanagement
-                    </h3>
+                    <h3>Building Resilient Infrastructure with Cloud Solutions</h3>
                   </Link>
 
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                    Cloud infrastructure is critical for modern businesses. Learn
+                    how businesses are leveraging cloud solutions to ensure
+                    resilience and scalability.
                   </p>
 
                   <Link href="/news/news-details" className="read-more">
                     Read More <i className="bx bx-plus"></i>
                   </Link>
                 </div>
-              </div>
-            </div>
-
-            {/* Pagination */}
-            <div className="col-lg-12">
-              <div className="page-navigation-area">
-                <nav aria-label="Page navigation example text-center">
-                
-                </nav>
               </div>
             </div>
           </div>

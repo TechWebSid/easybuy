@@ -11,9 +11,7 @@ export default function ServiceDetailsPage() {
 
       <PageBanner
         pageTitle="Service Details"
-        homePageUrl="/"
-        homePageText="Home"
-        activePageText="Service Details"
+        activePageText="Transform your ideas into reality with our expert web & app development, scalable e-commerce solutions, and seamless API integrations tailored to meet your business needs and accelerate growth"
       />
 
       <ServiceDetailsContent />

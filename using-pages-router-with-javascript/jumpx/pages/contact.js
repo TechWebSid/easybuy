@@ -12,8 +12,8 @@ export default function ContactPage() {
 
       <PageBanner
         pageTitle="Contact Style One"
-        homePageUrl="/"
-        homePageText="Home"
+        
+        
         activePageText="Contact Style One"
       />
 

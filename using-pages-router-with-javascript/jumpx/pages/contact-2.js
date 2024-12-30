@@ -11,10 +11,9 @@ export default function Contact2Page() {
       <Navbar />
 
       <PageBanner
-        pageTitle="Contact Style Two"
-        homePageUrl="/"
-        homePageText="Home"
-        activePageText="Contact Style Two"
+        pageTitle="Contact"
+        
+        activePageText="For any assistance, reach out to us at customercare@easy2buyhub.com or call us at +91 8299585163. We’re here to help!"
       />
 
       <ContactInfo />

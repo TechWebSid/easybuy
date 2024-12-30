@@ -14,10 +14,8 @@ export default function About2Page() {
       <Navbar />
 
       <PageBanner
-        pageTitle="About Style Two"
-        homePageUrl="/"
-        homePageText="Home"
-        activePageText="About Style Two"
+        pageTitle="About Us"
+        activePageText="Discover our story, values, and commitment to excellence. We are passionate about creating a meaningful impact and building a brighter future together."
       />
 
       <About />

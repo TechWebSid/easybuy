@@ -12,10 +12,8 @@ export default function Services2Page() {
       <Navbar />
 
       <PageBanner
-        pageTitle="Services Style Two"
-        homePageUrl="/"
-        homePageText="Home"
-        activePageText="Services Style Two"
+        pageTitle="Services"
+        activePageText="Empowering your business with seamless web & app development, e-commerce solutions, and custom API integrations to drive success."
       />
 
       <ServicesStyleTwo />

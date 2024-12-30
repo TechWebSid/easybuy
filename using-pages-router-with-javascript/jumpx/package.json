@@ -22,8 +22,12 @@
         "react-dom": "^18.2.0",
         "sass": "^1.70.0",
         "sharp": "^0.33.2",
+        "styled-components": "^6.1.13",
         "sweetalert2": "^11.10.4",
         "sweetalert2-react-content": "^5.0.7",
         "swiper": "^11.0.5"
+    },
+    "devDependencies": {
+        "babel-plugin-styled-components": "^2.1.4"
     }
 }
