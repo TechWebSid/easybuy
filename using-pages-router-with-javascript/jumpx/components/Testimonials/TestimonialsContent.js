@@ -4,10 +4,10 @@ import Image from "next/image";
 const testimonialsData = [
   {
     image: "/images/clients/client1.jpg",
-    name: "Alen Meair",
-    designation: "Web Developer",
+    name: "Aarav Kumar",
+    designation: "Happy Client",
     feedbackText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,do eiusmod tempor incididunt ut labore et dolore.",
+      "Great experience! The team provided excellent service and support.",
 
     rating: [
       {
@@ -29,10 +29,10 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client2.jpg",
-    name: "Axon Detos",
-    designation: "CEO of ET",
+    name: "Isha Sharma",
+    designation: "Happy Client",
     feedbackText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,do eiusmod tempor incididunt ut labore et dolore.",
+      "Highly satisfied with the services. They delivered on time and exceeded expectations.",
 
     rating: [
       {
@@ -54,10 +54,10 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client3.jpg",
-    name: "John Dona",
-    designation: "UI/UX Designer",
+    name: "Rohan Patel",
+    designation: "Happy Client",
     feedbackText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,do eiusmod tempor incididunt ut labore et dolore.",
+      "Impressive work! The team is responsive and professional. Highly recommended.",
 
     rating: [
       {
@@ -79,10 +79,10 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client4.jpg",
-    name: "Jon Smith",
-    designation: "ReactJS Developer",
+    name: "Priya Verma",
+    designation: "Happy Client",
     feedbackText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,do eiusmod tempor incididunt ut labore et dolore.",
+      "Fantastic service! They understood our needs and delivered exactly what we wanted.",
 
     rating: [
       {
@@ -104,10 +104,10 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client5.jpg",
-    name: "Dew Smith",
-    designation: "UI/UX Designer",
+    name: "Saanvi Rao",
+    designation: "Happy Client",
     feedbackText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,do eiusmod tempor incididunt ut labore et dolore.",
+      "Excellent experience. The team was supportive and professional throughout.",
 
     rating: [
       {
@@ -129,10 +129,10 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client6.jpg",
-    name: "Jeath Smith",
-    designation: "SEO Developer",
+    name: "Arjun Singh",
+    designation: "Happy Client",
     feedbackText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,do eiusmod tempor incididunt ut labore et dolore.",
+      "I’m very happy with the results. The service was fast and efficient.",
 
     rating: [
       {
@@ -154,10 +154,10 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client7.jpg",
-    name: "Kilkaz Dew",
-    designation: "UI/UX Designer",
+    name: "Neha Gupta",
+    designation: "Happy Client",
     feedbackText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,do eiusmod tempor incididunt ut labore et dolore.",
+      "A wonderful experience. The team went above and beyond to meet our needs.",
 
     rating: [
       {
@@ -179,10 +179,10 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client8.jpg",
-    name: "Ana Deth",
-    designation: "PHP Developer",
+    name: "Devansh Mehta",
+    designation: "Happy Client",
     feedbackText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,do eiusmod tempor incididunt ut labore et dolore.",
+      "Very satisfied with the service. The team was professional and efficient.",
 
     rating: [
       {
@@ -204,10 +204,10 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client9.jpg",
-    name: "Zeck Smith",
-    designation: "Founder CEO",
+    name: "Tara Joshi",
+    designation: "Happy Client",
     feedbackText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,do eiusmod tempor incididunt ut labore et dolore.",
+      "Amazing service! The team was responsive and delivered exactly what we wanted.",
 
     rating: [
       {
@@ -264,38 +264,8 @@ const TestimonialsContent = () => {
                 </div>
               ))}
 
-            {/* Pagination */}
-            <div className="col-lg-12">
-              <div className="page-navigation-area">
-                <nav aria-label="Page navigation example text-center">
-                  <ul className="pagination">
-                    <li className="page-item">
-                      <a className="page-link page-links">
-                        <i className="bx bx-chevrons-left"></i>
-                      </a>
-                    </li>
-
-                    <li className="page-item active">
-                      <a className="page-link">1</a>
-                    </li>
-
-                    <li className="page-item">
-                      <a className="page-link">2</a>
-                    </li>
-
-                    <li className="page-item">
-                      <a className="page-link">3</a>
-                    </li>
-
-                    <li className="page-item">
-                      <a className="page-link">
-                        <i className="bx bx-chevrons-right"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
+           
+            
           </div>
         </div>
       </section>

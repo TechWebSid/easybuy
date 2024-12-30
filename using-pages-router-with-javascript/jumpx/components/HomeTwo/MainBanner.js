@@ -55,7 +55,7 @@ const MainBanner = () => {
                     Learn More
                   </Link>
 
-                  <Link href="/contact" className="default-btn">
+                  <Link href="/contact-2" className="default-btn">
                     Contact Us
                   </Link>
                 </div>

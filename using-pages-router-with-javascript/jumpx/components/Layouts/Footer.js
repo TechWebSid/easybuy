@@ -172,7 +172,7 @@ const Footer = () => {
                   <li className="address">
                     <i className="flaticon-envelope"></i>
                     <span>Email</span>
-                    customarecare@easy2buyhub.com
+                    customercare@easy2buyhub.com
                   </li>
 
                   <li className="address">
@@ -218,8 +218,10 @@ const Footer = () => {
             <div className="col-lg-3">
               <div className="designed">
                 <p>
-                  Designed By <i className="bx bx-heart"></i>{" "}
-                  <a href="https://envytheme.com/" target="_blank">
+                  Designed by <i className="bx bx-heart"></i>{" "}
+                  <a href="https://envytheme.com/" target="_blank"
+                  style={{ marginLeft: "4px" }}
+                  >
                     easy2buyhub
                   </a>
                 </p>

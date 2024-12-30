@@ -9,110 +9,83 @@ import shapeImg4 from "../../public/images/shape/services-shape/4.png";
 import shapeImg5 from "../../public/images/shape/services-shape/5.png";
 import shapeImg6 from "../../public/images/shape/services-shape/6.png";
 
+const servicesData = [
+  {
+    iconName: "flaticon-chip",
+    title: "Customize Website ",
+    shortText:
+      "Start to Create visually stunning and responsive websites that reflect your brand identity and enhance user experience starting with low budget.",
+    viewDetails: "/services/service-details/",
+    aosDelay: "400",
+  },
+  {
+    iconName: "flaticon-vr",
+    title: "E-commerce solutions",
+    shortText:
+      "Easy2BuyHub simplifies e-commerce by offering product listings, platform tie-ups, supplier networks, and comprehensive digital marketing.",
+    viewDetails: "/services/service-details/",
+    aosDelay: "500",
+  },
+  {
+    iconName: "flaticon-blockchain",
+    title: "SEO optimization",
+    shortText:
+      "Boost your website's visibility and attract organic traffic through expert SEO strategies, improving rankings and engagement.",
+    viewDetails: "/services/service-details/",
+    aosDelay: "600",
+  },
+  {
+    iconName: "flaticon-target",
+    title: "Full Stack Development",
+    shortText:
+      "Deliver scalable and high-performance applications using modern technologies like React.js, Node.js, MongoDB, Next.js, Capacitor.js.",
+    viewDetails: "/services/service-details/",
+    aosDelay: "700",
+  },
+  {
+    iconName: "flaticon-choice",
+    title: "API Integration",
+    shortText:
+      "Enhance your applications by integrating third-party APIs seamlessly, improving functionality, enriching user experience, automating processes.",
+    viewDetails: "/services/service-details/",
+    aosDelay: "800",
+  },
+  {
+    iconName: "flaticon-deep-learning",
+    title: "Digital Marketing",
+    shortText:
+      "Accelerating growth through customized strategies and powerful digital solutions designed to elevate your business and maximize results.",
+    viewDetails: "/services/service-details/",
+    aosDelay: "900",
+  },
+];
+
 const ServicesStyleTwo = () => {
   return (
     <>
       <div className="offer-area pt-100 pb-70">
         <div className="container">
           <div className="section-title">
-            <h2>Our Professionals Services For You</h2>
+            <h2>Our Services at Easy2BuyHub</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure
-              architecto quaerat eaque sapiente accusantium ad ut explicabo
-              consequuntur fuga quidem? Sint.
+              We offer a wide range of professional services to help you find the best deals online. Our experts are here to guide you through the buying process, making it simple and hassle-free.
             </p>
           </div>
 
           <div className="row justify-content-center">
-            <div className="col-lg-4 col-sm-6">
-              <div className="single-offer">
-                <i className="flaticon-chip"></i>
-                <h3>
-                  <Link href="/services/service-details/">
-                    Robotics & Drones
-                  </Link>
-                </h3>
-                <p>
-                  Lorem consectetur ipsum dolor sit amet, adipiscing elit, do
-                  eiusmod tempor incididunt sed.
-                </p>
+            {servicesData.map((service, index) => (
+              <div key={index} className="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay={service.aosDelay}>
+                <div className="single-offer">
+                  <i className={service.iconName}></i>
+                  <h3>
+                    <Link href={service.viewDetails}>
+                      {service.title}
+                    </Link>
+                  </h3>
+                  <p>{service.shortText}</p>
+                </div>
               </div>
-            </div>
-
-            <div className="col-lg-4 col-sm-6">
-              <div className="single-offer">
-                <i className="flaticon-vr"></i>
-                <h3>
-                  <Link href="/services/service-details/">
-                    Virtually Reality
-                  </Link>
-                </h3>
-                <p>
-                  Lorem consectetur ipsum dolor sit amet, adipiscing elit, do
-                  eiusmod tempor incididunt sed.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-sm-6">
-              <div className="single-offer">
-                <i className="flaticon-blockchain"></i>
-                <h3>
-                  <Link href="/services/service-details/">
-                    Blockchain Project
-                  </Link>
-                </h3>
-                <p>
-                  Lorem consectetur ipsum dolor sit amet, adipiscing elit, do
-                  eiusmod tempor incididunt sed.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-sm-6">
-              <div className="single-offer">
-                <i className="flaticon-target"></i>
-                <h3>
-                  <Link href="/services/service-details/">
-                    Image Processing
-                  </Link>
-                </h3>
-                <p>
-                  Lorem consectetur ipsum dolor sit amet, adipiscing elit, do
-                  eiusmod tempor incididunt sed.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-sm-6">
-              <div className="single-offer">
-                <i className="flaticon-choice"></i>
-                <h3>
-                  <Link href="/services/service-details/">
-                    Order Management
-                  </Link>
-                </h3>
-                <p>
-                  Lorem consectetur ipsum dolor sit amet, adipiscing elit, do
-                  eiusmod tempor incididunt sed.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-sm-6">
-              <div className="single-offer">
-                <i className="flaticon-deep-learning"></i>
-                <h3>
-                  <Link href="/services/service-details/">
-                    Machine Learning
-                  </Link>
-                </h3>
-                <p>
-                  Lorem consectetur ipsum dolor sit amet, adipiscing elit, do
-                  eiusmod tempor incididunt sed.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 

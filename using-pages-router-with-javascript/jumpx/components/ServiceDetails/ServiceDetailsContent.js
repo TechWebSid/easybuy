@@ -23,31 +23,25 @@ const ServiceDetailsContent = () => {
                   />
                 </div>
 
-                <h3>Service Of Warehousing</h3>
+                <h3>Comprehensive IT Services</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                  veritatis ducimus rerum sunt dignissimos libero et eum modi!
-                  Consequuntur rem incidunt et ducimus magnam sunt rerum hic
-                  beatae sed obcaecati. Lorem ipsum dolor sit amet consectetur,
-                  adipisicing elit. Laudantium asperiores eos obcaecati nostrum
-                  sed, corporis placeat quasi pariatur id, est iure, minus
-                  quibusdam! Facilis.
+                  Our IT service offerings are tailored to empower businesses in the digital age. 
+                  From web development and app development to digital marketing, we provide a 
+                  full spectrum of services to help you achieve your business goals.
                 </p>
 
                 <p>
-                  Contrary to popular belief, Lorem Ipsum is not simply random
-                  text. It has roots in a piece of classNameical Latin
-                  literature from 45 BC, making it over 2000 years old. Richard
-                  McClintock, a Latin professor at Hampden-Sydney College in
-                  Virginia, looked up one of the more obscure Latin words.
+                  Our web development solutions focus on creating responsive, user-friendly, 
+                  and visually appealing websites that reflect your brand identity. Whether you 
+                  need an e-commerce platform, a corporate website, or a portfolio site, our team 
+                  delivers exceptional results tailored to your requirements.
                 </p>
 
                 <p>
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable. If you are going to use a passage of
-                  Lorem, you to be sure there isn't anything.
+                  In the realm of app development, we specialize in building feature-rich, 
+                  cross-platform mobile applications. Our solutions ensure seamless user 
+                  experiences and robust functionality, designed to engage your audience 
+                  effectively on any device.
                 </p>
 
                 <div className="car-service-list-wrap">
@@ -65,32 +59,46 @@ const ServiceDetailsContent = () => {
 
                     <div className="col-lg-6 col-md-6">
                       <div className="car-service-list">
+                        <h4>Our Key Services</h4>
                         <ul>
                           <li>
                             <i className="bx bx-check"></i>
-                            Engine bay cleaned and dressed
+                            Custom Web Development
                           </li>
                           <li>
                             <i className="bx bx-check"></i>
-                            Door card panels cleaned
+                            Mobile App Development
                           </li>
                           <li>
                             <i className="bx bx-check"></i>
-                            Plastic trim enhanced
+                            SEO and Digital Marketing
                           </li>
                           <li>
                             <i className="bx bx-check"></i>
-                            Paint surface clay barred
+                            E-commerce Solutions
                           </li>
                           <li>
                             <i className="bx bx-check"></i>
-                            Alloy wheel treatment inside and out
+                            UI/UX Design Services
                           </li>
                         </ul>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                <p>
+                  With our digital marketing expertise, we help you reach your target audience 
+                  effectively through SEO, social media marketing, content creation, and paid 
+                  advertising campaigns. Our strategies are data-driven and designed to deliver 
+                  measurable results.
+                </p>
+
+                <p>
+                  Partner with us to unlock your business's full potential. We are dedicated 
+                  to delivering innovative solutions, unmatched quality, and ongoing support 
+                  to ensure your success in the digital world.
+                </p>
 
                 <AskQuestionForm />
               </div>

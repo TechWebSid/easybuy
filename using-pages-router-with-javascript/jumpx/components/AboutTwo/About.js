@@ -23,26 +23,22 @@ const About = () => {
                   We Complete Every Project With Extra Care As Customer Need
                 </h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
-                  maecenas accumsan lacus vel.
-                </p>
-
+  Our commitment is to exceed expectations by understanding your unique requirements. We focus on quality, precision, and attention to detail, ensuring each project is completed to perfection and tailored to your vision.
+</p>
                 <div className="row">
                   <div className="col-lg-6 col-sm-6">
                     <ul>
                       <li>
                         <i className="flaticon-checked"></i>
-                        Advanced caching
+                        Custom Websites
                       </li>
                       <li>
                         <i className="flaticon-checked"></i>
-                        Unlimited applications
+                        Digital Marketing
                       </li>
                       <li>
                         <i className="flaticon-checked"></i>
-                        PHP 7 ready transfer
+                        FullStack Development
                       </li>
                     </ul>
                   </div>
@@ -51,7 +47,7 @@ const About = () => {
                     <ul>
                       <li>
                         <i className="flaticon-checked"></i>
-                        PHP ready serves
+                        API Integration
                       </li>
                       <li>
                         <i className="flaticon-checked"></i>
@@ -65,9 +61,7 @@ const About = () => {
                   </div>
                 </div>
 
-                <Link href="/about" className="default-btn">
-                  Learn More
-                </Link>
+                
               </div>
             </div>
           </div>

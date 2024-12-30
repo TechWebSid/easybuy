@@ -33,10 +33,7 @@ const About = () => {
                   We Complete Every Project With Extra Care As Customer Need
                 </h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
-                  maecenas accumsan lacus vel.
+                We take pride in completing every project with exceptional care, ensuring it aligns perfectly with customer needs. Our dedicated approach guarantees high-quality results, combining expertise and attention to detail for a truly outstanding experience.
                 </p>
 
                 <div className="row">
@@ -44,15 +41,15 @@ const About = () => {
                     <ul>
                       <li>
                         <i className="flaticon-checked"></i>
-                        Advanced caching
+                        Custom Websites
                       </li>
                       <li>
                         <i className="flaticon-checked"></i>
-                        Unlimited applications
+                        Digital Marketing
                       </li>
                       <li>
                         <i className="flaticon-checked"></i>
-                        PHP 7 ready transfer
+                        SEO Optimization
                       </li>
                     </ul>
                   </div>
@@ -61,7 +58,7 @@ const About = () => {
                     <ul>
                       <li>
                         <i className="flaticon-checked"></i>
-                        PHP ready serves
+                        FullStack Development
                       </li>
                       <li>
                         <i className="flaticon-checked"></i>

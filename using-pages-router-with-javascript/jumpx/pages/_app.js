@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Jumpx - React Next.js AI & IT Startup Template</title>
+        <title>Easy2BuyHub - Digital Solution for your Businesses</title>
       </Head>
 
       <Component {...pageProps} />

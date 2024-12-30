@@ -11,9 +11,7 @@ const WhyChooseUs = () => {
               Our Platform Takes Away The Hard Process Of Creating Your Website
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nisi
-              rem quo itaque minus dolorem ratione vero, quisquam reiciendis
-              quia atque eos aspernatur.
+              We streamline website creation, eliminating the challenges and complexities. With our platform, you can achieve professional results effortlessly, backed by innovative tools and expert support.
             </p>
           </div>
 
@@ -25,8 +23,7 @@ const WhyChooseUs = () => {
                 </span>
                 <h3>Safe Security</h3>
                 <p>
-                  Lorem ipsum dolor sit labore amet, consectetur adipiscing
-                  elit, sed do eiusmod tempor.
+                  Your data is protected with advanced security measures, ensuring complete safety and peace of mind for your business.
                 </p>
               </div>
             </div>
@@ -38,8 +35,7 @@ const WhyChooseUs = () => {
                 </span>
                 <h3>Technical Support</h3>
                 <p>
-                  Lorem ipsum dolor sit labore amet, consectetur adipiscing
-                  elit, sed do eiusmod tempor.
+                  Our dedicated team is always ready to assist you with any technical issues, providing reliable and prompt support.
                 </p>
               </div>
             </div>
@@ -51,8 +47,7 @@ const WhyChooseUs = () => {
                 </span>
                 <h3>Live Support</h3>
                 <p>
-                  Lorem ipsum dolor sit labore amet, consectetur adipiscing
-                  elit, sed do eiusmod tempor.
+                  Get real-time assistance from our experts to address your queries and ensure a seamless experience.
                 </p>
               </div>
             </div>
@@ -62,10 +57,9 @@ const WhyChooseUs = () => {
                 <span>
                   04 <i className="flaticon-technical-support"></i>
                 </span>
-                <h3>Free Try </h3>
+                <h3>Free Trial</h3>
                 <p>
-                  Lorem ipsum dolor sit labore amet, consectetur adipiscing
-                  elit, sed do eiusmod tempor.
+                  Experience our services with a risk-free trial and see the value we bring to your business before committing.
                 </p>
               </div>
             </div>
@@ -75,10 +69,9 @@ const WhyChooseUs = () => {
                 <span>
                   05 <i className="flaticon-shield"></i>
                 </span>
-                <h3>Advanced Tchnology</h3>
+                <h3>Advanced Technology</h3>
                 <p>
-                  Lorem ipsum dolor sit labore amet, consectetur adipiscing
-                  elit, sed do eiusmod tempor.
+                  Leverage cutting-edge technology to create a website that is not only functional but also future-proof.
                 </p>
               </div>
             </div>
@@ -90,8 +83,7 @@ const WhyChooseUs = () => {
                 </span>
                 <h3>Competitive Pricing</h3>
                 <p>
-                  Lorem ipsum dolor sit labore amet, consectetur adipiscing
-                  elit, sed do eiusmod tempor.
+                  Enjoy top-notch services at affordable rates, giving you the best value for your investment.
                 </p>
               </div>
             </div>
