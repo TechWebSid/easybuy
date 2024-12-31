@@ -18,6 +18,7 @@ const Monthly = () => {
                 <s>₹10,888</s>
               </p>
               <p className="discounted-price">₹8,999/-</p>
+              <p className="inclusive-taxes">Inclusive of all taxes</p>
             </div>
 
             <ul>
@@ -83,7 +84,7 @@ const Monthly = () => {
 
         <div className="col-lg-4 col-md-6">
           <div className="single-pricing">
-            <strong className="popular-badge">Popular</strong>
+            <strong className="popular-badge">Most Subscribed</strong>
 
             <div className="pricing-top-heading">
               <h3>Standard</h3>
@@ -96,6 +97,7 @@ const Monthly = () => {
                 <s>₹22,988</s>
               </p>
               <p className="discounted-price">₹18,999/-</p>
+              <p className="inclusive-taxes">Inclusive of all taxes</p>
             </div>
 
             <ul>
@@ -171,7 +173,9 @@ const Monthly = () => {
               <p className="original-price">
                 <s>₹60,498</s>
               </p>
-              <p className="discounted-price">₹49,999/-</p>
+              <p className="discounted-price">₹49,999/- </p>
+              <p className="inclusive-taxes">Inclusive of all taxes</p>
+             
             </div>
 
             <ul>
@@ -264,12 +268,18 @@ const Monthly = () => {
           align-items: center;
           position: relative;
         }
+             .inclusive-taxes {
+          font-size: 12px;
+          color: gray;
+          margin-top: 5px;
+        }
 
         .discount-percentage {
           font-size: 16px;
           font-weight: bold;
           color: #ff0000;
-          margin-bottom: 5px;
+          margin-bottom: 0.3px;
+          
         }
 
         .original-price {
@@ -315,6 +325,12 @@ const Monthly = () => {
 
         ul li .bx-x {
           color: #ff0000;
+        }
+
+   .inclusive-taxes {
+          font-size: 12px;
+          color: #999;
+          margin-top: 5px;
         }
 
         .popular-badge {

@@ -75,7 +75,7 @@ const ServiceDetailsContent = () => {
                           </li>
                           <li>
                             <i className="bx bx-check"></i>
-                            E-commerce Solutions
+                            E-Commerce Solutions
                           </li>
                           <li>
                             <i className="bx bx-check"></i>

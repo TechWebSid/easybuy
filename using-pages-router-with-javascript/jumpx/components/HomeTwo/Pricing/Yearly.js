@@ -18,6 +18,7 @@ const Yearly = () => {
                 <s>₹14,510</s>
               </p>
               <p className="discounted-price">₹11,999/-</p>
+              <p className="inclusive-taxes">Inclusive of all taxes</p>
             </div>
 
             <ul>
@@ -83,7 +84,7 @@ const Yearly = () => {
 
         <div className="col-lg-4 col-md-6">
           <div className="single-pricing">
-            <strong className="popular-badge">Popular</strong>
+            <strong className="popular-badge">Most Subscribed</strong>
 
             <div className="pricing-top-heading">
               <h3>Standard</h3>
@@ -96,6 +97,7 @@ const Yearly = () => {
                 <s>₹30,249</s>
               </p>
               <p className="discounted-price">₹24,999/-</p>
+              <p className="inclusive-taxes">Inclusive of all taxes</p>
             </div>
 
             <ul>
@@ -172,6 +174,7 @@ const Yearly = () => {
                 <s>₹72,599</s>
               </p>
               <p className="discounted-price">₹59,999/-</p>
+              <p className="inclusive-taxes">Inclusive of all taxes</p>
             </div>
 
             <ul>
@@ -264,6 +267,11 @@ const Yearly = () => {
           align-items: center;
           position: relative;
         }
+             .inclusive-taxes {
+          font-size: 12px;
+          color: #999;
+          margin-top: 5px;
+        }
 
         .discount-percentage {
           font-size: 16px;
@@ -315,6 +323,12 @@ const Yearly = () => {
 
         ul li .bx-x {
           color: #ff0000;
+        }
+
+   .inclusive-taxes {
+          font-size: 12px;
+          color: gray;
+          margin-top: 5px;
         }
 
         .popular-badge {
