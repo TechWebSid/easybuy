@@ -56,36 +56,38 @@ const ServiceSidebar = () => {
             </li>
           </ul>
         </div>
+        <div className="why-choose-us">
+  <h3 className="service-details-title">Why Choose Easy2BuyHub?</h3>
+  <ul style={{ paddingLeft: "20px" }}>
+    <li style={{ marginBottom: "20px" }}>
+      <p style={{ lineHeight: "1.6" }}>
+        <strong>Expert Team:</strong> Our team of experienced developers, designers, and strategists ensures the highest quality in all our services.
+      </p>
+    </li>
+    <li style={{ marginBottom: "20px" }}>
+      <p style={{ lineHeight: "1.6" }}>
+        <strong>Customized Solutions:</strong> We offer tailored solutions for your business, ensuring you get exactly what you need.
+      </p>
+    </li>
+    <li style={{ marginBottom: "20px" }}>
+      <p style={{ lineHeight: "1.6" }}>
+        <strong>On-Time Delivery:</strong> We pride ourselves on delivering projects on time, ensuring your business stays ahead of the competition.
+      </p>
+    </li>
+    <li style={{ marginBottom: "20px" }}>
+      <p style={{ lineHeight: "1.6" }}>
+        <strong>Affordable Pricing:</strong> Our services are competitively priced, providing value without compromising on quality.
+      </p>
+    </li>
+    <li style={{ marginBottom: "20px" }}>
+      <p style={{ lineHeight: "1.6" }}>
+        <strong>24/7 Support:</strong> We provide round-the-clock support to help you with any queries or issues.
+      </p>
+    </li>
+  </ul>
+</div>
 
-        <div className="service-list">
-          <h3 className="service-details-title">Download Brochures</h3>
-          <ul>
-            <li>
-              <Link href="#">
-                PDF File (1)
-                <i className="bx bxs-cloud-download"></i>
-              </Link>
-            </li>
-            <li>
-              <Link href="#">
-                PDF File (2)
-                <i className="bx bxs-cloud-download"></i>
-              </Link>
-            </li>
-            <li>
-              <Link href="#">
-                PDF File (3)
-                <i className="bx bxs-cloud-download"></i>
-              </Link>
-            </li>
-            <li>
-              <Link href="#">
-                PDF File (4)
-                <i className="bx bxs-cloud-download"></i>
-              </Link>
-            </li>
-          </ul>
-        </div>
+
       </div>
     </>
   );

@@ -110,7 +110,7 @@ const Yearly = () => {
               <p>Build A Website</p>
             </div>
             <span>
-              $99<sub>/y</sub>
+            ₹8999<sub>/y</sub>
             </span>
 
             <ul>

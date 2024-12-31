@@ -14,6 +14,7 @@
         "aos": "^2.3.4",
         "axios": "^1.6.7",
         "fslightbox-react": "^1.7.6",
+        "lucide-react": "^0.469.0",
         "next": "^14.1.0",
         "nodemailer": "^6.9.8",
         "nodemailer-sendgrid-transport": "^0.2.0",
