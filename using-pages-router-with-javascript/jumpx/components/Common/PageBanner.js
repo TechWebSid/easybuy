@@ -75,9 +75,9 @@ const BannerContainer = styled.div`
   }
 
   .page-title-content ul li:not(:last-child)::after {
-    content: '/';
-    margin: 0 10px;
-    color: #f1f1f1;
+    // content: '/';
+    // margin: 0 10px;
+    // color: #f1f1f1;
   }
 
   .page-title-content ul li a {
