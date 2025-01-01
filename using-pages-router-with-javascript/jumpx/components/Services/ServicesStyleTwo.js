@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 const servicesData = [
   {
@@ -47,6 +48,8 @@ const servicesData = [
 ];
 
 const ServicesStyleTwo = () => {
+  const router = useRouter();
+
   return (
     <>
       <style jsx>{`
@@ -131,6 +134,51 @@ const ServicesStyleTwo = () => {
         .view-details-button:hover {
           background-color: #0056b3;
         }
+
+        .chat-assistant-button {
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          padding: 16px 28px;
+          background: linear-gradient(45deg, #3b82f6, #2563eb);
+          color: #fff;
+          border: none;
+          border-radius: 50px;
+          font-size: 1.1rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          z-index: 1000;
+        }
+
+        .chat-assistant-button:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+          background: linear-gradient(45deg, #2563eb, #1d4ed8);
+        }
+
+        .chat-icon {
+          font-size: 1.4rem;
+          animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-5px); }
+        }
+
+        @media (max-width: 768px) {
+          .chat-assistant-button {
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            font-size: 1rem;
+          }
+        }
       `}</style>
 
       <div className="offer-area">
@@ -158,6 +206,14 @@ const ServicesStyleTwo = () => {
           </div>
         </div>
       </div>
+
+      <button 
+        className="chat-assistant-button"
+        onClick={() => router.push('/chatbot')}
+      >
+        <span className="chat-icon">💬</span>
+        Need Help? Chat with AI Assistant
+      </button>
     </>
   );
 };
