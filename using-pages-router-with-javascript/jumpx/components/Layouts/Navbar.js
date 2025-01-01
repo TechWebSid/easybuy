@@ -121,7 +121,7 @@ const Navbar = () => {
                     className="nav-link"
                     onClick={(e) => e.preventDefault()}
                   >
-                    News <i className="bx bx-chevron-down"></i>
+                    Blog <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
@@ -132,7 +132,7 @@ const Navbar = () => {
                           currentPath == "/news/" && "active"
                         }`}
                       >
-                        News Grid
+                        Blog Grid
                       </Link>
                     </li>
 
@@ -145,7 +145,7 @@ const Navbar = () => {
                           currentPath == "/news/news-details/" && "active"
                         }`}
                       >
-                        News Details
+                        Blog Details
                       </Link>
                     </li>
                   </ul>

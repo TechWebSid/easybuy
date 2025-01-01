@@ -103,7 +103,7 @@ const Monthly = () => {
             <ul>
               <li>
                 <i className="bx bx-check"></i>
-                Simple Website Creation 
+                Standard Website Creation 
               </li>
               <li>
                 <i className="bx bx-check"></i>
@@ -181,7 +181,7 @@ const Monthly = () => {
             <ul>
               <li>
                 <i className="bx bx-check"></i>
-                Simple Website Creation 
+                Premium Website Creation 
               </li>
               <li>
                 <i className="bx bx-check"></i>

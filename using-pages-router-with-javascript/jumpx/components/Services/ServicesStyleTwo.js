@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 
@@ -49,6 +49,315 @@ const servicesData = [
 
 const ServicesStyleTwo = () => {
   const router = useRouter();
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [messages, setMessages] = useState([
+    {
+      type: "bot",
+      content: "Hello! 👋 I'm your AI assistant. How can I help you today?",
+      timestamp: new Date(),
+    },
+  ]);
+  const [inputMessage, setInputMessage] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+
+  const additionalStyles = `
+    .chat-window-container {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 380px;
+      height: 500px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+    }
+
+    .chat-window-container.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .chat-header {
+      padding: 20px;
+      background: linear-gradient(45deg, #3b82f6, #2563eb);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-header h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .close-chat {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 1.5rem;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .chat-messages {
+      flex-grow: 1;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 12px 16px;
+      border-radius: 15px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .message.bot {
+      background: #f1f5f9;
+      color: #1e293b;
+      align-self: flex-start;
+      border-bottom-left-radius: 5px;
+    }
+
+    .message.user {
+      background: #3b82f6;
+      color: #ffffff;
+      align-self: flex-end;
+      border-bottom-right-radius: 5px;
+    }
+
+    .chat-input {
+      padding: 15px;
+      border-top: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+
+    .chat-input form {
+      display: flex;
+      gap: 10px;
+    }
+
+    .chat-input input {
+      flex-grow: 1;
+      padding: 10px 15px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .chat-input input:focus {
+      border-color: #3b82f6;
+    }
+
+    .chat-input button {
+      padding: 10px 20px;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .chat-input button:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 768px) {
+      .chat-window-container {
+        width: 90%;
+        right: 5%;
+        bottom: 80px;
+      }
+    }
+
+    .chat-assistant-button {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      padding: 12px 20px;
+      background: linear-gradient(45deg, #2563eb, #4f46e5);
+      color: #fff;
+      border: none;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 1000;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      animation: pulseAnimation 2s infinite;
+    }
+
+    .chat-assistant-button:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+      background: linear-gradient(45deg, #1d4ed8, #4338ca);
+    }
+
+    .chat-icon {
+      font-size: 1.2rem;
+      animation: bounce 2s infinite;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 6px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    @keyframes pulseAnimation {
+      0% {
+        box-shadow: 0 5px 20px rgba(37, 99, 235, 0.4);
+      }
+      50% {
+        box-shadow: 0 5px 30px rgba(37, 99, 235, 0.6);
+      }
+      100% {
+        box-shadow: 0 5px 20px rgba(37, 99, 235, 0.4);
+      }
+    }
+
+    .chat-notification {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      width: 8px;
+      height: 8px;
+      background-color: #22c55e;
+      border-radius: 50%;
+      border: 1.5px solid white;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .chat-assistant-button {
+        bottom: 15px;
+        left: 15px;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+      }
+    }
+  `;
+
+  const chatButtonJSX = (
+    <button 
+      className="chat-assistant-button"
+      onClick={() => setIsChatOpen(!isChatOpen)}
+    >
+      <div style={{ position: 'relative' }}>
+        <span className="chat-icon">💬</span>
+        <span className="chat-notification"></span>
+      </div>
+      <span style={{ 
+        fontWeight: '600',
+        letterSpacing: '0.3px',
+        textShadow: '0 1px 2px rgba(0,0,0,0.1)'
+      }}>
+        Chat with AI Assistant
+      </span>
+    </button>
+  );
+
+  const chatWindowJSX = (
+    <>
+      {chatButtonJSX}
+      <div className={`chat-window-container ${isChatOpen ? 'open' : ''}`}>
+        <div className="chat-header">
+          <h3>AI Assistant</h3>
+          <button className="close-chat" onClick={() => setIsChatOpen(false)}>×</button>
+        </div>
+        
+        <div className="chat-messages">
+          {messages.map((message, index) => (
+            <div key={index} className={`message ${message.type}`}>
+              {message.content}
+            </div>
+          ))}
+        </div>
+
+        <div className="chat-input">
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            if (!inputMessage.trim()) return;
+            
+            // Add user message
+            setMessages(prev => [...prev, {
+              type: "user",
+              content: inputMessage,
+              timestamp: new Date(),
+            }]);
+            
+            // Clear input
+            setInputMessage("");
+            
+            // Simulate bot response
+            setIsTyping(true);
+            setTimeout(() => {
+              setMessages(prev => [...prev, {
+                type: "bot",
+                content: "Thank you for your message. I'll help you with that.",
+                timestamp: new Date(),
+              }]);
+              setIsTyping(false);
+            }, 1000);
+          }}>
+            <input
+              type="text"
+              value={inputMessage}
+              onChange={(e) => setInputMessage(e.target.value)}
+              placeholder="Type your message..."
+              disabled={isTyping}
+            />
+            <button type="submit" disabled={!inputMessage.trim() || isTyping}>
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </>
+  );
 
   return (
     <>
@@ -135,50 +444,7 @@ const ServicesStyleTwo = () => {
           background-color: #0056b3;
         }
 
-        .chat-assistant-button {
-          position: fixed;
-          bottom: 30px;
-          right: 30px;
-          padding: 16px 28px;
-          background: linear-gradient(45deg, #3b82f6, #2563eb);
-          color: #fff;
-          border: none;
-          border-radius: 50px;
-          font-size: 1.1rem;
-          font-weight: 500;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          z-index: 1000;
-        }
-
-        .chat-assistant-button:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-          background: linear-gradient(45deg, #2563eb, #1d4ed8);
-        }
-
-        .chat-icon {
-          font-size: 1.4rem;
-          animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-5px); }
-        }
-
-        @media (max-width: 768px) {
-          .chat-assistant-button {
-            bottom: 20px;
-            right: 20px;
-            padding: 12px 20px;
-            font-size: 1rem;
-          }
-        }
+        ${additionalStyles}
       `}</style>
 
       <div className="offer-area">
@@ -207,13 +473,7 @@ const ServicesStyleTwo = () => {
         </div>
       </div>
 
-      <button 
-        className="chat-assistant-button"
-        onClick={() => router.push('/chatbot')}
-      >
-        <span className="chat-icon">💬</span>
-        Need Help? Chat with AI Assistant
-      </button>
+      {chatWindowJSX}
     </>
   );
 };
