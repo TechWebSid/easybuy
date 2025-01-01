@@ -4,7 +4,7 @@ const APIServices = () => {
   const services = [
     {
       title: "Third-Party API Integration",
-      image: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg",
+      image: "https://images.pexels.com/photos/8636591/pexels-photo-8636591.jpeg",
       items: [
         {
           name: "Payment Gateway APIs",
@@ -22,7 +22,7 @@ const APIServices = () => {
     },
     {
       title: "Custom API Development",
-      image: "https://images.pexels.com/photos/7376/startup-photos.jpg",
+      image: "https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg",
       items: [
         {
           name: "Tailored Solutions",
@@ -36,7 +36,7 @@ const APIServices = () => {
     },
     {
       title: "Cloud API Integration",
-      image: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg",
+      image: "https://images.pexels.com/photos/7988079/pexels-photo-7988079.jpeg",
       items: [
         {
           name: "SaaS Integration",
@@ -50,7 +50,7 @@ const APIServices = () => {
     },
     {
       title: "Data Integration APIs",
-      image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg",
+      image: "https://images.pexels.com/photos/8728560/pexels-photo-8728560.jpeg",
       items: [
         {
           name: "CRM & ERP Integration",
@@ -64,7 +64,7 @@ const APIServices = () => {
     },
     {
       title: "IoT & Automation APIs",
-      image: "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg",
+      image: "https://images.pexels.com/photos/7054528/pexels-photo-7054528.jpeg",
       items: [
         {
           name: "IoT Device Integration",
@@ -78,7 +78,7 @@ const APIServices = () => {
     },
     {
       title: "Development Tools & Frameworks",
-      image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
+      image: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg",
       items: [
         {
           name: "API Protocols",
@@ -92,7 +92,7 @@ const APIServices = () => {
     },
     {
       title: "Testing & Documentation",
-      image: "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+      image: "https://images.pexels.com/photos/7988086/pexels-photo-7988086.jpeg",
       items: [
         {
           name: "Comprehensive Testing",
@@ -106,7 +106,7 @@ const APIServices = () => {
     },
     {
       title: "Industry Solutions",
-      image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+      image: "https://images.pexels.com/photos/8728558/pexels-photo-8728558.jpeg",
       items: [
         {
           name: "Sector-Specific APIs",
