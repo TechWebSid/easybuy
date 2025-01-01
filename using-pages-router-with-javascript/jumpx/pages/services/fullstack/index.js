@@ -1,116 +1,128 @@
 import React from "react";
 
-const SEOServices = () => {
+const FullStackServices = () => {
   const services = [
     {
-      title: "On-Page SEO",
-      image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg",
+      title: "Frontend Development",
+      image: "https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg",
       items: [
         {
-          name: "Content Optimization",
-          description: "Optimization of website content and HTML source code for maximum search engine visibility.",
+          name: "Responsive Web Design",
+          description: "Pixel-perfect and mobile-friendly interfaces for desktops, tablets, and smartphones using HTML5, CSS3, Bootstrap, Tailwind CSS, Material-UI.",
         },
         {
-          name: "Key Features",
-          description: "Keyword research and integration, meta titles and descriptions, header tags (H1, H2, etc.) optimization, image optimization, internal linking structure.",
+          name: "Dynamic Frontend Solutions",
+          description: "Interactive elements built with React.js, Angular.js, Vue.js, and Svelte for engaging user experiences.",
+        },
+        {
+          name: "Single Page Applications",
+          description: "Fast, dynamic websites that load without refreshing, similar to Gmail-like applications.",
         },
       ],
     },
     {
-      title: "Off-Page SEO",
-      image: "https://images.pexels.com/photos/34577/pexels-photo.jpg",
+      title: "Backend Development",
+      image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
       items: [
         {
-          name: "Authority Building",
-          description: "Building authority and credibility through external links and relationships.",
+          name: "API Development & Integration",
+          description: "Robust RESTful and GraphQL APIs built with Node.js, Express.js, Django, Flask, Ruby on Rails, and PHP (Laravel).",
         },
         {
-          name: "Key Features",
-          description: "Backlink building, guest blogging, social bookmarking, influencer outreach strategies.",
+          name: "Database Management",
+          description: "Optimized database systems using MySQL, PostgreSQL, MongoDB, Firebase, and SQLite for secure data handling.",
+        },
+        {
+          name: "Cloud Solutions",
+          description: "Scalable cloud server development on AWS, Google Cloud, Microsoft Azure, and DigitalOcean.",
         },
       ],
     },
     {
-      title: "Technical SEO",
-      image: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg",
+      title: "Full Stack Frameworks",
+      image: "https://images.pexels.com/photos/7376/startup-photos.jpg",
       items: [
         {
-          name: "Technical Optimization",
-          description: "Ensuring the website is technically optimized for search engines.",
+          name: "Popular Stacks",
+          description: "Expert development in MEAN Stack (MongoDB, Express.js, Angular, Node.js) and MERN Stack (MongoDB, Express.js, React.js, Node.js).",
         },
         {
-          name: "Key Features",
-          description: "Website speed optimization, mobile-friendliness, secure connections (HTTPS), structured data (schema markup), crawlability and indexability improvements.",
+          name: "Traditional Stacks",
+          description: "LAMP Stack (Linux, Apache, MySQL, PHP) and Django Stack (Django, PostgreSQL, React.js/Vue.js) implementation.",
+        },
+        {
+          name: "Modern Stacks",
+          description: "Ruby on Rails Stack with PostgreSQL/MySQL and modern JavaScript frameworks.",
         },
       ],
     },
     {
-      title: "Local SEO",
-      image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg",
+      title: "Custom Application Development",
+      image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
       items: [
         {
-          name: "Local Search Optimization",
-          description: "Optimize for local search queries and improve local visibility.",
+          name: "Enterprise Solutions",
+          description: "Large-scale business applications, E-commerce platforms with payment gateways, and custom CMS solutions.",
         },
         {
-          name: "Key Features",
-          description: "Google My Business optimization, local keyword optimization, generating and managing local reviews, NAP (Name, Address, Phone) consistency.",
+          name: "Real-Time Applications",
+          description: "Chat applications, gaming platforms, live video streaming, and IoT platform integrations.",
         },
       ],
     },
     {
-      title: "E-Commerce SEO",
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
+      title: "Maintenance and Support",
+      image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg",
       items: [
         {
-          name: "E-Commerce Optimization",
-          description: "Specialized strategies for online stores and e-commerce platforms.",
+          name: "Ongoing Support",
+          description: "Code audit & optimization, bug fixing, server management, and security updates.",
         },
         {
-          name: "Key Features",
-          description: "Product page optimization, category page SEO, integration with shopping platforms (Google Shopping, Amazon), managing product reviews and Q&A sections.",
+          name: "Feature Enhancement",
+          description: "Regular updates and new feature integrations based on business requirements.",
         },
       ],
     },
     {
-      title: "Content Optimization",
-      image: "https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg",
+      title: "Development Technologies",
+      image: "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg",
       items: [
         {
-          name: "Content Strategy",
-          description: "Improve the quality and relevance of website content.",
+          name: "Frontend & Backend Tools",
+          description: "Expertise in HTML, CSS, JavaScript, React.js, Angular, Vue.js, Python, PHP, Ruby, Java, .NET, and more.",
         },
         {
-          name: "Key Features",
-          description: "Blog optimization and optimization, long-tail keyword targeting, voice search optimization.",
+          name: "Database & DevOps",
+          description: "Comprehensive database solutions (SQL & NoSQL) and DevOps tools including CI/CD pipelines and containers.",
         },
       ],
     },
     {
-      title: "SEO Audit and Reporting",
-      image: "https://images.pexels.com/photos/95916/pexels-photo-95916.jpeg",
+      title: "Development Process",
+      image: "https://images.pexels.com/photos/7376/startup-photos.jpg",
       items: [
         {
-          name: "Comprehensive Analysis",
-          description: "Comprehensive analysis of your website's current SEO status.",
+          name: "End-to-End Development",
+          description: "Complete process from requirement analysis to deployment, including UI/UX design, development, testing, and launch.",
         },
         {
-          name: "Key Features",
-          description: "Identifying technical issues, competitor analysis, monthly performance reports.",
+          name: "Post-Launch Support",
+          description: "Continuous monitoring, updates, troubleshooting, and maintenance support.",
         },
       ],
     },
     {
-      title: "SEO for Startups and Small Businesses",
-      image: "https://images.pexels.com/photos/7367/startup-photos.jpg",
+      title: "Marketing & Analytics",
+      image: "https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg",
       items: [
         {
-          name: "Startup SEO Package",
-          description: "Affordable and effective solutions tailored for beginners.",
+          name: "Digital Marketing",
+          description: "SEO optimization, content management, performance analytics, and digital marketing campaigns.",
         },
         {
-          name: "Key Features",
-          description: "Domain selection guidance, website launch SEO checklist, budget-friendly SEO strategies.",
+          name: "Global Solutions",
+          description: "Multi-language and multi-currency support for international reach.",
         },
       ],
     },
@@ -119,7 +131,7 @@ const SEOServices = () => {
   return (
     <>
       <style jsx>{`
-        .seo-services {
+        .fullstack-services {
           padding: 80px 20px;
           background: linear-gradient(to bottom, #f8f9ff, #ffffff);
         }
@@ -229,7 +241,7 @@ const SEOServices = () => {
           margin-bottom: 18px;
         }
 
-        .analyze-button {
+        .contact-button {
           display: inline-flex;
           align-items: center;
           padding: 14px 28px;
@@ -243,7 +255,7 @@ const SEOServices = () => {
           box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
         }
 
-        .analyze-button:hover {
+        .contact-button:hover {
           background: linear-gradient(45deg, #2563eb, #1d4ed8);
           transform: translateY(-2px);
           box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
@@ -264,14 +276,14 @@ const SEOServices = () => {
         }
       `}</style>
 
-      <div className="seo-services">
+      <div className="fullstack-services">
         <div className="container">
           <div className="section-title">
-            <h2>SEO Services & Solutions</h2>
+            <h2>Full Stack Development Services</h2>
             <p>
-              Boost your online visibility and drive organic traffic with our comprehensive 
-              SEO services. From technical optimization to content strategy, we help you 
-              achieve sustainable search engine rankings.
+              Comprehensive full-stack development solutions to bring your digital vision to life. 
+              From frontend excellence to robust backend systems, we deliver end-to-end development 
+              services that scale with your business.
             </p>
           </div>
 
@@ -286,7 +298,7 @@ const SEOServices = () => {
                       <h4>{item.name}</h4>
                       <p>{item.description}</p>
                       {idx === 0 && (
-                        <a href="/purchase" className="analyze-button">
+                        <a href="/purchase" className="contact-button">
                           Get Started →
                         </a>
                       )}
@@ -302,4 +314,4 @@ const SEOServices = () => {
   );
 };
 
-export default SEOServices;
+export default FullStackServices;
