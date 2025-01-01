@@ -65,10 +65,10 @@ const ServicesStyleTwo = () => {
       position: fixed;
       bottom: 100px;
       right: 30px;
-      width: 380px;
-      height: 500px;
+      width: 320px;
+      height: 400px;
       background: #ffffff;
-      border-radius: 20px;
+      border-radius: 16px;
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
       z-index: 1000;
       overflow: hidden;
@@ -87,7 +87,7 @@ const ServicesStyleTwo = () => {
     }
 
     .chat-header {
-      padding: 20px;
+      padding: 15px;
       background: linear-gradient(45deg, #3b82f6, #2563eb);
       color: white;
       display: flex;
@@ -97,7 +97,7 @@ const ServicesStyleTwo = () => {
 
     .chat-header h3 {
       margin: 0;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: white;
     }
 
@@ -113,18 +113,18 @@ const ServicesStyleTwo = () => {
 
     .chat-messages {
       flex-grow: 1;
-      padding: 20px;
+      padding: 15px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 12px;
     }
 
     .message {
-      max-width: 80%;
-      padding: 12px 16px;
-      border-radius: 15px;
-      font-size: 0.95rem;
+      max-width: 85%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 0.9rem;
       line-height: 1.4;
     }
 
@@ -143,22 +143,23 @@ const ServicesStyleTwo = () => {
     }
 
     .chat-input {
-      padding: 15px;
+      padding: 12px;
       border-top: 1px solid #e2e8f0;
       background: #f8fafc;
     }
 
     .chat-input form {
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
 
     .chat-input input {
       flex-grow: 1;
-      padding: 10px 15px;
+      padding: 8px 12px;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
+      border-radius: 6px;
       outline: none;
+      font-size: 0.9rem;
     }
 
     .chat-input input:focus {
@@ -166,12 +167,13 @@ const ServicesStyleTwo = () => {
     }
 
     .chat-input button {
-      padding: 10px 20px;
+      padding: 8px 16px;
       background: #3b82f6;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
+      font-size: 0.9rem;
     }
 
     .chat-input button:disabled {
@@ -181,9 +183,10 @@ const ServicesStyleTwo = () => {
 
     @media (max-width: 768px) {
       .chat-window-container {
-        width: 90%;
-        right: 5%;
+        width: 280px;
+        height: 350px;
         bottom: 80px;
+        right: 20px;
       }
     }
 

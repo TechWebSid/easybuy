@@ -162,7 +162,19 @@ const Navbar = () => {
                     Contact
                   </Link>
                 </li>
+
+                <li className="nav-item">
+                  <Link
+                    href="/careers/"
+                    className={`nav-link ${
+                      currentPath == "/careers/" && "active"
+                    }`}
+                  >
+                    Careers
+                  </Link>
+                </li>
               </ul>
+              
 
               <div className="others-options">
                 <Link href="/auth/login/" className="default-btn">
