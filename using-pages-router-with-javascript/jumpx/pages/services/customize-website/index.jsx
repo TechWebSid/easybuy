@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../../../components/Layouts/Navbar";
 
 const CustomizeWebsite = () => {
   const services = [
@@ -160,6 +161,7 @@ const CustomizeWebsite = () => {
 
   return (
     <>
+    <Navbar/>
       <style jsx>{`
         .customize-website {
           padding: 80px 20px;

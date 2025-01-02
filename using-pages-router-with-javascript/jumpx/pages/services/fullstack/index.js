@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../../../components/Layouts/Navbar";
 
 const FullStackServices = () => {
   const services = [
@@ -130,6 +131,7 @@ const FullStackServices = () => {
 
   return (
     <>
+    <Navbar/>
       <style jsx>{`
         .fullstack-services {
           padding: 80px 20px;

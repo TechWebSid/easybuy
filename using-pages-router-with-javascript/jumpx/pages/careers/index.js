@@ -87,11 +87,11 @@ const Careers = () => {
 
   return (
     <>
-   
+      <Navbar />
       <style jsx>{`
         .careers-container {
-          padding: 80px 20px;
-          background: linear-gradient(135deg, #f8faff 0%, #f0f5ff 100%);
+          padding: 120px 20px 80px;
+          background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
         }
 
         .container {
@@ -107,19 +107,19 @@ const Careers = () => {
         .careers-header h1 {
           font-size: 3.2rem;
           font-weight: 800;
-          background: linear-gradient(45deg, #1e40af, #3730a3);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          color: #ffffff;
           margin-bottom: 25px;
           letter-spacing: -0.5px;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .careers-header p {
           font-size: 1.25rem;
-          color: #475569;
+          color: #e2e8f0;
           max-width: 800px;
           margin: 0 auto;
           line-height: 1.8;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .positions-grid {
@@ -130,13 +130,18 @@ const Careers = () => {
         }
 
         .position-card {
-          background: #ffffff;
+          background: rgba(255, 255, 255, 0.95);
           border-radius: 20px;
           padding: 35px;
-          box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
           transition: all 0.4s ease;
-          border: 1px solid rgba(0, 0, 0, 0.03);
+          border: none;
           position: relative;
+        }
+
+        .position-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         }
 
         .position-title {
@@ -167,33 +172,32 @@ const Careers = () => {
         .skill-tag {
           background: #e5edff;
           color: #1e40af;
-          padding: 8px 16px;
-          border-radius: 20px;
-          font-size: 0.9rem;
+          padding: 6px 12px;
+          border-radius: 8px;
+          font-size: 0.85rem;
           font-weight: 500;
         }
 
         .position-description {
-          color: #64748b;
+          font-size: 1rem;
+          color: #475569;
           line-height: 1.6;
-          margin-top: 20px;
+          margin-bottom: 20px;
         }
 
         .application-form {
-          background: #ffffff;
-          padding: 50px;
-          border-radius: 24px;
-          box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
-          border: 1px solid rgba(0, 0, 0, 0.03);
+          background: rgba(255, 255, 255, 0.95);
+          border-radius: 20px;
+          padding: 40px;
+          box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+          margin-bottom: 60px;
         }
 
         .form-title {
-          font-size: 2.2rem;
+          font-size: 1.8rem;
           font-weight: 700;
           color: #1e293b;
-          margin-bottom: 35px;
-          text-align: center;
-          letter-spacing: -0.5px;
+          margin-bottom: 30px;
         }
 
         .form-grid {
@@ -203,62 +207,55 @@ const Careers = () => {
         }
 
         .form-group {
-          margin-bottom: 20px;
-        }
-
-        .form-group.full-width {
-          grid-column: 1 / -1;
+          display: flex;
+          flex-direction: column;
         }
 
         .form-label {
-          display: block;
+          font-size: 0.9rem;
+          color: #475569;
           margin-bottom: 8px;
-          color: #1e293b;
-          font-weight: 500;
         }
 
         .form-input,
         .form-select,
         .form-textarea {
-          width: 100%;
-          padding: 14px;
-          border: 2px solid #e2e8f0;
-          border-radius: 12px;
+          padding: 12px 15px;
+          border: 1px solid #e2e8f0;
+          border-radius: 8px;
           font-size: 1rem;
+          color: #1e293b;
           transition: all 0.3s ease;
-          background: #f8fafc;
         }
 
         .form-input:focus,
         .form-select:focus,
         .form-textarea:focus {
           border-color: #1e40af;
-          background: #ffffff;
+          box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
           outline: none;
-          box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.1);
         }
 
         .form-textarea {
-          height: 120px;
           resize: vertical;
+          min-height: 120px;
         }
 
         .submit-button {
-          background: linear-gradient(45deg, #1e40af, #3730a3);
-          color: white;
-          padding: 16px 32px;
-          border: none;
-          border-radius: 12px;
-          font-size: 1.1rem;
+          padding: 14px 28px;
+          background: linear-gradient(45deg, #1e3a8a, #1e40af);
+          color: #ffffff;
+          font-size: 1rem;
           font-weight: 600;
+          border: none;
+          border-radius: 8px;
           cursor: pointer;
           transition: all 0.3s ease;
-          width: 100%;
-          letter-spacing: 0.5px;
+          box-shadow: 0 4px 15px rgba(30, 64, 175, 0.2);
         }
 
         .submit-button:hover {
-          background: linear-gradient(45deg, #1e3a8a, #312e81);
+          background: linear-gradient(45deg, #1e40af, #1e3a8a);
           transform: translateY(-2px);
           box-shadow: 0 8px 25px rgba(30, 64, 175, 0.2);
         }

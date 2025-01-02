@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../../../components/Layouts/Navbar";
 
 const SEOServices = () => {
   const services = [
@@ -118,6 +119,7 @@ const SEOServices = () => {
 
   return (
     <>
+    <Navbar/>
       <style jsx>{`
         .seo-services {
           padding: 80px 20px;

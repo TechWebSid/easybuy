@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../../../components/Layouts/Navbar";
 
 const ECommerceServices = () => {
   const services = [
@@ -146,6 +147,7 @@ const ECommerceServices = () => {
 
   return (
     <>
+    <Navbar/>
       <style jsx>{`
         .e-commerce-services {
           padding: 80px 20px;

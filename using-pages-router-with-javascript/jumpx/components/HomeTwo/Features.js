@@ -7,7 +7,7 @@ const featuresData = [
     title: "IT Consultancy",
     shortText:
       "Expert guidance to optimize your technology and drive business success.",
-    viewDetails: "/services/service-details/",
+    viewDetails: "/services/it-consultancy/",
     aosDelay: "300",
   },
   {
@@ -15,7 +15,7 @@ const featuresData = [
     title: "Development",
     shortText:
       "Tailored solutions to bring your ideas to life with precision and efficiency.",
-    viewDetails: "/services/service-details/",
+    viewDetails: "/services/development/",
     aosDelay: "600",
   },
   {
@@ -23,7 +23,7 @@ const featuresData = [
     title: "UI/UX Strategy",
     shortText:
       "Crafting intuitive designs for seamless and engaging user experiences.",
-    viewDetails: "/services/service-details/",
+    viewDetails: "/services/uiux/",
     aosDelay: "900",
   },
 ];
