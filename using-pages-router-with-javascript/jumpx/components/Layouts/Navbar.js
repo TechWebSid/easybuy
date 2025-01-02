@@ -151,7 +151,7 @@ const Navbar = () => {
                   </ul>
                 </li>
 
-                {/* Removed dropdown from Contact */}
+
                 <li className="nav-item">
                   <Link
                     href="/contact-2/"

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "../../components/Layouts/Navbar";
 
 const Careers = () => {
   const [formData, setFormData] = useState({
@@ -80,12 +81,13 @@ const Careers = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
+    
     console.log(formData);
   };
 
   return (
     <>
+   
       <style jsx>{`
         .careers-container {
           padding: 80px 20px;

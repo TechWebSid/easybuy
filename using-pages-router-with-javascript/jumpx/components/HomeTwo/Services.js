@@ -7,14 +7,14 @@ const servicesData = [
     title: "Customize Website",
     shortText:
       "Start to Create visually stunning and responsive websites that reflect your brand identity and enhance user experience starting with low budget.",
-    viewDetails: "/services/customize-websites/",
+    viewDetails: "/services/customize-website/",
   },
   {
     iconName: "flaticon-vr",
     title: "E-commerce solutions",
     shortText:
       "Easy2BuyHub simplifies e-commerce by offering product listings, platform tie-ups, supplier networks, and comprehensive digital marketing.",
-    viewDetails: "/services/e-commerse-solutions/",
+    viewDetails: "/services/e-commerce/",
   },
   {
     iconName: "flaticon-blockchain",
