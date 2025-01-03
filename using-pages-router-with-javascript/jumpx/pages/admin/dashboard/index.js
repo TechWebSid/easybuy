@@ -1,8 +1,34 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import {
+  LineChart, Line, AreaChart, Area, BarChart, Bar,
+  XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  ResponsiveContainer, PieChart, Pie, Cell
+} from 'recharts';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
+
+
+  const monthlyRevenue = [
+    { month: 'Jan', revenue: 15000 },
+    { month: 'Feb', revenue: 38000 },
+    { month: 'Mar', revenue: 65999 }, 
+  ];
+
+  const subscriptionsByPlan = [
+    { name: 'Basic', value: 18 },
+    { name: 'Stanard', value: 15 },
+    { name: 'Premium', value: 15 },
+  ];
+
+  const applicationsByDepartment = [
+    { department: 'Frontend', count: 45 },
+    { department: 'Backend', count: 38 },
+    { department: 'UI/UX', count: 32 },
+    { department: 'DevOps', count: 25 },
+    { department: 'Others', count: 16 },
+  ];
 
   // Dummy data for demonstration
   const recentSubscriptions = [
@@ -50,6 +76,239 @@ const AdminDashboard = () => {
     activeSubscriptions: 48,
     totalApplications: 156,
     pendingReviews: 23
+  };
+
+  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
+
+  const renderActiveTabContent = () => {
+    switch (activeTab) {
+      case 'overview':
+        return (
+          <>
+            <div className="stats-grid">
+              <div className="stat-card">
+                <h3>{stats.totalRevenue}</h3>
+                <p>Total Revenue</p>
+              </div>
+              <div className="stat-card">
+                <h3>{stats.activeSubscriptions}</h3>
+                <p>Active Subscriptions</p>
+              </div>
+              <div className="stat-card">
+                <h3>{stats.totalApplications}</h3>
+                <p>Total Applications</p>
+              </div>
+              <div className="stat-card">
+                <h3>{stats.pendingReviews}</h3>
+                <p>Pending Reviews</p>
+              </div>
+            </div>
+            
+            <div className="graphs-grid">
+              <div className="graph-container revenue-trend">
+                <h2>Revenue Trend</h2>
+                <ResponsiveContainer width="100%" height={300}>
+                  <AreaChart data={monthlyRevenue}>
+                    <defs>
+                      <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#2563eb" stopOpacity={0.8}/>
+                        <stop offset="95%" stopColor="#2563eb" stopOpacity={0.1}/>
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="month" />
+                    <YAxis 
+                      label={{ 
+                        value: 'Revenue ($)', 
+                        angle: -90, 
+                        position: 'insideLeft' 
+                      }}
+                    />
+                    <Tooltip 
+                      formatter={(value) => [`$${value}`, 'Revenue']}
+                      contentStyle={{
+                        backgroundColor: '#fff',
+                        borderRadius: '8px',
+                        border: 'none',
+                        boxShadow: '0 2px 12px rgba(0,0,0,0.1)'
+                      }}
+                    />
+                    <Area 
+                      type="monotone" 
+                      dataKey="revenue" 
+                      stroke="#2563eb" 
+                      fillOpacity={1} 
+                      fill="url(#colorRevenue)" 
+                    />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
+
+              <div className="graph-container subscription-distribution">
+                <h2>Subscription Distribution</h2>
+                <ResponsiveContainer width="100%" height={300}>
+                  <PieChart>
+                    <Pie
+                      data={subscriptionsByPlan}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={true}
+                      label={({name, percent}) => `${name} (${(percent * 100).toFixed(0)}%)`}
+                      outerRadius={100}
+                      fill="#8884d8"
+                      dataKey="value"
+                    >
+                      {subscriptionsByPlan.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                    <Legend />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            <div className="tables-grid">
+              <div className="table-container recent-subscriptions">
+                <div className="table-header">
+                  <h2>Recent Subscriptions</h2>
+                  <button className="view-all-btn">View All</button>
+                </div>
+                <div className="table-wrapper">
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th>User</th>
+                        <th>Plan</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {recentSubscriptions.map((sub) => (
+                        <tr key={sub.id}>
+                          <td>{sub.user}</td>
+                          <td>{sub.plan}</td>
+                          <td>{sub.amount}</td>
+                          <td>{sub.date}</td>
+                          <td>
+                            <span className={`status-badge status-${sub.status}`}>
+                              {sub.status}
+                            </span>
+                          </td>
+                          <td>
+                            <button className="action-btn">View</button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="table-container recent-applications">
+                <div className="table-header">
+                  <h2>Recent Applications</h2>
+                  <button className="view-all-btn">View All</button>
+                </div>
+                <div className="table-wrapper">
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Experience</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {jobApplications.map((app) => (
+                        <tr key={app.id}>
+                          <td>{app.name}</td>
+                          <td>{app.position}</td>
+                          <td>{app.experience}</td>
+                          <td>{app.appliedDate}</td>
+                          <td>
+                            <span className={`status-badge status-${app.status}`}>
+                              {app.status}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </>
+        );
+
+      case 'subscriptions':
+        return (
+          <div className="graph-container">
+            <h2>Subscriptions by Plan</h2>
+            <ResponsiveContainer width="100%" height={400}>
+              <PieChart>
+                <Pie
+                  data={subscriptionsByPlan}
+                  cx="50%"
+                  cy="50%"
+                  labelLine={true}
+                  label={({name, percent}) => `${name} (${(percent * 100).toFixed(0)}%)`}
+                  outerRadius={150}
+                  fill="#8884d8"
+                  dataKey="value"
+                >
+                  {subscriptionsByPlan.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+        );
+
+      case 'applications':
+        return (
+          <div className="graph-container">
+            <h2>Applications by Department</h2>
+            <ResponsiveContainer width="100%" height={400}>
+              <BarChart data={applicationsByDepartment}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="department" />
+                <YAxis 
+                  label={{ 
+                    value: 'Number of Applications', 
+                    angle: -90, 
+                    position: 'insideLeft' 
+                  }}
+                />
+                <Tooltip />
+                <Legend />
+                <Bar 
+                  dataKey="count" 
+                  fill="#2563eb"
+                  radius={[4, 4, 0, 0]}
+                >
+                  {applicationsByDepartment.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        );
+
+      // Add more cases for other tabs...
+      default:
+        return null;
+    }
   };
 
   return (
@@ -227,6 +486,124 @@ const AdminDashboard = () => {
             text-align: center;
           }
         }
+
+        .graphs-grid {
+          display: grid;
+          grid-template-columns: 1.5fr 1fr;
+          gap: 30px;
+          margin: 30px 0;
+        }
+
+        .tables-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 30px;
+          margin-top: 30px;
+        }
+
+        .table-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+
+        .view-all-btn {
+          padding: 8px 16px;
+          background: #f1f5f9;
+          border: none;
+          border-radius: 6px;
+          color: #1e40af;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .view-all-btn:hover {
+          background: #e2e8f0;
+        }
+
+        .table-wrapper {
+          overflow-x: auto;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .graph-container {
+          background: white;
+          padding: 24px;
+          border-radius: 12px;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+          transition: transform 0.3s ease;
+        }
+
+        .graph-container:hover {
+          transform: translateY(-5px);
+        }
+
+        .graph-container h2 {
+          margin-bottom: 20px;
+          color: #1e40af;
+          font-size: 1.25rem;
+          font-weight: 600;
+        }
+
+        .status-badge {
+          padding: 6px 12px;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 500;
+          text-transform: capitalize;
+        }
+
+        .status-active {
+          background: #dcfce7;
+          color: #166534;
+        }
+
+        .status-pending {
+          background: #fef3c7;
+          color: #92400e;
+        }
+
+        .status-interviewed {
+          background: #dbeafe;
+          color: #1e40af;
+        }
+
+        @media (max-width: 1280px) {
+          .graphs-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 640px) {
+          .stats-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        /* Add animation for tab transitions */
+        .main-content > div {
+          animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
       `}</style>
 
       <div className="admin-dashboard">
@@ -268,97 +645,27 @@ const AdminDashboard = () => {
               <i className='bx bx-cog'></i>
               <span className="nav-text">Settings</span>
             </div>
+            <div 
+              className={`nav-item ${activeTab === 'tenders' ? 'active' : ''}`}
+              onClick={() => setActiveTab('tenders')}
+            >
+              <i className='bx bx-file'></i>
+              <Link href="/tenders">
+                <span className="nav-text">Tenders</span>
+              </Link>
+            </div>
           </nav>
         </div>
 
         <div className="main-content">
           <div className="header">
-            <h1>Dashboard Overview</h1>
+            <h1>{activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}</h1>
             <div className="user-menu">
               {/* Add user menu/profile here */}
             </div>
           </div>
 
-          <div className="stats-grid">
-            <div className="stat-card">
-              <h3>{stats.totalRevenue}</h3>
-              <p>Total Revenue</p>
-            </div>
-            <div className="stat-card">
-              <h3>{stats.activeSubscriptions}</h3>
-              <p>Active Subscriptions</p>
-            </div>
-            <div className="stat-card">
-              <h3>{stats.totalApplications}</h3>
-              <p>Total Applications</p>
-            </div>
-            <div className="stat-card">
-              <h3>{stats.pendingReviews}</h3>
-              <p>Pending Reviews</p>
-            </div>
-          </div>
-
-          <div className="content-grid">
-            <div className="table-container">
-              <h2>Recent Subscriptions</h2>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>User</th>
-                    <th>Plan</th>
-                    <th>Amount</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {recentSubscriptions.map((sub) => (
-                    <tr key={sub.id}>
-                      <td>{sub.user}</td>
-                      <td>{sub.plan}</td>
-                      <td>{sub.amount}</td>
-                      <td>{sub.date}</td>
-                      <td>
-                        <span className={`status-badge status-${sub.status}`}>
-                          {sub.status}
-                        </span>
-                      </td>
-                      <td>
-                        <button className="action-btn">View</button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="table-container">
-              <h2>Recent Applications</h2>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {jobApplications.map((app) => (
-                    <tr key={app.id}>
-                      <td>{app.name}</td>
-                      <td>{app.position}</td>
-                      <td>
-                        <span className={`status-badge status-${app.status}`}>
-                          {app.status}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+          {renderActiveTabContent()}
         </div>
       </div>
     </>

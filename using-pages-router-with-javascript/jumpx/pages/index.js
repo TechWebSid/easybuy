@@ -10,6 +10,7 @@ import WhatWeOffer from "../components/HomeTwo/WhatWeOffer"; // Assuming WhatWeO
 import Testimonials from "../components/Common/Testimonials";
 import News from "../components/Common/News";
 import Footer from "../components/Layouts/Footer";
+import Link from 'next/link';
 
 export default function IndexPage() {
   return (
@@ -33,6 +34,12 @@ export default function IndexPage() {
       <Testimonials />
 
       <News />
+
+      <Link href="/tenders">
+        <button className="btn btn-primary">
+          View Tenders
+        </button>
+      </Link>
 
       <Footer />
     </>

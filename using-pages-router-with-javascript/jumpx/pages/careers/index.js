@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Navbar from "../../components/Layouts/Navbar";
 
 const Careers = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -63,6 +65,15 @@ const Careers = () => {
       description: "Drive our digital marketing initiatives and help grow our online presence.",
     },
   ];
+
+  const filteredPositions = openPositions.filter(position => {
+    const searchString = searchTerm.toLowerCase();
+    return (
+      position.title.toLowerCase().includes(searchString) ||
+      position.skills.some(skill => skill.toLowerCase().includes(searchString)) ||
+      position.description.toLowerCase().includes(searchString)
+    );
+  });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -273,6 +284,63 @@ const Careers = () => {
             padding: 20px;
           }
         }
+
+        .search-container {
+          margin-bottom: 40px;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .search-input {
+          width: 100%;
+          padding: 16px 24px;
+          font-size: 1.1rem;
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          border-radius: 12px;
+          background: rgba(255, 255, 255, 0.95);
+          color: #1e293b;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-input:focus {
+          outline: none;
+          border-color: #1e40af;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .no-results {
+          text-align: center;
+          background: rgba(255, 255, 255, 0.95);
+          padding: 40px;
+          border-radius: 20px;
+          margin: 40px auto;
+          max-width: 600px;
+        }
+
+        .no-results h3 {
+          color: #1e293b;
+          font-size: 1.5rem;
+          margin-bottom: 15px;
+        }
+
+        .no-results p {
+          color: #64748b;
+          font-size: 1.1rem;
+        }
+
+        .search-icon {
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: #64748b;
+        }
+
+        .search-wrapper {
+          position: relative;
+        }
       `}</style>
 
       <div className="careers-container">
@@ -285,24 +353,47 @@ const Careers = () => {
             </p>
           </div>
 
-          <div className="positions-grid">
-            {openPositions.map((position, index) => (
-              <div key={index} className="position-card">
-                <h3 className="position-title">{position.title}</h3>
-                <div className="position-meta">
-                  <span className="meta-item">📍 {position.location}</span>
-                  <span className="meta-item">⏰ {position.type}</span>
-                  <span className="meta-item">💼 {position.experience}</span>
-                </div>
-                <div className="skills-list">
-                  {position.skills.map((skill, idx) => (
-                    <span key={idx} className="skill-tag">{skill}</span>
-                  ))}
-                </div>
-                <p className="position-description">{position.description}</p>
-              </div>
-            ))}
+          <div className="search-container">
+            <div className="search-wrapper">
+              <input
+                type="text"
+                className="search-input"
+                placeholder="Search positions by title, skills, or description..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <span className="search-icon">🔍</span>
+            </div>
           </div>
+
+          {filteredPositions.length > 0 ? (
+            <div className="positions-grid">
+              {filteredPositions.map((position, index) => (
+                <div key={index} className="position-card">
+                  <h3 className="position-title">{position.title}</h3>
+                  <div className="position-meta">
+                    <span className="meta-item">📍 {position.location}</span>
+                    <span className="meta-item">⏰ {position.type}</span>
+                    <span className="meta-item">💼 {position.experience}</span>
+                  </div>
+                  <div className="skills-list">
+                    {position.skills.map((skill, idx) => (
+                      <span key={idx} className="skill-tag">{skill}</span>
+                    ))}
+                  </div>
+                  <p className="position-description">{position.description}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="no-results">
+              <h3>No Positions Found</h3>
+              <p>
+                We couldn't find any positions matching your search criteria. 
+                Try adjusting your search terms or browse all positions by clearing the search.
+              </p>
+            </div>
+          )}
 
           <div className="application-form">
             <h2 className="form-title">Apply Now</h2>

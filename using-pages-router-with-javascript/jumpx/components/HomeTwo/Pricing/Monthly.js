@@ -18,7 +18,7 @@ const Monthly = () => {
                 <s>₹10,888</s>
               </p>
               <p className="discounted-price">₹8,999/-</p>
-              <p className="inclusive-taxes">Inclusive of all taxes</p>
+              <p className="inclusive-taxes">Exclusive of all taxes</p>
             </div>
 
             <ul>
@@ -97,7 +97,7 @@ const Monthly = () => {
                 <s>₹22,988</s>
               </p>
               <p className="discounted-price">₹18,999/-</p>
-              <p className="inclusive-taxes">Inclusive of all taxes</p>
+              <p className="inclusive-taxes">Exclusive of all taxes</p>
             </div>
 
             <ul>
@@ -174,7 +174,7 @@ const Monthly = () => {
                 <s>₹60,498</s>
               </p>
               <p className="discounted-price">₹49,999/- </p>
-              <p className="inclusive-taxes">Inclusive of all taxes</p>
+              <p className="inclusive-taxes">Exclusive of all taxes</p>
              
             </div>
 
