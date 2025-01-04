@@ -8,6 +8,8 @@ import "../styles/flaticon.css";
 import "react-accessible-accordion/dist/fancy-example.css";
 import "swiper/css";
 import "swiper/css/bundle";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Global styles
 import "../styles/style.css";
@@ -31,6 +33,7 @@ function MyApp({ Component, pageProps }) {
 
       {/* Go Top Button */}
       <GoTop scrollStepInPx="100" delayInMs="10.50" />
+      <ToastContainer position="top-right" />
     </>
   );
 }
