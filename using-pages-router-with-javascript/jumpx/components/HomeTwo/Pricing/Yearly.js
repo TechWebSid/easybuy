@@ -327,7 +327,7 @@ const Yearly = () => {
 
    .inclusive-taxes {
           font-size: 12px;
-          color: gray;
+          color: black;
           margin-top: 5px;
         }
 

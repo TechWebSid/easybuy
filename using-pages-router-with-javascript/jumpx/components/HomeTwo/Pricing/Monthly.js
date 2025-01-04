@@ -270,7 +270,7 @@ const Monthly = () => {
         }
              .inclusive-taxes {
           font-size: 12px;
-          color: gray;
+          color: black;
           margin-top: 5px;
         }
 
@@ -329,7 +329,7 @@ const Monthly = () => {
 
    .inclusive-taxes {
           font-size: 12px;
-          color: #999;
+          color: black;
           margin-top: 5px;
         }
 

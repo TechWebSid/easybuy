@@ -80,6 +80,30 @@ const AdminDashboard = () => {
 
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
 
+  const tenderAnalytics = {
+    monthlyTenders: [
+      { month: 'Jan', count: 12, value: 45000 },
+      { month: 'Feb', count: 15, value: 55000 },
+      { month: 'Mar', count: 18, value: 65000 },
+      { month: 'Apr', count: 14, value: 52000 },
+      { month: 'May', count: 20, value: 75000 },
+      { month: 'Jun', count: 22, value: 85000 },
+    ],
+    tendersByCategory: [
+      { category: 'Web Development', count: 45 },
+      { category: 'Mobile Apps', count: 32 },
+      { category: 'UI/UX Design', count: 28 },
+      { category: 'Cloud Services', count: 25 },
+      { category: 'Cybersecurity', count: 20 },
+    ],
+    tenderStatus: [
+      { name: 'Active', value: 35 },
+      { name: 'Completed', value: 45 },
+      { name: 'Under Review', value: 15 },
+      { name: 'Cancelled', value: 5 },
+    ]
+  };
+
   const renderActiveTabContent = () => {
     switch (activeTab) {
       case 'overview':
@@ -303,6 +327,128 @@ const AdminDashboard = () => {
               </BarChart>
             </ResponsiveContainer>
           </div>
+        );
+
+      case 'tenders':
+        return (
+          <>
+            <div className="stats-grid">
+              <div className="stat-card">
+                <h3>156</h3>
+                <p>Total Tenders</p>
+              </div>
+              <div className="stat-card">
+                <h3>35</h3>
+                <p>Active Tenders</p>
+              </div>
+              <div className="stat-card">
+                <h3>$2.5M</h3>
+                <p>Total Value</p>
+              </div>
+              <div className="stat-card">
+                <h3>89%</h3>
+                <p>Success Rate</p>
+              </div>
+            </div>
+
+            <div className="graphs-grid">
+              <div className="graph-container">
+                <h2>Tender Trends</h2>
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart data={tenderAnalytics.monthlyTenders}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="month" />
+                    <YAxis yAxisId="left" orientation="left" stroke="#2563eb"
+                      label={{ value: 'Number of Tenders', angle: -90, position: 'insideLeft' }} />
+                    <YAxis yAxisId="right" orientation="right" stroke="#10b981"
+                      label={{ value: 'Value ($)', angle: 90, position: 'insideRight' }} />
+                    <Tooltip 
+                      contentStyle={{
+                        backgroundColor: '#fff',
+                        borderRadius: '8px',
+                        border: 'none',
+                        boxShadow: '0 2px 12px rgba(0,0,0,0.1)'
+                      }}
+                    />
+                    <Legend />
+                    <Line 
+                      yAxisId="left"
+                      type="monotone" 
+                      dataKey="count" 
+                      stroke="#2563eb" 
+                      name="Number of Tenders"
+                      strokeWidth={2}
+                      dot={{ r: 4 }}
+                      activeDot={{ r: 6 }}
+                    />
+                    <Line 
+                      yAxisId="right"
+                      type="monotone" 
+                      dataKey="value" 
+                      stroke="#10b981" 
+                      name="Tender Value"
+                      strokeWidth={2}
+                      dot={{ r: 4 }}
+                      activeDot={{ r: 6 }}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+
+              <div className="graph-container">
+                <h2>Tender Status Distribution</h2>
+                <ResponsiveContainer width="100%" height={300}>
+                  <PieChart>
+                    <Pie
+                      data={tenderAnalytics.tenderStatus}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={60}
+                      outerRadius={90}
+                      paddingAngle={5}
+                      dataKey="value"
+                      label={({name, percent}) => `${name} (${(percent * 100).toFixed(0)}%)`}
+                    >
+                      {tenderAnalytics.tenderStatus.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                    <Legend />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            <div className="graph-container" style={{ marginTop: '30px' }}>
+              <h2>Tenders by Category</h2>
+              <ResponsiveContainer width="100%" height={400}>
+                <BarChart data={tenderAnalytics.tendersByCategory}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="category" angle={-45} textAnchor="end" height={70} />
+                  <YAxis label={{ value: 'Number of Tenders', angle: -90, position: 'insideLeft' }} />
+                  <Tooltip 
+                    contentStyle={{
+                      backgroundColor: '#fff',
+                      borderRadius: '8px',
+                      border: 'none',
+                      boxShadow: '0 2px 12px rgba(0,0,0,0.1)'
+                    }}
+                  />
+                  <Legend />
+                  <Bar 
+                    dataKey="count" 
+                    fill="#2563eb"
+                    radius={[4, 4, 0, 0]}
+                  >
+                    {tenderAnalytics.tendersByCategory.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </>
         );
 
       // Add more cases for other tabs...
@@ -535,6 +681,7 @@ const AdminDashboard = () => {
           border-radius: 12px;
           box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
           transition: transform 0.3s ease;
+          margin-bottom: 20px;
         }
 
         .graph-container:hover {
@@ -650,9 +797,9 @@ const AdminDashboard = () => {
               onClick={() => setActiveTab('tenders')}
             >
               <i className='bx bx-file'></i>
-              <Link href="/tenders">
+              
                 <span className="nav-text">Tenders</span>
-              </Link>
+              
             </div>
           </nav>
         </div>
