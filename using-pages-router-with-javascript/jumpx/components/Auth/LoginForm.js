@@ -142,7 +142,7 @@ const LoginForm = () => {
                     <div className="col-12">
                       <p className="account-desc">
                         Not a member?
-                        <Link href="/auth/signup"> Register Now</Link>
+                        <Link href="/signup"> Register Now</Link>
                       </p>
                     </div>
                   </div>

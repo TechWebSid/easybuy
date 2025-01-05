@@ -207,7 +207,7 @@ const SignUpForm = () => {
                     <div className="col-12">
                       <p className="account-desc">
                         Already have an account?
-                        <Link href="/auth/login"> Login</Link>
+                        <Link href="/login"> Login</Link>
                       </p>
                     </div>
                   </div>

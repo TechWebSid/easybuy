@@ -18,8 +18,8 @@ const AdminDashboard = () => {
 
   const subscriptionsByPlan = [
     { name: 'Basic', value: 18 },
-    { name: 'Stanard', value: 15 },
-    { name: 'Premium', value: 15 },
+    { name: 'Standard', value: 15 },
+    { name: 'Premium', value: 78 },
   ];
 
   const applicationsByDepartment = [
