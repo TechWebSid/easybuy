@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 // This data should be moved to a central state management solution
 export const tenderData = [
   {
@@ -70,6 +71,9 @@ const Tenders = () => {
     });
 
   return (
+   <> 
+   
+  
     <div className="tenders-container">
       <div className="tenders-header">
         <h1>Tender Management</h1>
@@ -316,6 +320,7 @@ const Tenders = () => {
         }
       `}</style>
     </div>
+    </>
   );
 };
 
