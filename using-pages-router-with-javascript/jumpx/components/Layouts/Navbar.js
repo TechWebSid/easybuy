@@ -112,6 +112,16 @@ const Navbar = () => {
                         Service Details
                       </Link>
                     </li>
+                    <li className="nav-item">
+                      <Link
+                        href="/tender/Tender/"
+                        className={`nav-link ${
+                          currentPath == "/tender/Tender/" && "active"
+                        }`}
+                      >
+                        Tenders
+                      </Link>
+                    </li>
                   </ul>
                 </li>
 

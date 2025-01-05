@@ -355,13 +355,39 @@ const AdminDashboard = () => {
               <div className="graph-container">
                 <h2>Tender Trends</h2>
                 <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={tenderAnalytics.monthlyTenders}>
+                  <LineChart 
+                    data={tenderAnalytics.monthlyTenders}
+                    margin={{ top: 20, right: 50, left: 50, bottom: 20 }}
+                  >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="month" />
-                    <YAxis yAxisId="left" orientation="left" stroke="#2563eb"
-                      label={{ value: 'Number of Tenders', angle: -90, position: 'insideLeft' }} />
-                    <YAxis yAxisId="right" orientation="right" stroke="#10b981"
-                      label={{ value: 'Value ($)', angle: 90, position: 'insideRight' }} />
+                    <YAxis 
+                      yAxisId="left" 
+                      orientation="left" 
+                      stroke="#2563eb"
+                      label={{ 
+                        value: 'Number of Tenders', 
+                        angle: -90, 
+                        position: 'inside-left',
+                        offset: 0,
+                        style: {
+                          textAnchor: 'middle',
+                          fontSize: '0.9rem',
+                          fill: '#64748b',
+                        }
+                      }} 
+                    />
+                    <YAxis 
+                      yAxisId="right" 
+                      orientation="right" 
+                      stroke="#10b981"
+                      label={{ 
+                        value: 'Value ($)', 
+                        angle: 90, 
+                        position: 'outside',
+                        offset: 0
+                      }} 
+                    />
                     <Tooltip 
                       contentStyle={{
                         backgroundColor: '#fff',
