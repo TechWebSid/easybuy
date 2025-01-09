@@ -87,7 +87,16 @@ const Careers = () => {
       "experience": "Fresher",
       "skills": ["Digital Marketing", "SEO", "Social Media Management", "Content Marketing", "Google Ads", "Data Analysis", "Communication"],
       "description": "Looking for a dynamic Marketing Executive to drive brand growth, manage marketing campaigns, and deliver impactful strategies using modern marketing tools and techniques."
+    },
+    {
+      title: "Accountant",
+      type: "Full-time",
+      location: "On-site / Remote",
+      experience: "2+ years (Preferred)",
+      skills: ["Accounting", "Tax Compliance", "Tally", "QuickBooks", "Financial Reporting", "MS Excel", "Budget Management"],
+      description: "Seeking a detail-oriented accountant to manage financial operations, ensure compliance with tax regulations, and provide strategic financial insights to support business growth.",
     }
+    
     
   ];
 

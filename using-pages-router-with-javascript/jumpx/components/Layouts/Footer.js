@@ -168,12 +168,12 @@ const Footer = () => {
                     <span>Phone</span>
                     +91 8299585163
                   </li>
-
                   <li className="address">
-                    <i className="flaticon-envelope"></i>
-                    <span>Email</span>
-                    customercare@easy2buyhub.com
-                  </li>
+  <i className="flaticon-envelope"></i>
+  <span>Email</span>
+  <a href="mailto:customercare@easy2buyhub.com">customercare@easy2buyhub.com</a>
+</li>
+
 
                   <li className="address">
                     <i className="flaticon-maps-and-flags"></i>
