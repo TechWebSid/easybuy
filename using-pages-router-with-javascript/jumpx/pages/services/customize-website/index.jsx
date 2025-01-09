@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../../components/Layouts/Navbar";
+import Link from 'next/link';
 
 const CustomizeWebsite = () => {
   const services = [
@@ -267,24 +268,54 @@ const CustomizeWebsite = () => {
         }
 
         .purchase-button {
-          display: inline-flex;
-          align-items: center;
-          padding: 12px 24px;
-          background: linear-gradient(45deg, #3b82f6, #2563eb);
-          color: #fff;
-          font-size: 1rem;
-          font-weight: 500;
-          border-radius: 8px;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-        }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff8e72, #ffc85e);
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(255, 116, 142, 0.3);
+  position: relative;
+  overflow: hidden;
+  gap: 8px;
+  width: fit-content;
+}
 
-        .purchase-button:hover {
-          background: linear-gradient(45deg, #2563eb, #1d4ed8);
-          transform: translateY(-2px);
-          box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
-        }
+.purchase-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 116, 142, 0.4);
+  background: linear-gradient(135deg, #ffc85e, #ff8e72, #ff758c, #ff7eb3);
+}
+
+.purchase-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(255, 116, 142, 0.3);
+}
+
+/* Add shine effect */
+.purchase-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+  border-radius: 50%;
+}
+
+.purchase-button:hover::before {
+  opacity: 1;
+  transform: rotate(45deg) translateX(-50%);
+}
 
         @media (max-width: 768px) {
           .services-grid {
@@ -321,9 +352,9 @@ const CustomizeWebsite = () => {
                     <div className="service-item" key={idx}>
                       <h4>{item.name}</h4>
                       <p>{item.description}</p>
-                      <a href="/purchase" className="purchase-button">
-                        Get Started →
-                      </a>
+                      <Link href="/pricing">
+                          <span className="purchase-button">Get Started →</span>
+                        </Link>
                     </div>
                   ))}
                 </div>

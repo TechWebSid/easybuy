@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../../components/Layouts/Navbar";
+import Link from "next/link";
 
 const SEOServices = () => {
   const services = [
@@ -251,6 +252,27 @@ const SEOServices = () => {
           box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
         }
 
+        .purchase-button {
+          display: inline-flex;
+          align-items: center;
+          padding: 12px 24px;
+          background: linear-gradient(45deg, #3b82f6, #2563eb);
+          color: #ffffff;
+          font-size: 1rem;
+          font-weight: 500;
+          border-radius: 10px;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
+          cursor: pointer;
+        }
+
+        .purchase-button:hover {
+          background: linear-gradient(45deg, #2563eb, #1d4ed8);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+        }
+
         @media (max-width: 768px) {
           .services-grid {
             grid-template-columns: 1fr;
@@ -288,9 +310,9 @@ const SEOServices = () => {
                       <h4>{item.name}</h4>
                       <p>{item.description}</p>
                       {idx === 0 && (
-                        <a href="/purchase" className="analyze-button">
-                          Get Started →
-                        </a>
+                        <Link href="/pricing">
+                          <span className="purchase-button">Get Started →</span>
+                        </Link>
                       )}
                     </div>
                   ))}

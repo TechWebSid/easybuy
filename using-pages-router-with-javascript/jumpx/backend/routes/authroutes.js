@@ -8,6 +8,6 @@ const router = express.Router();
 
 // Signup route
 router.post('/signup', signup);
-router.post('/sigin', signin);
+router.post('/signin', signin);
 
 export default router;  // Export the router to use it in the index.js

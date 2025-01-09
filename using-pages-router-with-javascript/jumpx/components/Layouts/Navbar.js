@@ -104,12 +104,12 @@ const Navbar = () => {
 
                     <li className="nav-item">
                       <Link
-                        href="/services/service-details/"
+                        href="/tender/Tender/"
                         className={`nav-link ${
-                          currentPath == "/services/service-details/" && "active"
+                          currentPath == "/tender/Tender/" && "active"
                         }`}
                       >
-                        Service Details
+                        Tenders
                       </Link>
                     </li>
                   </ul>

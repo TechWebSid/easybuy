@@ -1,7 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import axios from "axios";
+import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 
 const LoginForm = () => {
+  const router = useRouter();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.email || !formData.password) {
+      toast.error("All fields are required");
+      return;
+    }
+
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await axios.post("http://localhost:5000/api/user/signin", {
+        email: formData.email,
+        password: formData.password,
+      });
+
+      if (response.status === 200) {
+        toast.success("Login successful!");
+        router.push("/index-2");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      
+      if (error.response) {
+        // Server responded with an error
+        const errorMessage = error.response.data.message;
+        
+        // Check if the error response contains HTML (indicating a server crash)
+        if (typeof error.response.data === 'string' && 
+            error.response.data.includes('<!DOCTYPE html>')) {
+          toast.error("Server error: Database connection failed. Please try again later.");
+        } else {
+          switch (error.response.status) {
+            case 400:
+              toast.error(errorMessage || "Invalid credentials");
+              break;
+            case 401:
+              toast.error("Invalid email or password");
+              break;
+            case 500:
+              toast.error("Server error. Please try again later");
+              break;
+            default:
+              toast.error(errorMessage || "Login failed");
+          }
+        }
+      } else if (error.request) {
+        toast.error("Cannot connect to server. Please check your internet connection");
+      } else {
+        toast.error("Error in making request. Please try again");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <div className="user-area-all-style log-in-area ptb-100">
@@ -13,45 +93,17 @@ const LoginForm = () => {
                   <h3 className="form-title">Login to your account!</h3>
                 </div>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="row">
-                    <div className="col-lg-4 col-md-4 col-sm-12">
-                      <a
-                        href="https://www.google.com/"
-                        className="default-btn mb-30"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-google"></i> Google
-                      </a>
-                    </div>
-
-                    <div className="col-lg-4 col-md-4 col-sm-12">
-                      <a
-                        href="https://www.facebook.com/"
-                        className="default-btn mb-30"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-facebook"></i> Facebook
-                      </a>
-                    </div>
-
-                    <div className="col-lg-4 col-md-4 col-sm-12">
-                      <a
-                        href="https://www.twitter.com/"
-                        className="default-btn mb-30"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-twitter"></i> Twitter
-                      </a>
-                    </div>
-
                     <div className="col-12">
                       <div className="form-group">
                         <input
                           className="form-control"
-                          type="text"
-                          name="name"
-                          placeholder="Username or Email"
+                          type="email"
+                          name="email"
+                          placeholder="Email"
+                          value={formData.email}
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -63,44 +115,34 @@ const LoginForm = () => {
                           type="password"
                           name="password"
                           placeholder="Password"
+                          value={formData.password}
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
 
-                    <div className="col-lg-6 col-sm-6 form-condition">
-                      <div className="agree-label">
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            id="gridCheck"
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="gridCheck"
-                          >
-                            Remember me
-                          </label>
-                        </div>
+                    <div className="col-12">
+                      <div className="login-action">
+                        <span className="forgot-login">
+                          <Link href="/auth/forgot-password">Forgot Password?</Link>
+                        </span>
                       </div>
                     </div>
 
-                    <div className="col-lg-6 col-sm-6">
-                      <Link href="/auth/recover-password" className="forget">
-                        Forgot my password?
-                      </Link>
-                    </div>
-
                     <div className="col-12">
-                      <button className="default-btn btn-two" type="submit">
-                        Log In Now
+                      <button
+                        className="default-btn btn-two"
+                        type="submit"
+                        disabled={loading}
+                      >
+                        {loading ? "Logging in..." : "Log In"}
                       </button>
                     </div>
 
                     <div className="col-12">
                       <p className="account-desc">
                         Not a member?
-                        <Link href="/auth/sign-up">Register</Link>
+                        <Link href="/signup"> Register Now</Link>
                       </p>
                     </div>
                   </div>

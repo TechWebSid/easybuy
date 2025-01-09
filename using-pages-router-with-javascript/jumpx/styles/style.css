@@ -492,59 +492,69 @@ Default Btn Area Style
   font-size: 15px;
   font-weight: 600;
   color: #ffffff;
-  padding: 18px 35px;
+  padding: 12px 28px;
   line-height: 1;
-  transition: all 0.6s ease;
-  z-index: 1;
-  text-transform: capitalize;
-  border-radius: 10px;
+  transition: all 0.4s ease;
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1dd3f8 0%, #1a9ef5 100%);
+  border: none;
+  box-shadow: 0 4px 15px rgba(29, 211, 248, 0.2);
   cursor: pointer;
   overflow: hidden;
-  background-color: #1dd3f8;
-  display: inline-block;
+  text-transform: capitalize;
+  gap: 8px;
 }
+
+.default-btn i {
+  font-size: 18px;
+  transition: all 0.4s ease;
+}
+
+.default-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 211, 248, 0.3);
+  background: linear-gradient(135deg, #1a9ef5 0%, #1dd3f8 100%);
+}
+
+.default-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(29, 211, 248, 0.2);
+}
+
+/* Optional: Add a subtle shine effect on hover */
 .default-btn::before {
-  content: "";
+  content: '';
   position: absolute;
-  top: -20px;
-  left: -40px;
-  width: 10px;
-  height: 100px;
-  background-color: #ffffff;
-  opacity: 0.5;
-  transition: all 0.6s ease;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
   transform: rotate(45deg);
-}
-.default-btn::after {
-  content: "";
-  position: absolute;
-  top: -20px;
-  right: -40px;
-  width: 10px;
-  height: 100px;
-  background-color: #ffffff;
-  opacity: 0.5;
   transition: all 0.6s ease;
-  transform: rotate(45deg);
+  opacity: 0;
 }
+
+.default-btn:hover::before {
+  opacity: 1;
+  transform: rotate(45deg) translateX(-50%);
+}
+
+/* Active state styles */
 .default-btn.active {
-  background-color: #ffffff;
+  background: #ffffff;
   color: #1dd3f8;
+  border: 2px solid #1dd3f8;
 }
+
 .default-btn.active:hover {
   color: #ffffff;
-  background-color: #1dd3f8;
-}
-.default-btn:hover {
-  color: #ffffff;
-  transition: all 0.6s ease;
-}
-.default-btn:hover::before {
-  left: 200px;
-}
-.default-btn:hover::after {
-  right: 200px;
+  background: linear-gradient(135deg, #1dd3f8 0%, #1a9ef5 100%);
+  border: 2px solid transparent;
 }
 
 .popup-youtube {

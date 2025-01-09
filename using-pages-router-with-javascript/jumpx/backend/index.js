@@ -1,28 +1,58 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import userRoutes from '../backend/routes/authroutes.js'; // Corrected the import name
+import userRoutes from '../backend/routes/authroutes.js';
 import contactRoute from '../backend/routes/contactroute.js';
+<<<<<<< HEAD
 import blogRoute from "./routes/blogRoute.js"
 import Comment from './routes/commentRoute.js';
 import job from "./routes/jobRoutes.js"
+=======
+import cors from 'cors'
+>>>>>>> 0156044c126cffb276972dc4f46d35ed3a09d10b
 
 // Load environment variables
 dotenv.config();
 
 const app = express();
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO)
-  .then(() => {
-    console.log('MongoDB is connected');
-  })
-  .catch((err) => {
-    console.log('Error connecting to MongoDB:', err);
-  });
+app.use(express.urlencoded({extended:true}))
+
+// Connect to MongoDB with proper options
+mongoose.connect(process.env.MONGO, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
+  socketTimeoutMS: 45000, // Close sockets after 45s of inactivity
+})
+.then(() => {
+  console.log('MongoDB is connected');
+})
+.catch((err) => {
+  console.error('MongoDB connection error:', err);
+});
+
+// Handle MongoDB connection errors
+mongoose.connection.on('error', err => {
+  console.error('MongoDB connection error:', err);
+});
+
+mongoose.connection.on('disconnected', () => {
+  console.log('MongoDB disconnected');
+});
 
 // Middleware to parse JSON
 app.use(express.json());
+app.use(cors()); 
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({
+    message: "Internal server error",
+    error: process.env.NODE_ENV === 'development' ? err.message : undefined
+  });
+});
 
 // Routes
 app.get('/', (req, res) => {

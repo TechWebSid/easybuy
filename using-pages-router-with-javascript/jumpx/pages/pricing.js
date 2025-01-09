@@ -1,29 +1,22 @@
 import React from "react";
 import Navbar from "../components/Layouts/Navbar";
-import PageBanner from "../components/Common/PageBanner";
-import PricingStyleOne from "../components/Pricing/PricingStyleOne";
-import MakeYourBusiness from "../components/Common/MakeYourBusiness";
-import Footer from "../components/Layouts/Footer";
+import Pricing from "../components/HomeTwo/Pricing";
 
-export default function PricingPage() {
+const PricingPage = () => {
   return (
     <>
       <Navbar />
-
-      <PageBanner
-        pageTitle="Pricing"
-        homePageUrl="/"
-        homePageText="Home"
-        activePageText="Pricing"
-      />
-
-      <PricingStyleOne />
-
-      <div className="bg-fafafa">
-        <MakeYourBusiness />
+      <div className="page-title-area">
+        <div className="container">
+          <div className="page-title-content">
+            <h2>Our Pricing Plans</h2>
+            <p>Choose the perfect plan for your needs</p>
+          </div>
+        </div>
       </div>
-
-      <Footer />
+      <Pricing />
     </>
   );
-}
+};
+
+export default PricingPage;

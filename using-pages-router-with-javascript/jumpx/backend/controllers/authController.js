@@ -1,7 +1,7 @@
 import express from 'express';
 import {errorHandler} from '../utils/error.js';
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs'; // Corrected the import to bcrypt
+import bcrypt from 'bcryptjs';
 import User from "../models/userModel.js";
 
 export const signup = async (req, res, next) => {
@@ -41,46 +41,53 @@ export const signup = async (req, res, next) => {
 };
 
 export const signin = async (req, res, next) => {
-  const { email, password } = req.body;
-
-  // Validate input fields
-  if (!email || !password) {
-    return next(errorHandler(400, 'All fields are required'));
-  }
-
   try {
+    const { email, password } = req.body;
+
+    // Validate input fields
+    if (!email || !password) {
+      return next(errorHandler(400, 'All fields are required'));
+    }
+
     // Check if the user exists
-    const validUser = await User.findOne({ email });
-    if (!validUser) {
-      return next(errorHandler(400, 'User not found'));
+    const user = await User.findOne({ email });
+    if (!user) {
+      return next(errorHandler(401, 'Invalid email or password'));
     }
 
     // Validate password
-    const validPassword = bcrypt.compareSync(password, validUser.password);
+    const validPassword = await bcrypt.compare(password, user.password);
     if (!validPassword) {
-      return next(errorHandler(400, 'Wrong Password'));
+      return next(errorHandler(401, 'Invalid email or password'));
     }
 
     // Generate JWT token
     const token = jwt.sign(
-      { id: validUser._id, isAdmin: validUser.isAdmin },
-      process.env.JWT_SECRET,
-      { expiresIn: '15d' } // Optional: Set token expiry
+      { id: user._id, isAdmin: user.isAdmin },
+      process.env.JWT_SECRET || 'fallback_secret',
+      { expiresIn: '15d' }
     );
 
-    // Destructure user details excluding password
-    const { password: pass, ...otherDetails } = validUser._doc;
+    // Remove password from user object
+    const { password: pass, ...userWithoutPassword } = user._doc;
 
-    // Send response with token in cookie
+    // Send response with token in cookie and user data
     res
-      .status(200)
-      .cookie('accessToken', token, {
+      .cookie('access_token', token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+        secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict',
+        maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days
       })
-      .json(otherDetails);
-  } catch (err) {
-    next(err);
+      .status(200)
+      .json({
+        success: true,
+        message: 'Login successful',
+        user: userWithoutPassword,
+      });
+
+  } catch (error) {
+    console.error('Signin error:', error);
+    next(errorHandler(500, 'Internal server error'));
   }
 };

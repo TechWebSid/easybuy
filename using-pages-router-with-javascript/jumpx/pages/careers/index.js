@@ -20,7 +20,7 @@ const Careers = () => {
       title: "Frontend Developer",
       type: "Full-time",
       location: "Remote / On-site",
-      experience: "3+ years",
+      experience: "2+ years",
       skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "Performance Optimization"],
       description: "Looking for an expert frontend developer to create stunning user interfaces and deliver exceptional user experiences using modern web technologies.",
     },
@@ -28,7 +28,7 @@ const Careers = () => {
       title: "Backend Developer",
       type: "Full-time",
       location: "Remote / Hybrid",
-      experience: "3+ years",
+      experience: "2+ years",
       skills: ["Node.js", "Python", "PostgreSQL", "Redis", "Microservices", "API Design"],
       description: "Seeking a skilled backend developer to architect and build robust server-side applications and scalable APIs.",
     },
@@ -36,7 +36,7 @@ const Careers = () => {
       title: "Full Stack Developer",
       type: "Full-time",
       location: "Remote / On-site",
-      experience: "4+ years",
+      experience: "1+ years",
       skills: ["React.js", "Node.js", "MongoDB", "AWS", "TypeScript"],
       description: "Looking for an experienced full-stack developer to build scalable web applications and lead technical initiatives.",
     },
@@ -64,6 +64,40 @@ const Careers = () => {
       skills: ["SEO", "Content Marketing", "Social Media", "Google Analytics", "Email Marketing"],
       description: "Drive our digital marketing initiatives and help grow our online presence.",
     },
+    {
+      title: "Backend Intern",
+      type: "Part-time",
+      location: "Remote / On-site",
+      experience: "Fresher",
+      skills: ["Node.js,Express.js,MongoDb,Sql"],
+      description: "Looking for an expert frontend developer to create stunning user interfaces and deliver exceptional user experiences using modern web technologies.",
+    },
+    {
+      title: "Frontend Intern",
+      type: "Part-time",
+      location: "Remote / On-site",
+      experience: "Fresher",
+      skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "Performance Optimization"],
+      description: "Looking for an expert frontend developer to create stunning user interfaces and deliver exceptional user experiences using modern web technologies.",
+    },
+    {
+      "title": "Marketing Executive",
+      "type": "Full-time",
+      "location": "Remote / On-site",
+      "experience": "Fresher",
+      "skills": ["Digital Marketing", "SEO", "Social Media Management", "Content Marketing", "Google Ads", "Data Analysis", "Communication"],
+      "description": "Looking for a dynamic Marketing Executive to drive brand growth, manage marketing campaigns, and deliver impactful strategies using modern marketing tools and techniques."
+    },
+    {
+      title: "Accountant",
+      type: "Full-time",
+      location: "On-site / Remote",
+      experience: "2+ years (Preferred)",
+      skills: ["Accounting", "Tax Compliance", "Tally", "QuickBooks", "Financial Reporting", "MS Excel", "Budget Management"],
+      description: "Seeking a detail-oriented accountant to manage financial operations, ensure compliance with tax regulations, and provide strategic financial insights to support business growth.",
+    }
+    
+    
   ];
 
   const filteredPositions = openPositions.filter(position => {
