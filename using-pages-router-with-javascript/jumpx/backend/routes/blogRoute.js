@@ -1,5 +1,4 @@
-import express from 'express'
-
+import express from 'express';
 import {
     create,
     getposts,
@@ -7,11 +6,13 @@ import {
     updatepost
 } from "../controllers/BlogController.js"
 
+
 const router = express.Router();
 
-router.post("/post" , create);
-router.post("/getpost" , getposts);
-router.post("/deletepost" , deletepost);
-router.post("updatepost" , updatepost);
+router.post("/post", create);
+router.post("/getpost", getposts);
+router.post("/deletepost", deletepost);
+router.post("/updatepost", updatepost); // Fixed missing slash
 
 export default router;
+

@@ -3,6 +3,10 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import userRoutes from '../backend/routes/authroutes.js';
 import contactRoute from '../backend/routes/contactroute.js';
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa47277ad9fd734cf20118fd36b2a24e6f5b303b
 import blogRoute from "./routes/blogRoute.js"
 import Comment from './routes/commentRoute.js';
 import job from "./routes/jobRoutes.js"
@@ -58,7 +62,7 @@ app.get('/', (req, res) => {
 // routes
 app.use("/api/user", userRoutes);
 app.use("/api/contact", contactRoute);
-app.use("api/blog" , blogRoute);
+app.use("/api/blog" , blogRoute);
 app.use("/api/comment" , Comment);
 app.use("/api/job", job);
 
