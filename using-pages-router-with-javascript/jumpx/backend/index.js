@@ -3,6 +3,9 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import userRoutes from '../backend/routes/authroutes.js'; // Corrected the import name
 import contactRoute from '../backend/routes/contactroute.js';
+import blogRoute from "./routes/blogRoute.js"
+import Comment from './routes/commentRoute.js';
+import job from "./routes/jobRoutes.js"
 
 // Load environment variables
 dotenv.config();
@@ -29,6 +32,9 @@ app.get('/', (req, res) => {
 // routes
 app.use("/api/user", userRoutes);
 app.use("/api/contact", contactRoute);
+app.use("api/blog" , blogRoute);
+app.use("/api/comment" , Comment);
+app.use("/api/job", job);
 
 // Start the server
 app.listen(5000, () => {

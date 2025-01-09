@@ -28,7 +28,8 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     }
-});
+}, { timestamps: true } 
+);
 
 // Create the model from the schema
 const User = mongoose.model('User', userSchema);

@@ -22,7 +22,10 @@ const ContactSchema = new mongoose.Schema({
         type:String,
         required:true,
     }
-})
+    
+},
+{ timestamps: true }
+);
 
 
 const UserContact = mongoose.model('ContactUs' , ContactSchema);
