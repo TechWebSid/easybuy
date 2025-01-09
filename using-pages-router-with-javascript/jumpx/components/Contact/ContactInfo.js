@@ -12,6 +12,7 @@ const ContactInfo = () => {
                 <h3>Email Us:</h3>
                 <p>
                   <a href="mailto:customercare@easy2buyhub.com">customercare@easy2buyhub.com</a>
+                  <a href="mailto:customercare@easy2buyhub.com">info@easy2buyhub.com</a>
                 </p>
                 
               </div>
@@ -22,7 +23,7 @@ const ContactInfo = () => {
                 <i className="bx bx-phone-call"></i>
                 <h3>Call Us:</h3>
                 <p>
-                  Tel. + <a href="tel:12318005678990">(123) 1800-567-8990</a>
+                 <a href="tel:12318005678990">+91 8299585163, +91 6387945717 </a>
                 </p>
              
               </div>
@@ -32,7 +33,7 @@ const ContactInfo = () => {
               <div className="single-contact-info">
                 <i className="bx bx-location-plus"></i>
                 <h3>India</h3>
-                <p>Lucknow</p>
+                <p> Industrial Area Near Sitapur City Mall,Lakhimpur Road,Sitapur,Uttar Pradesh - 261001</p>
               </div>
             </div>
 

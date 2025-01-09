@@ -132,12 +132,7 @@ const Footer = () => {
                       Pricing
                     </Link>
                   </li>
-                  <li>
-                    <Link href="/team">
-                      <i className="right-icon bx bx-chevrons-right"></i>
-                      Team
-                    </Link>
-                  </li>
+                
                   <li>
                     <Link href="/contact-2">
                       <i className="right-icon bx bx-chevrons-right"></i>
@@ -167,7 +162,7 @@ const Footer = () => {
                   <li className="address">
                     <i className="flaticon-call"></i>
                     <span>Phone</span>
-                    +91 8299585163
+                    +91 8299585163, +91 6387945717
                    
                    
                 </li>
@@ -175,13 +170,14 @@ const Footer = () => {
   <i className="flaticon-envelope"></i>
   <span>Email</span>
   <a href="mailto:customercare@easy2buyhub.com">customercare@easy2buyhub.com</a>
+  <a href="mailto:customercare@easy2buyhub.com">info@easy2buyhub.com</a>
 </li>
 
 
                   <li className="address">
                     <i className="flaticon-maps-and-flags"></i>
                     <span>Address</span>
-                   Lucknow
+                   Industrial Area Near Sitapur City Mall,Lakhimpur Road,Sitapur,Uttar Pradesh , India - 261001
                   </li>
                 </ul>
               </div>
