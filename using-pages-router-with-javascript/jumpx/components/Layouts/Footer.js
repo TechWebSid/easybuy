@@ -6,6 +6,7 @@ import logo from "../../public/images/white-logo.png";
 import shape1 from "../../public/images/shape/footer-shape-one.png";
 import shape2 from "../../public/images/shape/footer-shape-two.png";
 import easy from "../../public/images/easy2buyhub.png"
+import snt from "../../public/images/snt_logo.png"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,7 +27,7 @@ const Footer = () => {
                 </Link>
 
                 <p>
-                Easy2BuyHub is a leading IT service company dedicated to providing innovative and customized solutions to meet diverse business needs. We focus on delivering excellence, efficiency, and value to help clients achieve their goals.
+                SNT Rudra Tech LLP is a prominent IT service company, supported by a talented team of more than 28 professionals. We are committed to delivering innovative, customized solutions that cater to diverse business needs. Our focus is on providing excellence, efficiency, and value to empower our clients in achieving their goals.
                 </p>
 
                 <ul className="social-icon">
@@ -167,7 +168,9 @@ const Footer = () => {
                     <i className="flaticon-call"></i>
                     <span>Phone</span>
                     +91 8299585163
-                  </li>
+                   
+                   
+                </li>
                   <li className="address">
   <i className="flaticon-envelope"></i>
   <span>Email</span>

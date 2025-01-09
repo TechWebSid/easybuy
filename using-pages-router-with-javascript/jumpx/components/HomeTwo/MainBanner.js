@@ -42,7 +42,7 @@ const MainBanner = () => {
                   data-aos-duration="1200"
                   data-aos-delay="200"
                 >
-                  Easy2BuyHub is a leading IT service company dedicated to providing innovative and customized solutions to meet diverse business needs. We focus on delivering excellence, efficiency, and value to help clients achieve their goals.
+               SNT Rudra Tech LLP is a leading IT service company and a proud member of the SNT Rudra Group. With a team of more than 28 skilled professionals, we are dedicated to providing innovative and customized solutions to meet diverse business needs. Our commitment lies in delivering excellence, efficiency, and value, ensuring that our clients achieve their goals with the highest standards of service.
                 </p>
 
                 <div
