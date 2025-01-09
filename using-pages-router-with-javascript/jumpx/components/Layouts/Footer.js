@@ -32,7 +32,7 @@ const Footer = () => {
                 <ul className="social-icon">
                   <li>
                     <a href="https://www.facebook.com/" target="_blank">
-                      <i className="bx bxl-facebook"></i>
+                      <i className="bx bxl-linkedin"></i>
                     </a>
                   </li>
                   <li>
@@ -120,7 +120,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services">
+                    <Link href="/services/style-2">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       Services
                     </Link>
