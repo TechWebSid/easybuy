@@ -138,12 +138,12 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contact">
+                    <Link href="/contact-2">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       Support
                     </Link>
                   </li>
-                  <li>
+                  <li>  
                     <Link href="/testimonials">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       Testimonials

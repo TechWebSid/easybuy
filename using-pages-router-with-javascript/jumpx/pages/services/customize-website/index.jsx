@@ -6,7 +6,7 @@ const CustomizeWebsite = () => {
   const services = [
     {
       title: "Corporate and Professional Websites",
-      image: "https://images.pexels.com/photos/7172830/pexels-photo-7172830.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/corporate.jpg",
       items: [
         {
           name: "Business Websites",
@@ -20,7 +20,7 @@ const CustomizeWebsite = () => {
     },
     {
       title: "E-Commerce and Retail",
-      image: "https://images.pexels.com/photos/5632379/pexels-photo-5632379.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/e-commerce.jpg",
       items: [
         {
           name: "E-Commerce Stores",
@@ -34,7 +34,7 @@ const CustomizeWebsite = () => {
     },
     {
       title: "Hospitality and Travel",
-      image: "https://images.pexels.com/photos/29983421/pexels-photo-29983421/free-photo-of-elegant-fine-dining-restaurant-with-cityscape-view.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/hotels.jpg",
       items: [
         {
           name: "Hotel and Booking Websites",

@@ -109,7 +109,7 @@ const Navbar = () => {
                           currentPath == "/tender/Tender/" && "active"
                         }`}
                       >
-                        Tenders
+                        Contract
                       </Link>
                     </li>
                   </ul>
