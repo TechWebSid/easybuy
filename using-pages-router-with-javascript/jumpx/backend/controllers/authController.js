@@ -1,5 +1,5 @@
 import express from 'express';
-import {errorHandler} from '../utils/error.js';
+import { errorHandler } from '../utils/error.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import User from "../models/userModel.js";
@@ -41,53 +41,98 @@ export const signup = async (req, res, next) => {
 };
 
 export const signin = async (req, res, next) => {
+    try {
+        const { email, password } = req.body;
+
+        // Validate input fields
+        if (!email || !password) {
+            return next(errorHandler(400, 'All fields are required'));
+        }
+
+        // Check if the user exists
+        const user = await User.findOne({ email });
+        if (!user) {
+            return next(errorHandler(401, 'Invalid email or password'));
+        }
+
+        // Validate password
+        const validPassword = await bcrypt.compare(password, user.password);
+        if (!validPassword) {
+            return next(errorHandler(401, 'Invalid email or password'));
+        }
+
+        // Generate JWT token
+        const token = jwt.sign(
+            { id: user._id, isAdmin: user.isAdmin },
+            process.env.JWT_SECRET || 'fallback_secret',
+            { expiresIn: '15d' }
+        );
+
+        // Remove password from user object
+        const { password: pass, ...userWithoutPassword } = user._doc;
+
+        // Set cookie with proper configuration
+        res
+            .cookie('access_token', token, {
+                httpOnly: true, // Set to true for security
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'lax',
+                path: '/',
+                maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days
+            })
+            .status(200)
+            .json({
+                success: true,
+                message: 'Login successful',
+                user: userWithoutPassword,
+            });
+
+    } catch (error) {
+        console.error('Signin error:', error);
+        next(errorHandler(500, 'Internal server error'));
+    }
+};
+
+export const logout = async (req, res, next) => {
+    try {
+        res.clearCookie('access_token', {
+            sameSite: 'strict',
+            secure: process.env.NODE_ENV === 'production',
+        });
+
+        res.status(200).json({
+            success: true,
+            message: 'Logged out successfully',
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
+export const checkSession = (req, res) => {
   try {
-    const { email, password } = req.body;
+      // Check if req.cookies exists
+      if (!req.cookies) {
+          return res.status(200).json({ isLoggedIn: false });
+      }
 
-    // Validate input fields
-    if (!email || !password) {
-      return next(errorHandler(400, 'All fields are required'));
-    }
+      const token = req.cookies.access_token;
 
-    // Check if the user exists
-    const user = await User.findOne({ email });
-    if (!user) {
-      return next(errorHandler(401, 'Invalid email or password'));
-    }
+      if (!token) {
+          return res.status(200).json({ isLoggedIn: false });
+      }
 
-    // Validate password
-    const validPassword = await bcrypt.compare(password, user.password);
-    if (!validPassword) {
-      return next(errorHandler(401, 'Invalid email or password'));
-    }
+      jwt.verify(token, process.env.JWT_SECRET || 'fallback_secret', (err, decoded) => {
+          if (err) {
+              console.error('JWT verification failed:', err);
+              return res.status(200).json({ isLoggedIn: false });
+          }
 
-    // Generate JWT token
-    const token = jwt.sign(
-      { id: user._id, isAdmin: user.isAdmin },
-      process.env.JWT_SECRET || 'fallback_secret',
-      { expiresIn: '15d' }
-    );
-
-    // Remove password from user object
-    const { password: pass, ...userWithoutPassword } = user._doc;
-
-    // Send response with token in cookie and user data
-    res
-      .cookie('access_token', token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
-        maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days
-      })
-      .status(200)
-      .json({
-        success: true,
-        message: 'Login successful',
-        user: userWithoutPassword,
+          res.status(200).json({ isLoggedIn: true });
       });
-
   } catch (error) {
-    console.error('Signin error:', error);
-    next(errorHandler(500, 'Internal server error'));
+      console.error('Error checking session:', error);
+      res.status(200).json({ isLoggedIn: false });
   }
 };
+

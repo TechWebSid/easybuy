@@ -8,6 +8,7 @@ import blogRoute from "./routes/blogRoute.js"
 import Comment from './routes/commentRoute.js';
 import job from "./routes/jobRoutes.js"
 import cors from 'cors'
+import cookieParser from 'cookie-parser';
 
 
 // Load environment variables
@@ -42,7 +43,13 @@ mongoose.connection.on('disconnected', () => {
 
 // Middleware to parse JSON
 app.use(express.json());
-app.use(cors()); 
+app.use(cookieParser());
+app.use(cors({
+  origin: 'http://localhost:3000', // your frontend URL
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+})); 
 
 // Error handling middleware
 app.use((err, req, res, next) => {

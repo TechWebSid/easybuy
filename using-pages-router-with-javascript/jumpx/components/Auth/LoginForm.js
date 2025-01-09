@@ -40,11 +40,15 @@ const LoginForm = () => {
       const response = await axios.post("http://localhost:5000/api/user/signin", {
         email: formData.email,
         password: formData.password,
+      }, {
+        withCredentials: true
       });
 
       if (response.status === 200) {
         toast.success("Login successful!");
-        router.push("/index-2");
+        setTimeout(() => {
+          router.push("/index-2");
+        }, 500);
       }
     } catch (error) {
       console.error("Login error:", error);
