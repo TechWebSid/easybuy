@@ -123,7 +123,7 @@ const Monthly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                2 Revisions
+                5 Revisions
               </li>
               <li>
                 <i className="bx bx-check"></i>
@@ -201,7 +201,7 @@ const Monthly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                2 Revisions
+                Unlimited Revisions
               </li>
               <li>
                 <i className="bx bx-check"></i>
