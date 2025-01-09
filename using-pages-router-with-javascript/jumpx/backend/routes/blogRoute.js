@@ -5,7 +5,7 @@ import {
     getposts,
     deletepost,
     updatepost
-} from "../controllers/BlogController"
+} from "../controllers/BlogController.js"
 
 const router = express.Router();
 
@@ -14,3 +14,4 @@ router.post("/getpost" , getposts);
 router.post("/deletepost" , deletepost);
 router.post("updatepost" , updatepost);
 
+export default router;

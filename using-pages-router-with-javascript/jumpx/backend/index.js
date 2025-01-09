@@ -3,13 +3,11 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import userRoutes from '../backend/routes/authroutes.js';
 import contactRoute from '../backend/routes/contactroute.js';
-<<<<<<< HEAD
 import blogRoute from "./routes/blogRoute.js"
 import Comment from './routes/commentRoute.js';
 import job from "./routes/jobRoutes.js"
-=======
 import cors from 'cors'
->>>>>>> 0156044c126cffb276972dc4f46d35ed3a09d10b
+
 
 // Load environment variables
 dotenv.config();
@@ -20,8 +18,6 @@ app.use(express.urlencoded({extended:true}))
 
 // Connect to MongoDB with proper options
 mongoose.connect(process.env.MONGO, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
   serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
   socketTimeoutMS: 45000, // Close sockets after 45s of inactivity
 })

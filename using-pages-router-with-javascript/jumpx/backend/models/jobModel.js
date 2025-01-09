@@ -6,7 +6,7 @@ const jobs = new mongoose.Schema ({
         reruired :true,
     },
     email:{
-        type:email,
+        type:String,
         required: true,
     },
     applied:{
@@ -22,7 +22,7 @@ const jobs = new mongoose.Schema ({
         required:true,
     },
     file:{
-        type: file,
+        type: String,
         required: true,
     },
     message:{
