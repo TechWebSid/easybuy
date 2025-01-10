@@ -65,37 +65,37 @@ const Footer = () => {
                 <h3>Services</h3>
                 <ul>
                   <li>
-                    <Link href="/services/service-details/">
+                    <Link href="/services/customize-website/">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       Customize websites
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/service-details/">
+                    <Link href="/services/uiux/">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       UI/UX Design
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/service-details/">
+                    <Link href="/services/e-commerce/">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       E-commerce solutions
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/service-details/">
+                    <Link href="/services/seo/">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       SEO optimizations
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/service-details/">
+                    <Link href="/services/fullstack/">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       Full stack development
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/service-details/">
+                    <Link href="/services/api/">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       API Integration
                     </Link>
@@ -115,7 +115,7 @@ const Footer = () => {
 
                 <ul>
                   <li>
-                    <Link href="/about">
+                    <Link href="/about-2">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       About Us
                     </Link>
