@@ -38,7 +38,7 @@ const partnerData = [
     aosDelay: "700",
   },
   {
-    image: "/images/brands/brand8.png",
+    image: "/images/brands/b9.jpg",
     url: "#",
     aosDelay: "800",
   },
