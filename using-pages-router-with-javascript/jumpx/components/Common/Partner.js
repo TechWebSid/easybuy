@@ -3,29 +3,29 @@ import Image from "next/image";
 
 const partnerData = [
   {
-    image: "/images/brands/brand1.png",
+    image: "/images/brands/b1.png",
     url: "#",
     aosDelay: "100",
   },
   {
-    image: "/images/brands/brand2.png",
+    image: "/images/brands/b2.png",
     url: "#",
     aosDelay: "200",
   },
   {
-    image: "/images/brands/brand3.png",
+    image: "/images/brands/b3.png",
     url: "#",
     aosDelay: "300",
   },
   {
-    image: "/images/brands/brand4.png",
+    image: "/images/brands/b5.png",
     url: "#",
     aosDelay: "400",
   },
   {
-    image: "/images/brands/brand5.png",
+    image: "/images/brands/brand2.png",
     url: "#",
-    aosDelay: "500",
+    aosDelay: "300",
   },
   {
     image: "/images/brands/brand6.png",
@@ -46,7 +46,7 @@ const partnerData = [
     image: "/images/brands/brand9.png",
     url: "#",
     aosDelay: "900",
-  },
+  },  
   {
     image: "/images/brands/brand10.png",
     url: "#",
