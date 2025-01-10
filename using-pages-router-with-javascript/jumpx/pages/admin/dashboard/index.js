@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
   LineChart, Line, AreaChart, Area, BarChart, Bar,
@@ -8,7 +8,75 @@ import {
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
+  const [analyticsData, setAnalyticsData] = useState({
+    totalApplications: 0,
+    applicationsByPosition: [],
+    monthlyApplications: [],
+    recentApplications: []
+  });
+  const [isLoading, setIsLoading] = useState(true);
+  const [applications, setApplications] = useState([]);
 
+  useEffect(() => {
+    fetchAnalyticsData();
+  }, []);
+
+  useEffect(() => {
+    if (activeTab === 'applicants') {
+        fetchApplications();
+    }
+  }, [activeTab]);
+
+  const fetchAnalyticsData = async () => {
+    try {
+      setIsLoading(true);
+      const response = await fetch('http://localhost:5000/api/job/analytics');
+      const data = await response.json();
+      
+      if (data.success) {
+        // Transform monthly applications data for chart
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const transformedMonthlyData = data.data.monthlyApplications.map(item => ({
+          month: monthNames[item._id.month - 1],
+          applications: item.count
+        }));
+
+        setAnalyticsData({
+          totalApplications: data.data.totalApplications,
+          applicationsByPosition: data.data.applicationsByPosition,
+          monthlyApplications: transformedMonthlyData,
+          recentApplications: data.data.recentApplications.map(app => ({
+            id: app._id,
+            name: app.name,
+            position: app.position,
+            experience: app.experience,
+            appliedDate: new Date(app.createdAt).toLocaleDateString(),
+            status: 'pending' // You can add status field in your schema if needed
+          }))
+        });
+      }
+    } catch (error) {
+      console.error('Error fetching analytics:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const fetchApplications = async () => {
+    try {
+        setIsLoading(true);
+        const response = await fetch('http://localhost:5000/api/job/applications-list');
+        const data = await response.json();
+        
+        if (data.success) {
+            setApplications(data.data);
+        }
+    } catch (error) {
+        console.error('Error fetching applications:', error);
+    } finally {
+        setIsLoading(false);
+    }
+  };
 
   const monthlyRevenue = [
     { month: 'Jan', revenue: 15000 },
@@ -22,13 +90,7 @@ const AdminDashboard = () => {
     { name: 'Premium', value: 78 },
   ];
 
-  const applicationsByDepartment = [
-    { department: 'Frontend', count: 45 },
-    { department: 'Backend', count: 38 },
-    { department: 'UI/UX', count: 32 },
-    { department: 'DevOps', count: 25 },
-    { department: 'Others', count: 16 },
-  ];
+  const applicationsByDepartment = analyticsData.applicationsByPosition;
 
   // Dummy data for demonstration
   const recentSubscriptions = [
@@ -74,7 +136,7 @@ const AdminDashboard = () => {
   const stats = {
     totalRevenue: "$25,999",
     activeSubscriptions: 48,
-    totalApplications: 156,
+    totalApplications: analyticsData.totalApplications,
     pendingReviews: 23
   };
 
@@ -250,19 +312,25 @@ const AdminDashboard = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {jobApplications.map((app) => (
-                        <tr key={app.id}>
-                          <td>{app.name}</td>
-                          <td>{app.position}</td>
-                          <td>{app.experience}</td>
-                          <td>{app.appliedDate}</td>
-                          <td>
-                            <span className={`status-badge status-${app.status}`}>
-                              {app.status}
-                            </span>
-                          </td>
+                      {isLoading ? (
+                        <tr>
+                          <td colSpan="5" className="loading">Loading...</td>
                         </tr>
-                      ))}
+                      ) : (
+                        analyticsData.recentApplications.map((app) => (
+                          <tr key={app.id}>
+                            <td>{app.name}</td>
+                            <td>{app.position}</td>
+                            <td>{app.experience}</td>
+                            <td>{app.appliedDate}</td>
+                            <td>
+                              <span className={`status-badge status-${app.status}`}>
+                                {app.status}
+                              </span>
+                            </td>
+                          </tr>
+                        ))
+                      )}
                     </tbody>
                   </table>
                 </div>
@@ -301,31 +369,35 @@ const AdminDashboard = () => {
       case 'applications':
         return (
           <div className="graph-container">
-            <h2>Applications by Department</h2>
-            <ResponsiveContainer width="100%" height={400}>
-              <BarChart data={applicationsByDepartment}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="department" />
-                <YAxis 
-                  label={{ 
-                    value: 'Number of Applications', 
-                    angle: -90, 
-                    position: 'insideLeft' 
-                  }}
-                />
-                <Tooltip />
-                <Legend />
-                <Bar 
-                  dataKey="count" 
-                  fill="#2563eb"
-                  radius={[4, 4, 0, 0]}
-                >
-                  {applicationsByDepartment.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+            <h2>Applications by Position</h2>
+            {isLoading ? (
+              <div className="loading">Loading...</div>
+            ) : (
+              <ResponsiveContainer width="100%" height={400}>
+                <BarChart data={applicationsByDepartment}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="department" />
+                  <YAxis 
+                    label={{ 
+                      value: 'Number of Applications', 
+                      angle: -90, 
+                      position: 'insideLeft' 
+                    }}
+                  />
+                  <Tooltip />
+                  <Legend />
+                  <Bar 
+                    dataKey="count" 
+                    fill="#2563eb"
+                    radius={[4, 4, 0, 0]}
+                  >
+                    {applicationsByDepartment.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            )}
           </div>
         );
 
@@ -477,11 +549,167 @@ const AdminDashboard = () => {
           </>
         );
 
+      case 'applicants':
+        return (
+            <div className="applications-container">
+                <h2>Job Applications</h2>
+                {isLoading ? (
+                    <div className="loading">Loading applications...</div>
+                ) : (
+                    <div className="applications-grid">
+                        {applications.map((application) => (
+                            <div key={application._id} className="application-card">
+                                <div className="application-header">
+                                    <h3>{application.name}</h3>
+                                    <span className="position-badge">{application.position}</span>
+                                </div>
+                                <div className="application-details">
+                                    <div className="detail-item">
+                                        <span className="label">Email:</span>
+                                        <span>{application.email}</span>
+                                    </div>
+                                    <div className="detail-item">
+                                        <span className="label">Phone:</span>
+                                        <span>{application.phone}</span>
+                                    </div>
+                                    <div className="detail-item">
+                                        <span className="label">Experience:</span>
+                                        <span>{application.experience}</span>
+                                    </div>
+                                    {application.portfolio && (
+                                        <div className="detail-item">
+                                            <span className="label">Portfolio:</span>
+                                            <a href={application.portfolio} target="_blank" rel="noopener noreferrer">
+                                                View Portfolio
+                                            </a>
+                                        </div>
+                                    )}
+                                    <div className="detail-item">
+                                        <span className="label">Resume:</span>
+                                        <a href={`http://localhost:5000/${application.resume}`} target="_blank" rel="noopener noreferrer">
+                                            Download Resume
+                                        </a>
+                                    </div>
+                                    <div className="detail-item full-width">
+                                        <span className="label">Message:</span>
+                                        <p className="message">{application.message}</p>
+                                    </div>
+                                    <div className="detail-item">
+                                        <span className="label">Applied On:</span>
+                                        <span>{new Date(application.createdAt).toLocaleDateString()}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        );
+
       // Add more cases for other tabs...
       default:
         return null;
     }
   };
+
+  const additionalStyles = `
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      font-size: 1.2rem;
+      color: #64748b;
+    }
+
+    .applications-container {
+        padding: 20px;
+    }
+
+    .applications-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .application-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        transition: transform 0.3s ease;
+    }
+
+    .application-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .application-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .application-header h3 {
+        font-size: 1.25rem;
+        color: #1e40af;
+        margin: 0;
+    }
+
+    .position-badge {
+        background: #dbeafe;
+        color: #1e40af;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    .detail-item {
+        display: flex;
+        margin-bottom: 12px;
+        font-size: 0.95rem;
+    }
+
+    .detail-item.full-width {
+        flex-direction: column;
+    }
+
+    .label {
+        font-weight: 600;
+        color: #64748b;
+        min-width: 100px;
+        margin-right: 12px;
+    }
+
+    .message {
+        margin-top: 8px;
+        color: #475569;
+        line-height: 1.5;
+        white-space: pre-wrap;
+    }
+
+    .detail-item a {
+        color: #2563eb;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .detail-item a:hover {
+        color: #1e40af;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .applications-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+  `;
 
   return (
     <>
@@ -777,6 +1005,8 @@ const AdminDashboard = () => {
             transform: translateY(0);
           }
         }
+
+        ${additionalStyles}
       `}</style>
 
       <div className="admin-dashboard">
@@ -826,6 +1056,13 @@ const AdminDashboard = () => {
               
                 <span className="nav-text">Tenders</span>
               
+            </div>
+            <div 
+              className={`nav-item ${activeTab === 'applicants' ? 'active' : ''}`}
+              onClick={() => setActiveTab('applicants')}
+            >
+              <i className='bx bx-user-pin'></i>
+              <span className="nav-text">Applicants</span>
             </div>
           </nav>
         </div>

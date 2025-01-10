@@ -87,3 +87,88 @@ export const getApplications = async (req, res, next) => {
         next(err);
     }
 };
+
+export const getJobAnalytics = async (req, res, next) => {
+    try {
+        // Get total applications
+        const totalApplications = await JobApplication.countDocuments();
+
+        // Get applications by position
+        const applicationsByPosition = await JobApplication.aggregate([
+            {
+                $group: {
+                    _id: "$position",
+                    count: { $sum: 1 }
+                }
+            },
+            {
+                $project: {
+                    department: "$_id",
+                    count: 1,
+                    _id: 0
+                }
+            }
+        ]);
+
+        // Get applications by date (last 6 months)
+        const sixMonthsAgo = new Date();
+        sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+
+        const monthlyApplications = await JobApplication.aggregate([
+            {
+                $match: {
+                    createdAt: { $gte: sixMonthsAgo }
+                }
+            },
+            {
+                $group: {
+                    _id: {
+                        month: { $month: "$createdAt" },
+                        year: { $year: "$createdAt" }
+                    },
+                    count: { $sum: 1 }
+                }
+            },
+            {
+                $sort: {
+                    "_id.year": 1,
+                    "_id.month": 1
+                }
+            }
+        ]);
+
+        // Get recent applications
+        const recentApplications = await JobApplication.find()
+            .sort({ createdAt: -1 })
+            .limit(5)
+            .select('name position experience createdAt');
+
+        res.status(200).json({
+            success: true,
+            data: {
+                totalApplications,
+                applicationsByPosition,
+                monthlyApplications,
+                recentApplications
+            }
+        });
+    } catch (err) {
+        next(err);
+    }
+};
+
+// Add this to get detailed applications list
+export const getApplicationsList = async (req, res, next) => {
+    try {
+        const applications = await JobApplication.find()
+            .sort({ createdAt: -1 })
+            .select('name email phone position experience portfolio resume message createdAt');
+
+        res.status(200).json({
+            success: true,
+            data: applications
+        });
+    } catch (err) {
+        next(err);
+    }
+};
