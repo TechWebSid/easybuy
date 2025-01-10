@@ -124,10 +124,48 @@ const Careers = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    console.log(formData);
+    try {
+        const formDataToSend = new FormData();
+        formDataToSend.append('name', formData.name);
+        formDataToSend.append('email', formData.email);
+        formDataToSend.append('phone', formData.phone);
+        formDataToSend.append('position', formData.position);
+        formDataToSend.append('experience', formData.experience);
+        formDataToSend.append('portfolio', formData.portfolio);
+        formDataToSend.append('message', formData.message);
+        formDataToSend.append('resume', formData.resume);
+
+        const response = await fetch('http://localhost:5000/api/job/submit', {
+            method: 'POST',
+            body: formDataToSend,
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to submit application');
+        }
+
+        const data = await response.json();
+        alert('Application submitted successfully!');
+        
+        // Reset form
+        setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            position: "",
+            experience: "",
+            portfolio: "",
+            resume: null,
+            message: "",
+        });
+        
+    } catch (error) {
+        console.error('Error submitting application:', error);
+        alert('Failed to submit application. Please try again.');
+    }
   };
 
   return (

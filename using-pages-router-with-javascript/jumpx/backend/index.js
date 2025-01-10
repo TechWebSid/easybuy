@@ -8,6 +8,9 @@ import Comment from './routes/commentRoute.js';
 import job from "./routes/jobRoutes.js"
 import cors from 'cors'
 import cookieParser from 'cookie-parser';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import fs from 'fs';
 
 
 // Load environment variables
@@ -68,6 +71,18 @@ app.use("/api/contact", contactRoute);
 app.use("/api/blog" , blogRoute);
 app.use("/api/comment" , Comment);
 app.use("/api/job", job);
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Add this after your other middleware
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Create uploads directory if it doesn't exist
+const uploadsDir = path.join(__dirname, 'uploads/resumes');
+if (!fs.existsSync(uploadsDir)){
+    fs.mkdirSync(uploadsDir, { recursive: true });
+}
 
 // Start the server
 app.listen(5000, () => {

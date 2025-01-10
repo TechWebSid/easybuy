@@ -1,36 +1,41 @@
 import mongoose from 'mongoose';
 
-const jobsSchema = new mongoose.Schema({
-    FullName: {
+const jobApplicationSchema = new mongoose.Schema({
+    name: {
         type: String,
-        required: true, // Fixed typo from 'reruired' to 'required'
+        required: true,
     },
     email: {
         type: String,
         required: true,
-        match: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/, // Email regex for validation
+        match: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
     },
-    applied: {
+    phone: {
         type: String,
         required: true,
     },
-    Experience: { // Fixed typo from 'Experiance' to 'Experience'
+    position: {
         type: String,
         required: true,
     },
-    url: {
+    experience: {
         type: String,
         required: true,
     },
-    file: {
-        type: String, // Assuming you store the file path as a string
+    portfolio: {
+        type: String,
+        required: false,
+    },
+    resume: {
+        type: String, // This will store the file path
         required: true,
     },
     message: {
         type: String,
-    },
-}, { timestamps: true }); // Corrected the schema definition
+        required: true,
+    }
+}, { timestamps: true });
 
-const JobApplication = mongoose.model('JobApplication', jobsSchema); // Updated model name for clarity
+const JobApplication = mongoose.model('JobApplication', jobApplicationSchema);
 
 export default JobApplication;
