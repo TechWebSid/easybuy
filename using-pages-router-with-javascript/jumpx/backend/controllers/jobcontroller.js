@@ -1,9 +1,8 @@
 import express from 'express' 
 import jobs from '../models/jobModel.js'
 import { errorHandler } from '../utils/error.js';
-import job_application from '../models/jobModel.js';
 
-export const getjobs = async (req, res, next ) =>{
+export const getjobs = async (req, res, next) => {
     const {FullName, email, applied, Experiance, url, file, message} = req.body;
 
     if(
@@ -19,7 +18,7 @@ export const getjobs = async (req, res, next ) =>{
     }
 
     try {
-        const newJobs = new job_application ({
+        const newJobs = new jobs({
             FullName,
             email,
             applied,
@@ -27,10 +26,13 @@ export const getjobs = async (req, res, next ) =>{
             url,
             file,
             message,
-        })
+        });
+        
+        await newJobs.save();
+        res.status(201).json(newJobs);
     }
     catch(err){
-        return(err)
+        next(err);
     }
 }
 

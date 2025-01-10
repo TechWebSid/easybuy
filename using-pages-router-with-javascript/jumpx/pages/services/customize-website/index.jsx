@@ -6,7 +6,7 @@ const CustomizeWebsite = () => {
   const services = [
     {
       title: "Corporate and Professional Websites",
-      image: "https://images.pexels.com/photos/7172830/pexels-photo-7172830.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/corporate.jpg",
       items: [
         {
           name: "Business Websites",
@@ -20,7 +20,7 @@ const CustomizeWebsite = () => {
     },
     {
       title: "E-Commerce and Retail",
-      image: "https://images.pexels.com/photos/5632379/pexels-photo-5632379.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/e-commerce.jpg",
       items: [
         {
           name: "E-Commerce Stores",
@@ -34,7 +34,7 @@ const CustomizeWebsite = () => {
     },
     {
       title: "Hospitality and Travel",
-      image: "https://images.pexels.com/photos/29983421/pexels-photo-29983421/free-photo-of-elegant-fine-dining-restaurant-with-cityscape-view.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/hotels.jpg",
       items: [
         {
           name: "Hotel and Booking Websites",
@@ -48,7 +48,7 @@ const CustomizeWebsite = () => {
     },
     {
       title: "Food and Beverage",
-      image: "https://images.pexels.com/photos/541216/pexels-photo-541216.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/food.jpg",
       items: [
         {
           name: "Restaurant Websites",
@@ -62,7 +62,7 @@ const CustomizeWebsite = () => {
     },
     {
       title: "Media and Content Creators",
-      image: "https://images.pexels.com/photos/7586548/pexels-photo-7586548.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/media.jpg",
       items: [
         {
           name: "YouTubers/Influencers",
@@ -76,7 +76,7 @@ const CustomizeWebsite = () => {
     },
     {
       title: "Education and Training",
-      image: "https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/education.jpg",
       items: [
         {
           name: "Educational Platforms",
@@ -90,7 +90,7 @@ const CustomizeWebsite = () => {
     },
     {
       title: "Healthcare and Wellness",
-      image: "https://images.pexels.com/photos/5340280/pexels-photo-5340280.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/health.jpg",
       items: [
         {
           name: "Doctor Appointment Websites",
@@ -104,7 +104,7 @@ const CustomizeWebsite = () => {
     },
     {
       title: "Community and Engagement",
-      image: "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/community.jpg",
       items: [
         {
           name: "Social Networking Websites",
@@ -132,7 +132,7 @@ const CustomizeWebsite = () => {
     },
     {
       title: "Real Estate and Classifieds",
-      image: "https://images.pexels.com/photos/20025581/pexels-photo-20025581/free-photo-of-stove-in-a-neat-clean-kitchen.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/realestate.jpg",
       items: [
         {
           name: "Real Estate Websites",
@@ -146,7 +146,7 @@ const CustomizeWebsite = () => {
     },
     {
       title: "Technology and Innovation",
-      image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/tech.jpg",
       items: [
         {
           name: "SaaS Websites",
@@ -352,7 +352,7 @@ const CustomizeWebsite = () => {
                     <div className="service-item" key={idx}>
                       <h4>{item.name}</h4>
                       <p>{item.description}</p>
-                      <Link href="/pricing">
+                      <Link href="/payment">
                           <span className="purchase-button">Get Started →</span>
                         </Link>
                     </div>

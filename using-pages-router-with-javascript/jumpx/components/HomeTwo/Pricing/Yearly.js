@@ -44,7 +44,7 @@ const Yearly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                2 Revisions
+                5 Revisions
               </li>
               <li>
                 <i className="bx bx-x"></i>
@@ -200,7 +200,7 @@ const Yearly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                2 Revisions
+                Unlimited Revisions
               </li>
               <li>
                 <i className="bx bx-check"></i>

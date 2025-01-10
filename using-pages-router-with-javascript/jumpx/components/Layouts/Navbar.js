@@ -2,22 +2,70 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 import logo from "../../public/images/white-logo.png";
 import easy from "../../public/images/easy2buyhub.png";
 
 const Navbar = () => {
   const [currentPath, setCurrentPath] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
 
-  // Redirect from / to /index-2
+  // Check login status using the backend API
   useEffect(() => {
-    if (router.asPath === "/") {
-      router.push("/index-2"); // Redirect to Home 2
-    } else {
-      setCurrentPath(router.asPath);
+    const checkSession = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/user/check-session', {
+          withCredentials: true,
+        });
+        setIsLoggedIn(response.data.isLoggedIn);
+      } catch (error) {
+        console.error('Error checking session:', error);
+        setIsLoggedIn(false);
+      }
+    };
+
+    checkSession();
+    
+    const handleRouteChange = () => {
+      checkSession();
+    };
+    
+    router.events.on('routeChangeComplete', handleRouteChange);
+    
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, []);
+
+  // Logout handler
+  const handleLogout = async () => {
+    try {
+      await axios.post(
+        'http://localhost:5000/api/user/logout',
+        {},
+        { withCredentials: true }
+      );
+      
+      setIsLoggedIn(false);
+      toast.success('Logged out successfully!');
+      router.push('/auth/login');
+    } catch (error) {
+      console.error('Logout error:', error);
+      toast.error('Failed to log out. Please try again.');
     }
-  }, [router]);
+  };
+
+  // Redirect from / to /index-2
+  // useEffect(() => {
+  //   if (router.asPath === "/") {
+  //     router.push("/index-2"); // Redirect to Home 2
+  //   } else {
+  //     setCurrentPath(router.asPath);
+  //   }
+  // }, [router]);
 
   const [menu, setMenu] = React.useState(true);
   const toggleNavbar = () => {
@@ -94,9 +142,7 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="/services/style-2/"
-                        className={`nav-link ${
-                          currentPath == "/services/style-2/" && "active"
-                        }`}
+                        className={`nav-link ${currentPath == "/services/style-2/" && "active"}`}
                       >
                         Our Services
                       </Link>
@@ -105,11 +151,9 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="/tender/Tender/"
-                        className={`nav-link ${
-                          currentPath == "/tender/Tender/" && "active"
-                        }`}
+                        className={`nav-link ${currentPath == "/tender/Tender/" && "active"}`}
                       >
-                        Tenders
+                        Contract
                       </Link>
                     </li>
                   </ul>
@@ -128,22 +172,16 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="/news/"
-                        className={`nav-link ${
-                          currentPath == "/news/" && "active"
-                        }`}
+                        className={`nav-link ${currentPath == "/news/" && "active"}`}
                       >
                         Blog Grid
                       </Link>
                     </li>
 
-                  
-
                     <li className="nav-item">
                       <Link
                         href="/news/news-details/"
-                        className={`nav-link ${
-                          currentPath == "/news/news-details/" && "active"
-                        }`}
+                        className={`nav-link ${currentPath == "/news/news-details/" && "active"}`}
                       >
                         Blog Details
                       </Link>
@@ -151,13 +189,10 @@ const Navbar = () => {
                   </ul>
                 </li>
 
-
                 <li className="nav-item">
                   <Link
                     href="/contact-2/"
-                    className={`nav-link ${
-                      currentPath == "/contact-2/" && "active"
-                    }`}
+                    className={`nav-link ${currentPath == "/contact-2/" && "active"}`}
                   >
                     Contact
                   </Link>
@@ -166,20 +201,23 @@ const Navbar = () => {
                 <li className="nav-item">
                   <Link
                     href="/careers/"
-                    className={`nav-link ${
-                      currentPath == "/careers/" && "active"
-                    }`}
+                    className={`nav-link ${currentPath == "/careers/" && "active"}`}
                   >
                     Careers
                   </Link>
                 </li>
               </ul>
-              
 
               <div className="others-options">
-                <Link href="/auth/login/" className="default-btn">
-                  Log In <i className="bx bx-log-in-circle"></i>
-                </Link>
+                {isLoggedIn ? (
+                  <button onClick={handleLogout} className="default-btn">
+                    Logout <i className="bx bx-log-out-circle"></i>
+                  </button>
+                ) : (
+                  <Link href="/auth/login" className="default-btn">
+                    Log In <i className="bx bx-log-in-circle"></i>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

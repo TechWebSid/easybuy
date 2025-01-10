@@ -6,6 +6,7 @@ import logo from "../../public/images/white-logo.png";
 import shape1 from "../../public/images/shape/footer-shape-one.png";
 import shape2 from "../../public/images/shape/footer-shape-two.png";
 import easy from "../../public/images/easy2buyhub.png"
+import snt from "../../public/images/snt_logo.png"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,13 +27,13 @@ const Footer = () => {
                 </Link>
 
                 <p>
-                Easy2BuyHub is a leading IT service company dedicated to providing innovative and customized solutions to meet diverse business needs. We focus on delivering excellence, efficiency, and value to help clients achieve their goals.
+                SNT Rudra Tech LLP is a prominent IT service company, supported by a talented team of more than 28 professionals. We are committed to delivering innovative, customized solutions that cater to diverse business needs. Our focus is on providing excellence, efficiency, and value to empower our clients in achieving their goals.
                 </p>
 
                 <ul className="social-icon">
                   <li>
                     <a href="https://www.facebook.com/" target="_blank">
-                      <i className="bx bxl-facebook"></i>
+                      <i className="bx bxl-linkedin"></i>
                     </a>
                   </li>
                   <li>
@@ -120,7 +121,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services">
+                    <Link href="/services/style-2">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       Services
                     </Link>
@@ -131,19 +132,14 @@ const Footer = () => {
                       Pricing
                     </Link>
                   </li>
+                
                   <li>
-                    <Link href="/team">
-                      <i className="right-icon bx bx-chevrons-right"></i>
-                      Team
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact">
+                    <Link href="/contact-2">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       Support
                     </Link>
                   </li>
-                  <li>
+                  <li>  
                     <Link href="/testimonials">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       Testimonials
@@ -166,19 +162,22 @@ const Footer = () => {
                   <li className="address">
                     <i className="flaticon-call"></i>
                     <span>Phone</span>
-                    +91 8299585163
-                  </li>
+                    +91 8299585163, +91 6387945717
+                   
+                   
+                </li>
                   <li className="address">
   <i className="flaticon-envelope"></i>
   <span>Email</span>
   <a href="mailto:customercare@easy2buyhub.com">customercare@easy2buyhub.com</a>
+  <a href="mailto:customercare@easy2buyhub.com">info@easy2buyhub.com</a>
 </li>
 
 
                   <li className="address">
                     <i className="flaticon-maps-and-flags"></i>
                     <span>Address</span>
-                   Lucknow
+                   Industrial Area Near Sitapur City Mall,Lakhimpur Road,Sitapur,Uttar Pradesh , India - 261001
                   </li>
                 </ul>
               </div>
