@@ -1,18 +1,19 @@
-// /pages/index.js
+import React from "react";
 import Navbar from "../components/Layouts/Navbar";
-import MainBanner from "../components/HomeTwo/MainBanner"; // Assuming MainBanner for Home 2
-import Features from "../components/HomeTwo/Features"; // Assuming Features for Home 2
-import About from "../components/HomeTwo/About"; // Assuming About for Home 2
-import WhyChooseUs from "../components/HomeOne/WhyChooseUs"; // Assuming WhyChooseUs for Home 2
-import Services from "../components/HomeTwo/Services"; // Assuming Services for Home 2
+import MainBanner from "../components/HomeTwo/MainBanner";
+import Features from "../components/HomeTwo/Features";
+import About from "../components/HomeTwo/About";
+import Services from "../components/HomeTwo/Services";
+import Pricing from "../components/HomeTwo/Pricing";
+import Newsletter from "../components/Common/Newsletter";
 import MakeYourBusiness from "../components/Common/MakeYourBusiness";
-import WhatWeOffer from "../components/HomeTwo/WhatWeOffer"; // Assuming WhatWeOffer for Home 2
 import Testimonials from "../components/Common/Testimonials";
+import WhatWeOffer from "../components/HomeTwo/WhatWeOffer";
 import News from "../components/Common/News";
+import Partner from "../components/Common/Partner";
 import Footer from "../components/Layouts/Footer";
-import Link from 'next/link';
 
-export default function IndexPage() {
+export default function Index2Page() {
   return (
     <>
       <Navbar />
@@ -23,19 +24,23 @@ export default function IndexPage() {
 
       <About />
 
-      <WhyChooseUs />
-
       <Services />
+
+      <Pricing />
+
+      <Newsletter />
 
       <MakeYourBusiness />
 
-      <WhatWeOffer />
-
       <Testimonials />
+
+      <WhatWeOffer />
 
       <News />
 
-   
+      <div className="pb-50">
+        <Partner />
+      </div>
 
       <Footer />
     </>

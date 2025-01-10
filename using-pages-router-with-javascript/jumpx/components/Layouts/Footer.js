@@ -218,7 +218,7 @@ const Footer = () => {
               <div className="designed">
                 <p>
                   Designed by <i className="bx bx-heart"></i>{" "}
-                  <a href="https://envytheme.com/" target="_blank"
+                  <a href="#" target="_blank"
                   style={{ marginLeft: "4px" }}
                   >
                     easy2buyhub
