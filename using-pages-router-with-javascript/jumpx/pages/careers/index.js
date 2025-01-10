@@ -136,7 +136,9 @@ const Careers = () => {
       <style jsx>{`
         .careers-container {
           padding: 120px 20px 80px;
-          background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+          // background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+         background: linear-gradient(135deg, #0f172a 0%, #1f2937 100%);
+
         }
 
         .container {
