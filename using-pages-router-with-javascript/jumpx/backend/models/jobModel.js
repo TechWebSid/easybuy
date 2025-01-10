@@ -3,6 +3,13 @@ import mongoose from 'mongoose';
 const jobs = new mongoose.Schema({
     FullName: {
         type: String,
+<<<<<<< HEAD
+        reruired :true,
+    },
+    email:{
+        type:String,
+=======
+>>>>>>> 93ba9452e571ae7ad36012769096e051b9e4af42
         required: true,
     },
     email: {
@@ -18,7 +25,15 @@ const jobs = new mongoose.Schema({
         type: String,
         required: true,
     },
+<<<<<<< HEAD
+    url:{
+        type:String,
+        required:true,
+    },
+    file:{
+=======
     url: {
+>>>>>>> 93ba9452e571ae7ad36012769096e051b9e4af42
         type: String,
         required: true,
     },
