@@ -126,9 +126,8 @@ const PaymentPage = () => {
         .payment-container {
           min-height: 100vh;
           padding: 32px 16px;
-          background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
-        }
-
+       background: linear-gradient(135deg, #0f172a 0%, #1f2937 100%);
+  }
         .payment-card {
           max-width: 520px;
           margin: 0 auto;
