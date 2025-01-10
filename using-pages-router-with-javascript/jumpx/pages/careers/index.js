@@ -95,7 +95,16 @@ const Careers = () => {
       experience: "2+ years (Preferred)",
       skills: ["Accounting", "Tax Compliance", "Tally", "QuickBooks", "Financial Reporting", "MS Excel", "Budget Management"],
       description: "Seeking a detail-oriented accountant to manage financial operations, ensure compliance with tax regulations, and provide strategic financial insights to support business growth.",
+    },
+    {
+      "title": "Business Development Associate",
+      "type": "Full-time",
+      "location": "Remote / Hybrid",
+      "experience": "1+ years",
+      "skills": ["Sales", "Client Acquisition", "Market Research", "CRM Tools", "Communication Skills", "Negotiation"],
+      "description": "We are looking for a dynamic Business Development Associate to identify and pursue new business opportunities, build strong client relationships, and drive growth. The ideal candidate will have a passion for sales, excellent communication skills, and the ability to thrive in a fast-paced environment."
     }
+    
     
     
   ];

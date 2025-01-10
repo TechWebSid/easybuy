@@ -76,7 +76,7 @@ const Monthly = () => {
               </li>
             </ul>
 
-            <Link href="/services/style-2" className="default-btn">
+            <Link href="/payment" className="default-btn">
               Get Started
             </Link>
           </div>
@@ -155,7 +155,7 @@ const Monthly = () => {
               </li>
             </ul>
 
-            <Link href="/services/style-2" className="default-btn">
+            <Link href="/payment" className="default-btn">
               Get Started
             </Link>
           </div>
@@ -233,7 +233,7 @@ const Monthly = () => {
               </li>
             </ul>
 
-            <Link href="/services/style-2" className="default-btn">
+            <Link href="/payment" className="default-btn">
               Get Started
             </Link>
           </div>

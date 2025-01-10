@@ -44,9 +44,14 @@ const Yearly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                5 Revisions
+                3 Months Technical Support
               </li>
               <li>
+                <i className="bx bx-check"></i>
+                Google Listing - Location
+              </li>
+              <li>
+                
                 <i className="bx bx-x"></i>
                 Lead Generation And Sales Support 
               </li>
@@ -64,7 +69,7 @@ const Yearly = () => {
               </li>
               <li>
                 <i className="bx bx-x"></i>
-                Multipage Landing Page Website  
+                Multiple Landing Page Website  
               </li>
               <li>
                 <i className="bx bx-x"></i>
@@ -76,7 +81,7 @@ const Yearly = () => {
               </li>
             </ul>
 
-            <Link href="/services/style-2" className="default-btn">
+            <Link href="/payment" className="default-btn">
               Get Started
             </Link>
           </div>
@@ -123,8 +128,13 @@ const Yearly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                2 Revisions
+               3 Months Technical Support
               </li>
+              <li>
+                <i className="bx bx-check"></i>
+               Google Listing - Location
+              </li>
+              
               <li>
                 <i className="bx bx-check"></i>
                 Lead Generation And Sales Support 
@@ -143,7 +153,7 @@ const Yearly = () => {
               </li>
               <li>
                 <i className="bx bx-x"></i>
-                Multipage Landing Page Website  
+                Multiple Landing Page Website  
               </li>
               <li>
                 <i className="bx bx-x"></i>
@@ -155,7 +165,7 @@ const Yearly = () => {
               </li>
             </ul>
 
-            <Link href="/services/style-2" className="default-btn">
+            <Link href="/payment" className="default-btn">
               Get Started
             </Link>
           </div>
@@ -200,7 +210,11 @@ const Yearly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                Unlimited Revisions
+                3 Months Technical Support
+              </li>
+              <li>
+                <i className="bx bx-check"></i>
+                Google Listing - Location
               </li>
               <li>
                 <i className="bx bx-check"></i>
@@ -220,7 +234,7 @@ const Yearly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                Multipage Landing Page Website  
+                Multiple Landing Page Website  
               </li>
               <li>
                 <i className="bx bx-check"></i>
@@ -232,7 +246,7 @@ const Yearly = () => {
               </li>
             </ul>
 
-            <Link href="/services/style-2" className="default-btn">
+            <Link href="/payment" className="default-btn">
               Get Started
             </Link>
           </div>

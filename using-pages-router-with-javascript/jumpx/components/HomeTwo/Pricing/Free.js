@@ -25,7 +25,8 @@ const Free = () => {
                   marginBottom: "10px",
                 }}
               >
-                Free Add-Ons With Every Package 
+                Free Add-Ons 
+                <h6>(Only With Premium Service)</h6>
               </h3>
               <p style={{ fontSize: "16px", color: "#777", marginBottom: "20px" }}>
                 Empower Your Business With Us
@@ -33,42 +34,7 @@ const Free = () => {
             </div>
 
             <ul style={{ listStyle: "none", padding: "0", marginBottom: "20px" }}>
-              <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
-                <i
-                  className="bx bx-check"
-                  style={{ color: "#28a745", marginRight: "8px" }}
-                ></i>
-                Professional Brochure
-              </li>
-              <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
-                <i
-                  className="bx bx-check"
-                  style={{ color: "#28a745", marginRight: "8px" }}
-                ></i>
-                Letter Head Templates
-              </li>
-              <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
-                <i
-                  className="bx bx-check"
-                  style={{ color: "#28a745", marginRight: "8px" }}
-                ></i>
-                Video Editing Support
-              </li>
-              <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
-                <i
-                  className="bx bx-check"
-                  style={{ color: "#28a7455", marginRight: "8px" }}
-                ></i>
-                Virtual Invitation
-              </li>
-              <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
-                <i
-                  className="bx bx-check"
-                  style={{ color: "#28a7455", marginRight: "8px" }}
-                ></i>
-                Photo Editing 
-              </li>
-              <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
+            <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
                 <i
                   className="bx bx-check"
                   style={{ color: "#28a7455", marginRight: "8px" }}
@@ -78,10 +44,52 @@ const Free = () => {
               <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
                 <i
                   className="bx bx-check"
+                  style={{ color: "#28a745", marginRight: "8px" }}
+                ></i>
+                One Professional Printable Brochure 
+              </li>
+              <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
+                <i
+                  className="bx bx-check"
+                  style={{ color: "#28a745", marginRight: "8px" }}
+                ></i>
+                One Letter Head 
+              </li>
+              <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
+                <i
+                  className="bx bx-check"
+                  style={{ color: "#28a745", marginRight: "8px" }}
+                ></i>
+                One Video Ad Support 
+              </li>
+              <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
+                <i
+                  className="bx bx-check"
                   style={{ color: "#28a7455", marginRight: "8px" }}
                 ></i>
-                Blogging Support
+                Virtual Invitation Card
               </li>
+              <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
+                <i
+                  className="bx bx-check"
+                  style={{ color: "#28a7455", marginRight: "8px" }}
+                ></i>
+               One Professional Visiting Card 
+              </li>
+              {/* <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
+                <i
+                  className="bx bx-check"
+                  style={{ color: "#28a7455", marginRight: "8px" }}
+                ></i>
+                24x7 Customer Support
+              </li> */}
+              {/* <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
+                <i
+                  className="bx bx-check"
+                  style={{ color: "#28a7455", marginRight: "8px" }}
+                ></i>
+                Tech Blogging Support
+              </li> */}
               <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
                 <i
                   className="bx bx-check"
@@ -108,7 +116,7 @@ const Free = () => {
                   className="bx bx-check"
                   style={{ color: "#28a7455", marginRight: "8px" }}
                 ></i>
-                One Free Course For Education Purpose Related To IT
+                One Free E-Course Material For Education Purpose (Related To IT)
               </li>
               <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
                 <i
@@ -116,7 +124,7 @@ const Free = () => {
                   style={{ color: "#28a7455", marginRight: "8px" }}
                 ></i>
                 Social Media - LinkedIn 
-                (Only for Standard & Premium Customer)
+             
               </li>
               <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
                 <i
@@ -124,7 +132,7 @@ const Free = () => {
                   style={{ color: "#28a7455", marginRight: "8px" }}
                 ></i>
                 Social Media - Insta  
-                (Only for Standard & Premium Customer)
+               
               </li>
               <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>
                 <i
@@ -132,7 +140,7 @@ const Free = () => {
                   style={{ color: "#28a7455", marginRight: "8px" }}
                 ></i>
                 Social Media - Meta 
-                (Only for Standard & Premium Customer)
+               
               </li>
             </ul>
 
