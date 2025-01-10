@@ -145,6 +145,12 @@ const Footer = () => {
                       Testimonials
                     </Link>
                   </li>
+                  <li>  
+                    <Link href="/refundPolicy">
+                      <i className="right-icon bx bx-chevrons-right"></i>
+                      Refund Policy
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -159,13 +165,13 @@ const Footer = () => {
                 <h3>Information</h3>
 
                 <ul className="information">
-                  <li className="address">
-                    <i className="flaticon-call"></i>
-                    <span>Phone</span>
-                    +91 8299585163, +91 6387945717
-                   
-                   
-                </li>
+                <li className="address">
+  <i className="flaticon-call"></i>
+  <span>Phone</span>
+  <a href="tel:+918299585163">+91 8299585163</a>, 
+  <a href="tel:+916387945717">+91 6387945717</a>
+</li>
+
                   <li className="address">
   <i className="flaticon-envelope"></i>
   <span>Email</span>
