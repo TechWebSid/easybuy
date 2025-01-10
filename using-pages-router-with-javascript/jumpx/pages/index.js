@@ -35,11 +35,7 @@ export default function IndexPage() {
 
       <News />
 
-      <Link href="/tenders">
-        <button className="btn btn-primary">
-          View Tenders
-        </button>
-      </Link>
+   
 
       <Footer />
     </>

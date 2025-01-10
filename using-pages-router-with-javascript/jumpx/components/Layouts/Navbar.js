@@ -59,13 +59,13 @@ const Navbar = () => {
   };
 
   // Redirect from / to /index-2
-  // useEffect(() => {
-  //   if (router.asPath === "/") {
-  //     router.push("/index-2"); // Redirect to Home 2
-  //   } else {
-  //     setCurrentPath(router.asPath);
-  //   }
-  // }, [router]);
+  useEffect(() => {
+    if (router.asPath === "/") {
+      router.push("/index-2"); // Redirect to Home 2
+    } else {
+      setCurrentPath(router.asPath);
+    }
+  }, [router]);
 
   const [menu, setMenu] = React.useState(true);
   const toggleNavbar = () => {
