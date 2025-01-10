@@ -23,17 +23,17 @@ const partnerData = [
     aosDelay: "400",
   },
   {
-    image: "/images/brands/brand2.png",
+    image: "/images/brands/b6.jpg",
     url: "#",
     aosDelay: "300",
   },
   {
-    image: "/images/brands/brand6.png",
+    image: "/images/brands/b7.jpg",
     url: "#",
     aosDelay: "600",
   },
   {
-    image: "/images/brands/brand7.png",
+    image: "/images/brands/b8.jpg",
     url: "#",
     aosDelay: "700",
   },

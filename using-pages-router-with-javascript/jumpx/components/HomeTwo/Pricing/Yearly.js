@@ -76,7 +76,7 @@ const Yearly = () => {
               </li>
             </ul>
 
-            <Link href="/contact" className="default-btn">
+            <Link href="/services/style-2" className="default-btn">
               Get Started
             </Link>
           </div>
@@ -155,7 +155,7 @@ const Yearly = () => {
               </li>
             </ul>
 
-            <Link href="/contact" className="default-btn">
+            <Link href="/services/style-2" className="default-btn">
               Get Started
             </Link>
           </div>
@@ -232,7 +232,7 @@ const Yearly = () => {
               </li>
             </ul>
 
-            <Link href="/contact" className="default-btn">
+            <Link href="/services/style-2" className="default-btn">
               Get Started
             </Link>
           </div>
