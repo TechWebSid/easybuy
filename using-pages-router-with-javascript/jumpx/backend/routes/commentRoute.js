@@ -1,9 +1,6 @@
 import express from 'express';
-<<<<<<< HEAD
-import  {verifyToken}  from '../utils/verify.js';
-=======
 import { verifyToken } from '../utils/verify.js';
->>>>>>> aa47277ad9fd734cf20118fd36b2a24e6f5b303b
+
 import {
   createComment,
   deleteComment,

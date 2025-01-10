@@ -12,7 +12,7 @@ const router = express.Router();
 router.post("/post", create);
 router.post("/getpost", getposts);
 router.post("/deletepost", deletepost);
-router.post("/updatepost", updatepost); // Fixed missing slash
+router.put("/updatepost", updatepost); // Fixed missing slash
 
 export default router;
 
