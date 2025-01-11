@@ -198,9 +198,9 @@ const CustomizeWebsite = () => {
 
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-          gap: 30px;
-          padding: 20px;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 20px;
+          padding: 10px;
         }
 
         .service-card {
@@ -320,14 +320,56 @@ const CustomizeWebsite = () => {
         @media (max-width: 768px) {
           .services-grid {
             grid-template-columns: 1fr;
+            padding: 10px;
           }
           
           .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
+            padding: 0 15px;
+          }
+          
+          .section-title p {
+            font-size: 1.1rem;
+            padding: 0 15px;
+          }
+          
+          .service-card-content {
+            padding: 20px;
           }
           
           .service-card-content h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+          }
+          
+          .service-item {
+            padding: 15px;
+          }
+          
+          .service-item h4 {
+            font-size: 1.1rem;
+          }
+          
+          .service-item p {
+            font-size: 0.95rem;
+          }
+          
+          .purchase-button {
+            padding: 10px 20px;
+            font-size: 14px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .section-title h2 {
+            font-size: 1.8rem;
+          }
+          
+          .service-card img {
+            height: 200px;
+          }
+          
+          .service-card-content {
+            padding: 15px;
           }
         }
       `}</style>

@@ -156,9 +156,9 @@ const DigitalMarketing = () => {
 
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-          gap: 30px;
-          padding: 20px;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 25px;
+          padding: 15px;
         }
 
         .service-card {
@@ -275,16 +275,46 @@ const DigitalMarketing = () => {
         }
 
         @media (max-width: 768px) {
-          .services-grid {
-            grid-template-columns: 1fr;
+          .digital-marketing {
+            padding: 40px 15px;
           }
           
           .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
+            padding: 0 10px;
+          }
+          
+          .service-card-content {
+            padding: 20px;
+          }
+          
+          .service-item {
+            padding: 15px;
+            margin-bottom: 15px;
+          }
+          
+          .purchase-button {
+            padding: 10px 20px;
+            font-size: 14px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .section-title h2 {
+            font-size: 1.8rem;
+          }
+          
+          .section-title p {
+            font-size: 1rem;
+            padding: 0 10px;
+          }
+          
+          .service-card img {
+            height: 200px;
           }
           
           .service-card-content h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
           }
         }
       `}</style>
