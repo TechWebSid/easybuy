@@ -4,7 +4,7 @@ import Image from "next/image";
 const testimonialsData = [
   {
     image: "/images/clients/client1.jpg",
-    name: "Aarav Kumar",
+    name: "Akshay Innovation Pvt. Ltd.",
     designation: "Happy Client",
     feedbackText:
       "Great experience! The team provided excellent service and support.",
@@ -29,7 +29,7 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client2.jpg",
-    name: "Isha Sharma",
+    name: "Navya Tech Solution",
     designation: "Happy Client",
     feedbackText:
       "Highly satisfied with the services. They delivered on time and exceeded expectations.",
@@ -54,7 +54,7 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client3.jpg",
-    name: "Rohan Patel",
+    name: "Prithvi Arotech",
     designation: "Happy Client",
     feedbackText:
       "Impressive work! The team is responsive and professional. Highly recommended.",
@@ -79,7 +79,7 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client4.jpg",
-    name: "Priya Verma",
+    name: "Surya Nexus Enterprises",
     designation: "Happy Client",
     feedbackText:
       "Fantastic service! They understood our needs and delivered exactly what we wanted.",
@@ -104,7 +104,7 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client5.jpg",
-    name: "Saanvi Rao",
+    name: "Aaryan Edge Systems",
     designation: "Happy Client",
     feedbackText:
       "Excellent experience. The team was supportive and professional throughout.",
@@ -129,7 +129,7 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client6.jpg",
-    name: "Arjun Singh",
+    name: "Vedanta Creations LLP",
     designation: "Happy Client",
     feedbackText:
       "I’m very happy with the results. The service was fast and efficient.",
@@ -154,7 +154,7 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client7.jpg",
-    name: "Neha Gupta",
+    name: "Nirmaal BuildTech",
     designation: "Happy Client",
     feedbackText:
       "A wonderful experience. The team went above and beyond to meet our needs.",
@@ -179,7 +179,7 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client8.jpg",
-    name: "Devansh Mehta",
+    name: "Srishti Green Ventures",
     designation: "Happy Client",
     feedbackText:
       "Very satisfied with the service. The team was professional and efficient.",
@@ -204,7 +204,7 @@ const testimonialsData = [
   },
   {
     image: "/images/clients/client9.jpg",
-    name: "Tara Joshi",
+    name: "Ananya Digital Solutions",
     designation: "Happy Client",
     feedbackText:
       "Amazing service! The team was responsive and delivered exactly what we wanted.",

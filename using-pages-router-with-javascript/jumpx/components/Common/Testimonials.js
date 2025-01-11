@@ -7,7 +7,7 @@ const testimonialsData = [
  
   {
     image: "https://images.pexels.com/photos/5528969/pexels-photo-5528969.jpeg?auto=compress&cs=tinysrgb&w=600",
-    name: "Rahul Verma",
+    name: "Vedanta Creations LLP",
     designation: "Happy Client",
     feedbackText:
      "Highly professional and reliable! Their expertise has significantly boosted our business growth and efficiency."
@@ -34,7 +34,7 @@ const testimonialsData = [
   },
   {
     image: "https://images.pexels.com/photos/4295983/pexels-photo-4295983.jpeg?auto=compress&cs=tinysrgb&w=600",
-    name: "Aarav Singh",
+    name: "Nirmaan BuildTech",
     designation: "Happy Client",
     feedbackText:
       "Exceptional service and innovative solutions! Easy2BuyHub truly understands client needs and delivers beyond expectations.",
@@ -59,7 +59,7 @@ const testimonialsData = [
   },
   {
     image: "https://images.pexels.com/photos/27972368/pexels-photo-27972368/free-photo-of-a-man-in-a-suit-and-tie-is-drinking-coffee.jpeg?auto=compress&cs=tinysrgb&w=600",
-    name: "Daksh Saxena",
+    name: "Prithvi Agrotech",
     designation: "Happy Client",
     feedbackText:
      "Outstanding support and results! Easy2BuyHub is the go-to partner for transforming ideas into reality."
