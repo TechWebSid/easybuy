@@ -104,7 +104,7 @@ const SEOServices = () => {
     },
     {
       title: "SEO for Startups and Small Businesses",
-      image: "https://images.pexels.com/photos/7367/startup-photos.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCG7h_AyLfJEPIby9QafLej8JA-l1qZEjFzg&s",
       items: [
         {
           name: "Startup SEO Package",

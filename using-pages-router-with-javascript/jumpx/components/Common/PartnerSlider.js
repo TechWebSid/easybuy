@@ -5,45 +5,42 @@ import Image from "next/image";
 
 const partnerData = [
   {
-    image: "/images/brands/brand1.png",
+    image: "/images/brands/b1.png",
     url: "#",
   },
   {
-    image: "/images/brands/brand2.png",
+    image: "/images/brands/b2.png",
     url: "#",
   },
   {
-    image: "/images/brands/brand3.png",
+    image: "/images/brands/b3.png",
     url: "#",
   },
   {
-    image: "/images/brands/brand4.png",
+    image: "/images/brands/b5.png",
     url: "#",
   },
   {
-    image: "/images/brands/brand5.png",
+    image: "/images/brands/b6.jpg",
     url: "#",
   },
   {
-    image: "/images/brands/brand6.png",
+    image: "/images/brands/b7.jpg",
     url: "#",
   },
   {
-    image: "/images/brands/brand7.png",
+    image: "/images/brands/b8.jpg",
     url: "#",
   },
   {
-    image: "/images/brands/brand8.png",
+    image: "/images/brands/b9.jpg",
     url: "#",
   },
   {
-    image: "/images/brands/brand9.png",
+    image: "/images/brands/b11.jpg",
     url: "#",
   },
-  {
-    image: "/images/brands/brand10.png",
-    url: "#",
-  },
+ 
 ];
 
 const PartnerSlider = () => {

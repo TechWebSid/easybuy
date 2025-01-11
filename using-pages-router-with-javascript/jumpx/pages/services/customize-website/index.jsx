@@ -62,7 +62,7 @@ const CustomizeWebsite = () => {
     },
     {
       title: "Media and Content Creators",
-      image: "/images/media.jpg",
+      image: "https://images-platform.99static.com//4yfgygtAeHVF4gGFAIQUxjuYyfI=/0x0:1600x1600/fit-in/500x500/99designs-contests-attachments/75/75560/attachment_75560322",
       items: [
         {
           name: "YouTubers/Influencers",
