@@ -53,7 +53,7 @@ const SignUpForm = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post("https://easybuy-9.onrender.com/api/user/signup", {
+      const response = await axios.post("http://localhost:5000/api/user/signup", {
         firstName: formData.firstName,
         lastName: formData.lastName,
         Username: formData.Username,

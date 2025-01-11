@@ -37,7 +37,7 @@ const LoginForm = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post("https://easybuy-9.onrender.com/api/user/signin", {
+      const response = await axios.post("http://localhost:5000/api/user/signin", {
         email: formData.email,
         password: formData.password,
       }, {
