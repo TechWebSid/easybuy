@@ -4,6 +4,7 @@ const nextConfig = {
   output:"export",
   reactStrictMode: true,
   trailingSlash: true,
+  output:'export',
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
