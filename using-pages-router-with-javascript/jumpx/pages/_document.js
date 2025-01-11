@@ -13,7 +13,7 @@ class MyDocument extends Document {
           {/* Open Graph Tags for Social Media Sharing */}
           <meta property="og:title" content="Easy2BuyHub - Your One-Stop Shop for All Your Web Solutions" />
           <meta property="og:description" content="Easy2BuyHub provides customized web development, e-commerce solutions, and more to help you grow your online business." />
-          <meta property="og:image" content="/images/public/favicon.png" />
+          <meta property="og:image" content="/images/favicon.png" />
           <meta property="og:url" content="https://www.easy2buyhub.com" />
           <meta property="og:type" content="website" />
           
@@ -35,7 +35,7 @@ class MyDocument extends Document {
           />
           
           {/* Favicon */}
-          <link rel="icon" type="image/png" href="/images/public/favicon.png" />
+          <link rel="icon" type="image/png" href="/images/favicon.png" />
           
           {/* Additional Meta Tags */}
           <meta name="robots" content="index, follow" />
