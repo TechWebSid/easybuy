@@ -6,14 +6,14 @@ class MyDocument extends Document {
       <Html lang="en"> {/* Set the correct language code */}
         <Head>
           {/* Global Meta Tags for SEO */}
-          <meta name="description" content="Easy2BuyHub - Your One-Stop Shop for All Your Web Solutions" />
+          <meta name="description" content="Easy2BuyHub - Your One-Stop Shop for All Your Business Solutions" />
           <meta name="keywords" content="Easy2BuyHub, web solutions, website development, e-commerce, custom websites" />
           <meta name="author" content="Easy2BuyHub Team" />
           
           {/* Open Graph Tags for Social Media Sharing */}
           <meta property="og:title" content="Easy2BuyHub - Your One-Stop Shop for All Your Web Solutions" />
           <meta property="og:description" content="Easy2BuyHub provides customized web development, e-commerce solutions, and more to help you grow your online business." />
-          <meta property="og:image" content="/images/og-image.png" />
+          <meta property="og:image" content="/images/public/favicon.png" />
           <meta property="og:url" content="https://www.easy2buyhub.com" />
           <meta property="og:type" content="website" />
           
@@ -35,7 +35,7 @@ class MyDocument extends Document {
           />
           
           {/* Favicon */}
-          <link rel="icon" type="image/png" href="/images/favicon.png" />
+          <link rel="icon" type="image/png" href="/images/public/favicon.png" />
           
           {/* Additional Meta Tags */}
           <meta name="robots" content="index, follow" />
