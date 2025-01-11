@@ -354,17 +354,150 @@ const Careers = () => {
           box-shadow: 0 8px 25px rgba(30, 64, 175, 0.2);
         }
 
+        @media (max-width: 1200px) {
+          .container {
+            max-width: 95%;
+          }
+          
+          .positions-grid {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+          }
+        }
+
         @media (max-width: 768px) {
+          .careers-container {
+            padding: 100px 15px 60px;
+          }
+
           .careers-header h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+          }
+
+          .careers-header p {
+            font-size: 1.1rem;
+            padding: 0 15px;
           }
 
           .form-grid {
             grid-template-columns: 1fr;
+            gap: 15px;
           }
 
           .application-form {
-            padding: 20px;
+            padding: 25px;
+            margin-bottom: 40px;
+          }
+
+          .position-card {
+            padding: 25px;
+          }
+
+          .position-title {
+            font-size: 1.4rem;
+          }
+
+          .search-input {
+            padding: 12px 20px;
+            font-size: 1rem;
+          }
+
+          .skills-list {
+            gap: 6px;
+          }
+
+          .skill-tag {
+            padding: 4px 8px;
+            font-size: 0.8rem;
+          }
+
+          .submit-button {
+            width: 100%;
+            padding: 12px 20px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .careers-container {
+            padding: 80px 10px 40px;
+          }
+
+          .careers-header h1 {
+            font-size: 1.8rem;
+          }
+
+          .careers-header p {
+            font-size: 1rem;
+          }
+
+          .position-meta {
+            flex-direction: column;
+            gap: 5px;
+          }
+
+          .meta-item {
+            font-size: 0.85rem;
+            padding: 4px 8px;
+          }
+
+          .position-description {
+            font-size: 0.9rem;
+          }
+
+          .form-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+          }
+
+          .form-label {
+            font-size: 0.85rem;
+          }
+
+          .form-input,
+          .form-select,
+          .form-textarea {
+            padding: 10px 12px;
+            font-size: 0.9rem;
+          }
+
+          .no-results h3 {
+            font-size: 1.3rem;
+          }
+
+          .no-results p {
+            font-size: 0.95rem;
+          }
+        }
+
+        @media (min-width: 1600px) {
+          .container {
+            max-width: 1400px;
+          }
+
+          .careers-header h1 {
+            font-size: 3.8rem;
+          }
+
+          .careers-header p {
+            font-size: 1.4rem;
+          }
+
+          .positions-grid {
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 35px;
+          }
+
+          .position-card {
+            padding: 40px;
+          }
+
+          .position-title {
+            font-size: 1.8rem;
+          }
+
+          .skill-tag {
+            font-size: 0.95rem;
           }
         }
 
