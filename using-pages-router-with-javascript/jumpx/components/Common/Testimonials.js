@@ -6,7 +6,7 @@ import Image from "next/image";
 const testimonialsData = [
  
   {
-    image: "https://images.pexels.com/photos/5528969/pexels-photo-5528969.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "/images/clients/c1.jpg",
     name: "Vedanta Creations LLP",
     designation: "Happy Client",
     feedbackText:
