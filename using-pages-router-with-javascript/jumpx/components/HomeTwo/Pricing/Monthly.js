@@ -44,7 +44,11 @@ const Monthly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                2 Revisions
+                3 Months Technical Support
+              </li>
+              <li>
+                <i className="bx bx-check"></i>
+               Google Listing - Location
               </li>
               <li>
                 <i className="bx bx-x"></i>
@@ -64,7 +68,7 @@ const Monthly = () => {
               </li>
               <li>
                 <i className="bx bx-x"></i>
-                Multipage Landing Page Website  
+                Multiple Landing Page Website  
               </li>
               <li>
                 <i className="bx bx-x"></i>
@@ -123,7 +127,11 @@ const Monthly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                5 Revisions
+               3 Months Technical Support
+              </li>
+              <li>
+                <i className="bx bx-check"></i>
+                Google Listing - Location
               </li>
               <li>
                 <i className="bx bx-check"></i>
@@ -143,7 +151,7 @@ const Monthly = () => {
               </li>
               <li>
                 <i className="bx bx-x"></i>
-                Multipage Landing Page Website  
+                Multiple Landing Page Website  
               </li>
               <li>
                 <i className="bx bx-x"></i>
@@ -201,7 +209,11 @@ const Monthly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                Unlimited Revisions
+                3 months Technical Support
+              </li>
+              <li>
+                <i className="bx bx-check"></i>
+               Google Listing - Location
               </li>
               <li>
                 <i className="bx bx-check"></i>
@@ -221,7 +233,7 @@ const Monthly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                Multipage Landing Page Website  
+                Multiple Landing Page Website  
               </li>
               <li>
                 <i className="bx bx-check"></i>
