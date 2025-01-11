@@ -5,7 +5,7 @@ const PaymentPage = () => {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    // script.src = "https://checkout.razorpay.com/v1/checkout.js";
     script.async = true;
     script.onload = () => setIsScriptLoaded(true);
     document.body.appendChild(script);
@@ -20,7 +20,7 @@ const PaymentPage = () => {
 
     try {
       const options = {
-        key: "rzp_test_KyJVvNWUBa5r0B",
+        key: "rzp_test_KyJVvNWUBa5 ",
         amount: 50000,
         currency: "INR",
         name: "Easy2BuyHub",

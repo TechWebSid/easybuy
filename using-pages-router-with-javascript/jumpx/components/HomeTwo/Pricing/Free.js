@@ -16,22 +16,32 @@ const Free = () => {
               transition: "transform 0.3s ease-in-out",
             }}
           >
-            <div className="pricing-top-heading">
-              <h3
-                style={{
-                  fontSize: "28px",
-                  fontWeight: "700",
-                  color: "#333",
-                  marginBottom: "10px",
-                }}
-              >
-                Free Add-Ons 
-                <h6>(Only With Premium Service)</h6>
-              </h3>
-              <p style={{ fontSize: "16px", color: "#777", marginBottom: "20px" }}>
-                Empower Your Business With Us
-              </p>
-            </div>
+           <div className="pricing-top-heading">
+  <h3
+    style={{
+      fontSize: "28px",
+      fontWeight: "700",
+      color: "#333",
+      marginBottom: "10px",
+    }}
+  >
+    Free Add-Ons
+  </h3>
+  <h6
+    style={{
+      fontSize: "16px",
+      fontWeight: "400",
+      color: "#666",
+      marginBottom: "10px",
+    }}
+  >
+    (Only With Premium Service)
+  </h6>
+  <p style={{ fontSize: "16px", color: "#777", marginBottom: "20px" }}>
+    Empower Your Business With Us
+  </p>
+</div>
+
 
             <ul style={{ listStyle: "none", padding: "0", marginBottom: "20px" }}>
             <li style={{ marginBottom: "12px", fontSize: "16px", color: "#333" }}>

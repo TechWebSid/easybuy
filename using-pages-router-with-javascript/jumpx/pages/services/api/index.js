@@ -180,9 +180,9 @@ const APIServices = () => {
 
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-          gap: 35px;
-          padding: 20px;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 25px;
+          padding: 15px;
         }
 
         .service-card {
@@ -338,6 +338,22 @@ const APIServices = () => {
           
           .service-card-content h3 {
             font-size: 1.6rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .section-title h2 {
+            font-size: 1.8rem;
+            padding: 0 10px;
+          }
+          
+          .section-title p {
+            font-size: 1rem;
+            padding: 0 10px;
+          }
+          
+          .service-card img {
+            height: 200px;
           }
         }
       `}</style>

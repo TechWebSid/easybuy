@@ -1025,13 +1025,13 @@ jumpx Nav Area Style
 .navbar-toggler {
   border: none;
   background: #eee !important;
-  padding: 10px;
+  padding: 4px;
   border-radius: 0;
 }
 .navbar-toggler .icon-bar {
-  width: 28px;
+  width: 22px;
   transition: all 0.3s;
-  background: #1dd3f8;
+  background: #081b1f;
   height: 2px;
   display: block;
 }

@@ -168,9 +168,9 @@ const FullStackServices = () => {
 
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-          gap: 35px;
-          padding: 20px;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 25px;
+          padding: 15px;
         }
 
         .service-card {
@@ -316,16 +316,45 @@ const FullStackServices = () => {
 
 
         @media (max-width: 768px) {
-          .services-grid {
-            grid-template-columns: 1fr;
+          .fullstack-services {
+            padding: 40px 15px;
           }
           
           .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
+            padding: 0 10px;
+          }
+          
+          .service-card-content {
+            padding: 20px;
+          }
+          
+          .service-item {
+            padding: 15px;
+            margin-bottom: 15px;
+          }
+          
+          .service-item h4 {
+            font-size: 1.1rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .section-title h2 {
+            font-size: 1.8rem;
+          }
+          
+          .section-title p {
+            font-size: 1rem;
+            padding: 0 10px;
+          }
+          
+          .service-card img {
+            height: 200px;
           }
           
           .service-card-content h3 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
           }
         }
       `}</style>
