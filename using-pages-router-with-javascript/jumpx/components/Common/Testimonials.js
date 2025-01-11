@@ -33,8 +33,8 @@ const testimonialsData = [
     ],
   },
   {
-    image: "https://images.pexels.com/photos/4295983/pexels-photo-4295983.jpeg?auto=compress&cs=tinysrgb&w=600",
-    name: "Nirmaan BuildTech",
+    image: "/images/clients/c2.jpg",
+    name: "Blue Waves",
     designation: "Happy Client",
     feedbackText:
       "Exceptional service and innovative solutions! Easy2BuyHub truly understands client needs and delivers beyond expectations.",
@@ -58,8 +58,8 @@ const testimonialsData = [
     ],
   },
   {
-    image: "https://images.pexels.com/photos/27972368/pexels-photo-27972368/free-photo-of-a-man-in-a-suit-and-tie-is-drinking-coffee.jpeg?auto=compress&cs=tinysrgb&w=600",
-    name: "Prithvi Agrotech",
+    image: "/images/clients/c3.jpg",
+    name: "Ingoude",
     designation: "Happy Client",
     feedbackText:
      "Outstanding support and results! Easy2BuyHub is the go-to partner for transforming ideas into reality."
