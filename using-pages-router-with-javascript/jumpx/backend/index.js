@@ -46,7 +46,7 @@ mongoose.connection.on('disconnected', () => {
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: 'https://www.easy2buyhub.com', // Remove trailing slash
+  origin: ["http://easy2hub.com", "https://easy2hub.com"],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
