@@ -17,7 +17,7 @@ const Navbar = () => {
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/user/check-session', {
+        const response = await axios.get('https://easybuy-7rtx.onrender.com/api/user/check-session', {
           withCredentials: true,
         });
         setIsLoggedIn(response.data.isLoggedIn);
@@ -44,7 +44,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        'http://localhost:5000/api/user/logout',
+        'https://easybuy-7rtx.onrender.com/api/user/logout',
         {},
         { withCredentials: true }
       );
