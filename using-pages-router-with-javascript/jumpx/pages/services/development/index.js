@@ -116,8 +116,8 @@ const Development = () => {
 
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-          gap: 35px;
+          grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+          gap: 30px;
           padding: 20px;
         }
 
@@ -264,16 +264,64 @@ const Development = () => {
 
 
         @media (max-width: 768px) {
+          .development-services {
+            padding: 40px 10px;
+          }
+
           .services-grid {
             grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 10px;
           }
-          
-          .section-title h2 {
-            font-size: 2.5rem;
+
+          .service-card {
+            max-width: 100%;
+            margin: 0 auto;
           }
-          
-          .service-card-content h3 {
-            font-size: 1.6rem;
+
+          .service-card img {
+            height: 200px;
+          }
+
+          .service-card-content {
+            padding: 20px 15px;
+          }
+
+          .service-item {
+            padding: 15px;
+            margin-bottom: 15px;
+          }
+
+          .purchase-button {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .development-services {
+            padding: 30px 5px;
+          }
+
+          .services-grid {
+            padding: 5px;
+          }
+
+          .service-card {
+            border-radius: 15px;
+          }
+
+          .service-card img {
+            height: 180px;
+          }
+
+          .service-card-content {
+            padding: 15px 12px;
+          }
+
+          .service-item {
+            padding: 12px;
+            margin-bottom: 12px;
           }
         }
       `}</style>

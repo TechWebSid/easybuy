@@ -168,9 +168,9 @@ const FullStackServices = () => {
 
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-          gap: 25px;
-          padding: 15px;
+          grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+          gap: 30px;
+          padding: 20px;
         }
 
         .service-card {
@@ -317,7 +317,7 @@ const FullStackServices = () => {
 
         @media (max-width: 768px) {
           .fullstack-services {
-            padding: 40px 15px;
+            padding: 40px 10px;
           }
           
           .section-title h2 {

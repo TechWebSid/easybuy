@@ -156,9 +156,9 @@ const SEOServices = () => {
 
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-          gap: 25px;
-          padding: 15px;
+          grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+          gap: 30px;
+          padding: 20px;
         }
 
         .service-card {
@@ -275,7 +275,7 @@ const SEOServices = () => {
 
         @media (max-width: 768px) {
           .seo-services {
-            padding: 40px 15px;
+            padding: 40px 10px;
           }
           
           .section-title h2 {
@@ -309,7 +309,7 @@ const SEOServices = () => {
           }
           
           .service-card img {
-            height: 200px;
+            height: 180px;
           }
           
           .service-card-content h3 {

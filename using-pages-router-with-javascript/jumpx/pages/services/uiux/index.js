@@ -115,8 +115,8 @@ const UIUX = () => {
 
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-          gap: 35px;
+          grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+          gap: 30px;
           padding: 20px;
         }
 
@@ -212,16 +212,33 @@ const UIUX = () => {
         }
 
         @media (max-width: 768px) {
+          .uiux-services {
+            padding: 40px 10px;
+          }
+
           .services-grid {
             grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 10px;
           }
-          
-          .section-title h2 {
-            font-size: 2.5rem;
+
+          .service-card {
+            max-width: 100%;
           }
-          
-          .service-card-content h3 {
-            font-size: 1.6rem;
+
+          .get-started-button {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .uiux-services {
+            padding: 30px 5px;
+          }
+
+          .service-card img {
+            height: 180px;
           }
         }
       `}</style>
