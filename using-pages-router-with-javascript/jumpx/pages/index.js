@@ -26,7 +26,7 @@ export default function Index2Page() {
 
       <Services />
 
-      <Pricing />
+      {/* <Pricing /> */}
 
       <Newsletter />
 

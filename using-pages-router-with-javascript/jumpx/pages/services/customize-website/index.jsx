@@ -413,6 +413,19 @@ const CustomizeWebsite = () => {
             justify-content: center;
           }
         }
+          @media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 30px;
+  }
+
+  .service-card img {
+    height: 300px;
+    object-fit: cover;
+  }
+}
+
       `}</style>
 
       <div className="customize-website">
