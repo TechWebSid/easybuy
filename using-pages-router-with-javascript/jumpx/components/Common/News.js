@@ -13,9 +13,11 @@ const News = () => {
         <div className="container">
           <div className="section-title">
             <span>Latest Blog</span>
-            <h2>Our Recent Blog </h2>
+            <h2>Our Recent Blog</h2>
             <p>
-            Discover insightful articles, expert opinions, and the latest trends that inspire innovation and drive growth in today's dynamic world.
+              Stay updated with the latest insights, trends, and innovations in
+              technology, business, and beyond. Explore articles crafted to
+              inspire and inform.
             </p>
           </div>
 
@@ -31,7 +33,7 @@ const News = () => {
                   <Link href="/news/news-details">
                     <Image
                       src={blogImg1}
-                      alt="Image"
+                      alt="Is Machine Learning Right For You"
                       width={570}
                       height={400}
                     />
@@ -55,12 +57,13 @@ const News = () => {
                   </ul>
 
                   <Link href="/news/news-details">
-                    <h3>Is Machine Learning Right For You</h3>
+                    <h3>Is Machine Learning Right For You?</h3>
                   </Link>
 
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                    Discover how machine learning can transform your business.
+                    Learn about its applications, benefits, and whether it's
+                    the right fit for your goals.
                   </p>
 
                   <Link href="/news/news-details" className="read-more">
@@ -81,7 +84,7 @@ const News = () => {
                   <Link href="/news/news-details">
                     <Image
                       src={blogImg2}
-                      alt="Image"
+                      alt="The State Of Artificial Intelligence"
                       width={570}
                       height={400}
                     />
@@ -109,8 +112,9 @@ const News = () => {
                   </Link>
 
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                    Explore the latest advancements in AI, its impact on
+                    industries, and how it's shaping the future of technology
+                    and society.
                   </p>
 
                   <Link href="/news/news-details" className="read-more">
@@ -131,7 +135,7 @@ const News = () => {
                   <Link href="/news/news-details">
                     <Image
                       src={blogImg3}
-                      alt="Image"
+                      alt="Our Company Machine Learning"
                       width={570}
                       height={400}
                     />
@@ -155,12 +159,13 @@ const News = () => {
                   </ul>
 
                   <Link href="/news/news-details">
-                    <h3>Our Company Machine Learning </h3>
+                    <h3>Our Company Machine Learning Initiatives</h3>
                   </Link>
 
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                    Learn how our company leverages machine learning to deliver
+                    innovative solutions, streamline processes, and enhance
+                    customer experiences.
                   </p>
 
                   <Link href="/news/news-details" className="read-more">
