@@ -52,230 +52,275 @@ const ITConsultancy = () => {
     <>
       <Navbar />
       <style jsx>{`
-        #navbar {
-          background-color: rgba(255, 255, 255, 0.9);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+  #navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
-        .it-consultancy {
-          padding: 120px 20px 80px;
-          background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
-        }
+  .it-consultancy {
+    padding: 120px 20px 80px;
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+  }
 
-        .container {
-          max-width: 1400px;
-          margin: 0 auto;
-        }
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 
-        .section-title {
-          text-align: center;
-          margin-bottom: 60px;
-        }
+  .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+  }
 
-        .section-title h2 {
-          color: #ffffff;
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          font-size: 3.2rem;
-          font-weight: 800;
-          margin-bottom: 25px;
-        }
+  .section-title h2 {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+  }
 
-        .section-title p {
-          color: #cbd5e1;
-          font-size: 1.25rem;
-          line-height: 1.8;
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-          max-width: 800px;
-          margin: 0 auto;
-        }
+  .section-title p {
+    color: #cbd5e1;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+  }
 
-        .intro-box {
-          background: rgba(0, 0, 0, 0.2);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          color: #ffffff;
-          padding: 45px;
-          border-radius: 24px;
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
+  .intro-box {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 45px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  }
 
-        .intro-box h3 {
-          color: #ffffff;
-          font-size: 2rem;
-          font-weight: 700;
-          margin-bottom: 20px;
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-        }
+  .intro-box h3 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
 
-        .intro-box p {
-          color: #cbd5e1;
-          font-size: 1.15rem;
-          line-height: 1.8;
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-        }
+  .intro-box p {
+    color: #cbd5e1;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
 
-        .services-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-          gap: 35px;
-          padding: 20px;
-        }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 35px;
+    padding: 20px;
+  }
 
-        .service-card {
-          background: rgba(255, 255, 255, 0.95);
-          border-radius: 24px;
-          box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
-          overflow: hidden;
-          transition: all 0.4s ease;
-          border: none;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-        }
+  .service-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
-        .service-card:hover {
-          transform: translateY(-12px);
-          box-shadow: 0 22px 45px rgba(0, 0, 0, 0.12);
-        }
+  .service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.12);
+  }
 
-        .service-card img {
-          width: 100%;
-          height: 250px;
-          object-fit: cover;
-          transition: transform 0.6s ease;
-        }
+  .service-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
 
-        .service-card:hover img {
-          transform: scale(1.05);
-        }
+  .service-card:hover img {
+    transform: scale(1.05);
+  }
 
-        .service-card-content {
-          padding: 35px;
-          flex-grow: 1;
-          display: flex;
-          flex-direction: column;
-        }
+  .service-card-content {
+    padding: 35px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
 
-        .service-card-content h3 {
-          font-size: 1.85rem;
-          font-weight: 700;
-          color: #1e293b;
-          margin-bottom: 28px;
-          line-height: 1.3;
-        }
+  .service-card-content h3 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 28px;
+    line-height: 1.3;
+  }
 
-        .service-item {
-          padding: 25px;
-          margin-bottom: 22px;
-          border-radius: 16px;
-          background: #f8faff;
-          transition: all 0.3s ease;
-          flex-grow: 1;
-        }
+  .service-item {
+    padding: 25px;
+    margin-bottom: 22px;
+    border-radius: 16px;
+    background: #f8faff;
+    transition: all 0.3s ease;
+    flex-grow: 1;
+  }
 
-        .service-item:hover {
-          background: #f1f5f9;
-          transform: translateX(8px);
-        }
+  .service-item:hover {
+    background: #f1f5f9;
+    transform: translateX(8px);
+  }
 
-        .service-item h4 {
-          font-size: 1.3rem;
-          font-weight: 600;
-          color: #3b82f6;
-          margin-bottom: 12px;
-        }
+  .service-item h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #3b82f6;
+    margin-bottom: 12px;
+  }
 
-        .service-item p {
-          font-size: 1.1rem;
-          color: #64748b;
-          line-height: 1.7;
-          margin-bottom: 18px;
-        }
+  .service-item p {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
 
-        .get-started-button {
-          display: inline-flex;
-          align-items: center;
-          padding: 14px 28px;
-          background: linear-gradient(45deg, #1a237e, #0d47a1);
-          color: #fff;
-          font-size: 1.1rem;
-          font-weight: 500;
-          border-radius: 12px;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
-        }
+  .purchase-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff8e72, #ffc85e);
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(255, 116, 142, 0.3);
+    position: relative;
+    overflow: hidden;
+    gap: 8px;
+    width: fit-content;
+  }
 
-        .get-started-button:hover {
-          background: linear-gradient(45deg, #0d47a1, #1a237e);
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
-        }
+  .purchase-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(255, 116, 142, 0.4);
+    background: linear-gradient(135deg, #ffc85e, #ff8e72, #ff758c, #ff7eb3);
+  }
 
-         .purchase-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff8e72, #ffc85e);
-  color: black;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 15px rgba(255, 116, 142, 0.3);
-  position: relative;
-  overflow: hidden;
-  gap: 8px;
-  width: fit-content;
-}
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
 
-.purchase-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(255, 116, 142, 0.4);
-  background: linear-gradient(135deg, #ffc85e, #ff8e72, #ff758c, #ff7eb3);
-}
+    .service-card-content h3 {
+      font-size: 1.5rem;
+    }
 
-.purchase-button:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 10px rgba(255, 116, 142, 0.3);
-}
+    .service-card img {
+      height: 200px;
+    }
 
-/* Add shine effect */
-.purchase-button::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: rgba(255, 255, 255, 0.2);
-  transform: rotate(45deg);
-  transition: all 0.6s ease;
-  opacity: 0;
-  border-radius: 50%;
-}
+    .service-item {
+      padding: 20px;
+    }
 
-.purchase-button:hover::before {
-  opacity: 1;
-  transform: rotate(45deg) translateX(-50%);
-}
+    .purchase-button {
+      width: 100%;
+      font-size: 14px;
+      padding: 12px;
+    }
+  }
 
-        @media (max-width: 768px) {
-          .services-grid {
-            grid-template-columns: 1fr;
-          }
-          
-          .section-title h2 {
-            font-size: 2.5rem;
-          }
-          
-          .service-card-content h3 {
-            font-size: 1.6rem;
-          }
-        }
-      `}</style>
+  @media (max-width: 480px) {
+    .it-consultancy {
+      padding: 60px 10px 40px;
+    }
+
+    .services-grid {
+      gap: 15px;
+      padding: 10px;
+    }
+
+    .service-card {
+      max-height: none;
+      border-radius: 15px;
+    }
+
+    .service-card img {
+      height: 120px;
+    }
+
+    .service-card-content {
+      padding: 15px;
+    }
+
+    .service-card-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .service-item {
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+    }
+
+    .service-item h4 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .service-item p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .purchase-button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      margin: 0 auto;
+      display: block;
+      width: 90%;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .intro-box {
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .intro-box h3 {
+      font-size: 1.3rem;
+    }
+
+    .intro-box p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+  }
+`}</style>
+
 
       <div className="it-consultancy">
         <div className="container">

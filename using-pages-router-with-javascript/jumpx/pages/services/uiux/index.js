@@ -234,11 +234,82 @@ const UIUX = () => {
 
         @media (max-width: 480px) {
           .uiux-services {
-            padding: 30px 5px;
+            padding: 60px 10px 40px;
+          }
+
+          .services-grid {
+            gap: 15px;
+            padding: 10px;
+          }
+
+          .service-card {
+            max-height: none;
+            border-radius: 15px;
           }
 
           .service-card img {
-            height: 180px;
+            height: 120px;
+          }
+
+          .service-card-content {
+            padding: 15px;
+          }
+
+          .service-card-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+          }
+
+          .service-item {
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+          }
+
+          .service-item h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+          }
+
+          .service-item p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 12px;
+          }
+
+          .get-started-button {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            margin: 0 auto;
+            display: block;
+            width: 90%;
+            text-align: center;
+            border-radius: 8px;
+          }
+
+          .section-title h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+          }
+
+          .section-title p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+          }
+
+          .intro-box {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+          }
+
+          .intro-box h3 {
+            font-size: 1.3rem;
+          }
+
+          .intro-box p {
+            font-size: 0.9rem;
+            line-height: 1.4;
           }
         }
       `}</style>

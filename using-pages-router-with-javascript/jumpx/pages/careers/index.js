@@ -386,8 +386,8 @@ const Careers = () => {
           }
 
           .application-form {
-            padding: 25px;
-            margin-bottom: 40px;
+            padding: 20px 15px;
+            margin-bottom: 30px;
           }
 
           .position-card {
@@ -415,6 +415,22 @@ const Careers = () => {
           .submit-button {
             width: 100%;
             padding: 12px 20px;
+          }
+
+          .form-group {
+            margin-bottom: 12px;
+          }
+
+          .form-input,
+          .form-select,
+          .form-textarea {
+            padding: 10px 12px;
+            font-size: 0.95rem;
+            width: 100%;
+          }
+
+          .form-textarea {
+            min-height: 100px;
           }
         }
 
@@ -446,19 +462,21 @@ const Careers = () => {
           }
 
           .form-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
           }
 
           .form-label {
             font-size: 0.85rem;
+            margin-bottom: 5px;
           }
 
           .form-input,
           .form-select,
           .form-textarea {
-            padding: 10px 12px;
+            padding: 8px 10px;
             font-size: 0.9rem;
+            border-radius: 6px;
           }
 
           .no-results h3 {
@@ -467,6 +485,29 @@ const Careers = () => {
 
           .no-results p {
             font-size: 0.95rem;
+          }
+
+          .application-form {
+            padding: 15px;
+            border-radius: 15px;
+          }
+
+          .submit-button {
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            width: 100%;
+            margin-top: 10px;
+          }
+
+          /* Add specific styling for file input on mobile */
+          input[type="file"].form-input {
+            padding: 8px;
+            font-size: 0.85rem;
+          }
+
+          /* Ensure full-width form groups take up entire space */
+          .form-group.full-width {
+            grid-column: 1 / -1;
           }
         }
 
