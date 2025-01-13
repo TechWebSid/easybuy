@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const path = require('path')
 const nextConfig = {
-  output:"export",
+  output: 'export',
   reactStrictMode: true,
   trailingSlash: true,
-  output:'export',
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
@@ -14,8 +13,6 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  // For Static Export
-  // output: 'export',
   images: {
     unoptimized: true,
   },

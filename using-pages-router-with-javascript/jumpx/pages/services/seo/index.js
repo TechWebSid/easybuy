@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Navbar from "../../../components/Layouts/Navbar";
 import Link from "next/link";
 
@@ -120,7 +121,116 @@ const SEOServices = () => {
 
   return (
     <>
-    <Navbar/>
+      <Head>
+        <title>Professional SEO Services in India | Easy2BuyHub Digital Marketing</title>
+        <meta name="description" content="Boost your website rankings with Easy2BuyHub's professional SEO services. Expert on-page, off-page, technical SEO, and local SEO solutions. Get a free SEO audit today!" />
+        <meta name="keywords" content="SEO services, digital marketing, search engine optimization, local SEO, technical SEO, SEO company India, best SEO services, affordable SEO, ecommerce SEO, SEO optimization, SEO consultant, SEO expert, SEO packages, SEO strategy, website ranking" />
+        
+        <meta property="og:title" content="Professional SEO Services | Easy2BuyHub Digital Marketing" />
+        <meta property="og:description" content="Transform your online presence with our comprehensive SEO services. Expert solutions for better rankings, more traffic, and higher conversions." />
+        <meta property="og:image" content="https://www.easy2buyhub.com/images/seo-services.jpg" />
+        <meta property="og:url" content="https://www.easy2buyhub.com/services/seo" />
+        
+        <link rel="canonical" href="https://www.easy2buyhub.com/services/seo" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "SEO Services",
+              "provider": {
+                "@type": "Organization",
+                "name": "Easy2BuyHub",
+                "url": "https://www.easy2buyhub.com"
+              },
+              "description": "Comprehensive SEO services including technical optimization, content strategy, and local SEO",
+              "areaServed": "IN",
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "SEO Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "On-Page SEO",
+                      "description": "Complete on-page optimization including content and technical aspects"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Technical SEO",
+                      "description": "Advanced technical optimization for better search engine visibility"
+                    }
+                  }
+                ]
+              }
+            })
+          }}
+        />
+      </Head>
+
+      <Navbar />
+
+      <main className="seo-services">
+        <div className="container">
+          <header className="section-title">
+            <h1>SEO Services & Solutions</h1>
+            <p>
+              Boost your online visibility and drive organic traffic with our comprehensive 
+              SEO services. From technical optimization to content strategy, we help you 
+              achieve sustainable search engine rankings.
+            </p>
+          </header>
+
+          <section className="services-grid" aria-label="SEO Services">
+            {services.map((service, index) => (
+              <article className="service-card" key={index}>
+                <img 
+                  src={service.image} 
+                  alt={`${service.title} - Easy2BuyHub SEO Services`}
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+                <div className="service-card-content">
+                  <h2>{service.title}</h2>
+                  {service.items.map((item, idx) => (
+                    <div className="service-item" key={idx}>
+                      <h3>{item.name}</h3>
+                      <p>{item.description}</p>
+                      {idx === 0 && (
+                        <Link href="/quotation" className="purchase-button">
+                          Get Started <span className="sr-only">with {service.title}</span> →
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </section>
+
+          <section className="faq-section" aria-label="Frequently Asked Questions">
+            <h2>Frequently Asked Questions About SEO Services</h2>
+            <div className="faq-grid">
+              <details>
+                <summary>What is SEO and why is it important?</summary>
+                <p>SEO (Search Engine Optimization) is crucial for improving your website's visibility in search engine results. It helps drive organic traffic, increase brand awareness, and generate quality leads for your business.</p>
+              </details>
+              <details>
+                <summary>How long does it take to see SEO results?</summary>
+                <p>SEO is a long-term strategy. While initial improvements can be seen in 3-6 months, significant results typically take 6-12 months depending on competition, current website status, and target keywords.</p>
+              </details>
+            </div>
+          </section>
+        </div>
+      </main>
+
       <style jsx>{`
         .seo-services {
           padding: 80px 20px;
@@ -179,10 +289,10 @@ const SEOServices = () => {
         }
 
         .service-card img {
-          width: 100%;
-          height: 250px;
+          aspect-ratio: 16/9;
           object-fit: cover;
-          transition: transform 0.6s ease;
+          width: 100%;
+          height: auto;
         }
 
         .service-card:hover img {
@@ -316,42 +426,43 @@ const SEOServices = () => {
             font-size: 1.4rem;
           }
         }
+
+        .faq-section {
+          margin-top: 60px;
+          padding: 40px;
+          background: #f8fafc;
+          border-radius: 20px;
+        }
+
+        .faq-grid {
+          display: grid;
+          gap: 20px;
+          margin-top: 30px;
+        }
+
+        details {
+          padding: 20px;
+          background: white;
+          border-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        summary {
+          font-weight: 600;
+          cursor: pointer;
+        }
+
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0,0,0,0);
+          border: 0;
+        }
       `}</style>
-
-      <div className="seo-services">
-        <div className="container">
-          <div className="section-title">
-            <h2>SEO Services & Solutions</h2>
-            <p>
-              Boost your online visibility and drive organic traffic with our comprehensive 
-              SEO services. From technical optimization to content strategy, we help you 
-              achieve sustainable search engine rankings.
-            </p>
-          </div>
-
-          <div className="services-grid">
-            {services.map((service, index) => (
-              <div className="service-card" key={index}>
-                <img src={service.image} alt={service.title} loading="lazy" />
-                <div className="service-card-content">
-                  <h3>{service.title}</h3>
-                  {service.items.map((item, idx) => (
-                    <div className="service-item" key={idx}>
-                      <h4>{item.name}</h4>
-                      <p>{item.description}</p>
-                      {idx === 0 && (
-                        <Link href="/quotation">
-                          <span className="purchase-button">Get Started →</span>
-                        </Link>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </>
   );
 };

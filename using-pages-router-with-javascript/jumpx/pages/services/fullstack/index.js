@@ -1,4 +1,6 @@
 import React from "react";
+import Head from "next/head";
+import Image from "next/image";
 import Navbar from "../../../components/Layouts/Navbar";
 import Link from "next/link";
 
@@ -132,7 +134,136 @@ const FullStackServices = () => {
 
   return (
     <>
-    <Navbar/>
+      <Head>
+        <title>Full Stack Development Services | MERN & MEAN Stack | Easy2BuyHub</title>
+        <meta name="description" content="Transform your ideas into reality with our expert Full Stack Development services. Specializing in MERN, MEAN stack, custom web applications, and enterprise solutions. Get a free consultation today!" />
+        <meta name="keywords" content="full stack development, MERN stack, MEAN stack, web development, Node.js, React.js, Angular, MongoDB, Express.js, custom web applications, enterprise solutions, API development, frontend development, backend development, database management, cloud solutions" />
+        
+        <meta property="og:title" content="Full Stack Development Services | Easy2BuyHub Technology Solutions" />
+        <meta property="og:description" content="End-to-end web development solutions using cutting-edge technologies. Expert team in MERN/MEAN stack, custom applications, and enterprise solutions." />
+        <meta property="og:image" content="https://www.easy2buyhub.com/images/fullstack-development.jpg" />
+        <meta property="og:url" content="https://www.easy2buyhub.com/services/fullstack" />
+        
+        <link rel="canonical" href="https://www.easy2buyhub.com/services/fullstack" />
+
+        {/* Structured Data for Service */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Full Stack Development Services",
+              "provider": {
+                "@type": "Organization",
+                "name": "Easy2BuyHub",
+                "url": "https://www.easy2buyhub.com"
+              },
+              "description": "Comprehensive full stack development services including MERN/MEAN stack development",
+              "areaServed": "IN",
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Full Stack Development Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "MERN Stack Development",
+                      "description": "MongoDB, Express.js, React.js, Node.js development services"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Enterprise Solutions",
+                      "description": "Custom enterprise-grade applications and solutions"
+                    }
+                  }
+                ]
+              }
+            })
+          }}
+        />
+      </Head>
+
+      <Navbar />
+
+      <main className="fullstack-services">
+        <div className="container">
+          <header className="section-title">
+            <h1>Full Stack Development Services</h1>
+            <p>
+              Transform your digital vision into reality with our comprehensive full-stack 
+              development solutions. From frontend excellence to robust backend systems, 
+              we deliver scalable and efficient applications.
+            </p>
+          </header>
+
+          <section className="services-grid" aria-label="Full Stack Development Services">
+            {services.map((service, index) => (
+              <article className="service-card" key={index}>
+                <div className="image-wrapper">
+                  <Image 
+                    src={service.image}
+                    alt={`${service.title} - Easy2BuyHub Development Services`}
+                    width={400}
+                    height={300}
+                    loading={index <= 2 ? "eager" : "lazy"}
+                    quality={85}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC08MTAxMTIwPURCNz5GPjIxTU9HRVBVWFFQT05jbnNmUVBZYV3/2wBDARUXFx4aHR4eHV1CJzwnQl1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV3/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                    className="service-image"
+                  />
+                </div>
+                <div className="service-card-content">
+                  <h2>{service.title}</h2>
+                  {service.items.map((item, idx) => (
+                    <div className="service-item" key={idx}>
+                      <h3>{item.name}</h3>
+                      <p>{item.description}</p>
+                      {idx === 0 && (
+                        <Link href="/quotation" className="purchase-button">
+                          Get Started <span className="sr-only">with {service.title}</span> →
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </section>
+
+          {/* Technologies Section */}
+          <section className="technologies-section">
+            <h2>Technologies We Excel In</h2>
+            <div className="tech-grid">
+              {/* Add your technology icons/logos here */}
+              <div className="tech-item">
+            
+              
+              </div>
+              {/* Add more technology items */}
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section className="faq-section" aria-label="Frequently Asked Questions">
+            <h2>Common Questions About Full Stack Development</h2>
+            <div className="faq-grid">
+              <details>
+                <summary>What is Full Stack Development?</summary>
+                <p>Full Stack Development involves both frontend (client-side) and backend (server-side) development. Our developers are proficient in all aspects of web application development, from user interfaces to database management.</p>
+              </details>
+              {/* Add more FAQs */}
+            </div>
+          </section>
+
+        
+        </div>
+      </main>
+
       <style jsx>{`
         .fullstack-services {
           padding: 80px 20px;
@@ -357,42 +488,65 @@ const FullStackServices = () => {
             font-size: 1.4rem;
           }
         }
+
+        .image-wrapper {
+          position: relative;
+          width: 100%;
+          height: 300px;
+          overflow: hidden;
+          border-radius: 12px 12px 0 0;
+        }
+
+        .service-image {
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+        .technologies-section {
+          margin-top: 80px;
+          text-align: center;
+        }
+
+        .tech-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          gap: 30px;
+          margin-top: 40px;
+        }
+
+        .tech-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .cta-section {
+          margin-top: 80px;
+          text-align: center;
+          padding: 60px;
+          background: linear-gradient(135deg, #2563eb, #4f46e5);
+          border-radius: 20px;
+          color: white;
+        }
+
+        .cta-button {
+          display: inline-block;
+          padding: 15px 30px;
+          background: white;
+          color: #2563eb;
+          border-radius: 30px;
+          font-weight: 600;
+          margin-top: 20px;
+          transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+          transform: translateY(-2px);
+        }
+
+        /* Add responsive styles */
       `}</style>
-
-      <div className="fullstack-services">
-        <div className="container">
-          <div className="section-title">
-            <h2>Full Stack Development Services</h2>
-            <p>
-              Comprehensive full-stack development solutions to bring your digital vision to life. 
-              From frontend excellence to robust backend systems, we deliver end-to-end development 
-              services that scale with your business.
-            </p>
-          </div>
-
-          <div className="services-grid">
-            {services.map((service, index) => (
-              <div className="service-card" key={index}>
-                <img src={service.image} alt={service.title} loading="lazy" />
-                <div className="service-card-content">
-                  <h3>{service.title}</h3>
-                  {service.items.map((item, idx) => (
-                    <div className="service-item" key={idx}>
-                      <h4>{item.name}</h4>
-                      <p>{item.description}</p>
-                      {idx === 0 && (
-                        <Link href="/quotation">
-                        <span className="purchase-button">Get Started →</span>
-                      </Link>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </>
   );
 };

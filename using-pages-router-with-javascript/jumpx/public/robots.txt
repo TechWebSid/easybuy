@@ -1,9 +1,27 @@
-# *
+# Global rules
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*?*
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Googlebot specific rules
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Crawl-delay: 1
+
+# Bingbot specific rules
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Crawl-delay: 1
 
 # Host
 Host: https://easy2buyhub.com
 
 # Sitemaps
 Sitemap: https://easy2buyhub.com/sitemap.xml
+Sitemap: https://easy2buyhub.com/server-sitemap.xml
