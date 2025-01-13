@@ -275,8 +275,14 @@ const DigitalMarketing = () => {
         }
 
         @media (max-width: 768px) {
+          .digital-marketing {
+            padding: 120px 10px 40px;
+          }
+
           .services-grid {
             grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 10px;
           }
           
           .section-title h2 {

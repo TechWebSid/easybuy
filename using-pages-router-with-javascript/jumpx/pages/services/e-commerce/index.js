@@ -326,7 +326,7 @@ const ECommerceServices = () => {
 
         @media (max-width: 768px) {
           .e-commerce-services {
-            padding: 40px 10px;
+            padding: 120px 10px 40px;
           }
           
           .services-grid {
@@ -378,7 +378,7 @@ const ECommerceServices = () => {
 
         @media (max-width: 480px) {
           .e-commerce-services {
-            padding: 30px 5px;
+            padding: 100px 5px 30px;
           }
           
           .services-grid {

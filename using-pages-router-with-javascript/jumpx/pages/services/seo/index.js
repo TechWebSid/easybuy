@@ -275,7 +275,7 @@ const SEOServices = () => {
 
         @media (max-width: 768px) {
           .seo-services {
-            padding: 40px 10px;
+            padding: 120px 10px 40px;
           }
           
           .section-title h2 {

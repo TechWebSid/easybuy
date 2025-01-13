@@ -189,7 +189,7 @@ const APIServices = () => {
 
         @media (max-width: 768px) {
           .api-services {
-            padding: 40px 10px;
+            padding: 120px 10px 40px;
           }
 
           .services-grid {

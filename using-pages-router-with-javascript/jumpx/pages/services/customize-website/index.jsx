@@ -317,9 +317,9 @@ const CustomizeWebsite = () => {
   transform: rotate(45deg) translateX(-50%);
 }
 
-        @media (max-width: 768px) {
+          @media (max-width: 768px) {
           .customize-website {
-            padding: 40px 10px;
+            padding: 120px 10px 40px;
           }
 
           .services-grid {

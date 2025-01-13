@@ -265,8 +265,10 @@ const Development = () => {
 
         @media (max-width: 768px) {
           .development-services {
-            padding: 40px 10px;
+            padding: 120px 10px 80px;
           }
+
+        
 
           .services-grid {
             grid-template-columns: 1fr;

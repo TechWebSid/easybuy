@@ -276,7 +276,7 @@ const DigitalMarketing = () => {
 
         @media (max-width: 768px) {
           .digital-marketing {
-            padding: 40px 10px;
+            padding: 120px 10px 40px;
           }
           
           .services-grid {

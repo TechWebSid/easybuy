@@ -220,6 +220,7 @@ const ITConsultancy = () => {
   @media (max-width: 768px) {
     .services-grid {
       grid-template-columns: 1fr;
+      
     }
 
     .service-card-content h3 {
