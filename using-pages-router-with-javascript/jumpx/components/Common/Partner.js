@@ -57,6 +57,7 @@ const partnerData = [
 const Partner = () => {
   return (
     <>
+   
       <div className="brand-area">
         <div className="container">
           <div className="brand-list">

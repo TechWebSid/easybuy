@@ -1022,45 +1022,61 @@ jumpx Nav Area Style
   padding-bottom: 1px;
 }
 
+/* Hamburger Menu Styles */
 .navbar-toggler {
-  border: none;
-  background: #eee !important;
-  padding: 4px;
-  border-radius: 0;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
 }
-.navbar-toggler .icon-bar {
-  width: 22px;
-  transition: all 0.3s;
-  background: #081b1f;
+
+.navbar-toggler:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Create the lines */
+.navbar-toggler-icon {
+  background-image: none !important;
+  position: relative;
+  height: 2px !important;
+  width: 30px !important;
+  background: #ffffff !important;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: block !important;
+}
+
+/* Create the pseudo-elements for top and bottom lines */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  position: absolute;
   height: 2px;
-  display: block;
+  width: 30px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
-.navbar-toggler .top-bar {
+
+.navbar-toggler-icon::before {
+  transform: translateY(-8px);
+}
+
+.navbar-toggler-icon::after {
+  transform: translateY(8px);
+}
+
+/* Animation for the hamburger to X */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background: transparent !important;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
   transform: rotate(45deg);
-  transform-origin: 10% 10%;
-  left: 4px;
-  position: relative;
 }
-.navbar-toggler .middle-bar {
-  opacity: 0;
-  margin: 6px 0;
-}
-.navbar-toggler .bottom-bar {
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
   transform: rotate(-45deg);
-  transform-origin: 10% 90%;
-  left: 4px;
-  position: relative;
-}
-.navbar-toggler.collapsed .top-bar {
-  transform: rotate(0);
-  left: 0;
-}
-.navbar-toggler.collapsed .middle-bar {
-  opacity: 1;
-}
-.navbar-toggler.collapsed .bottom-bar {
-  transform: rotate(0);
-  left: 0;
 }
 
 /*

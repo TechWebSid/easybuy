@@ -176,6 +176,7 @@ const News = () => {
             </div>
           </div>
         </div>
+       
       </section>
     </>
   );

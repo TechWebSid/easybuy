@@ -12,14 +12,14 @@ const Yearly = () => {
               <p>Empower Your Business With Us</p>
             </div>
 
-            <div className="pricing-circle">
+            {/* <div className="pricing-circle">
               <p className="discount-percentage">-21%</p>
               <p className="original-price">
                 <s>₹14,510</s>
               </p>
               <p className="discounted-price">₹11,999/-</p>
               <p className="inclusive-taxes">Exclusive of all taxes</p>
-            </div>
+            </div> */}
 
             <ul>
               <li>
@@ -96,14 +96,14 @@ const Yearly = () => {
               <p>Empower Your Business With Us</p>
             </div>
 
-            <div className="pricing-circle">
+            {/* <div className="pricing-circle">
               <p className="discount-percentage">-21%</p>
               <p className="original-price">
                 <s>₹30,249</s>
               </p>
               <p className="discounted-price">₹24,999/-</p>
               <p className="inclusive-taxes">Exclusive of all taxes</p>
-            </div>
+            </div> */}
 
             <ul>
               <li>
@@ -178,14 +178,14 @@ const Yearly = () => {
               <p>Empower Your Business With Us</p>
             </div>
 
-            <div className="pricing-circle">
+            {/* <div className="pricing-circle">
               <p className="discount-percentage">-21%</p>
               <p className="original-price">
                 <s>₹72,599</s>
               </p>
               <p className="discounted-price">₹59,999/-</p>
               <p className="inclusive-taxes">Exclusive of all taxes</p>
-            </div>
+            </div> */}
 
             <ul>
               <li>
