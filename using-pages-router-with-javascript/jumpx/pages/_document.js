@@ -35,7 +35,7 @@ class MyDocument extends Document {
           />
           
           {/* Favicon */}
-          <link rel="icon" type="image/png" href="/images/favicon.png" />
+          <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
           
           {/* Additional Meta Tags */}
           <meta name="robots" content="index, follow" />
