@@ -439,7 +439,7 @@ const ECommerceServices = () => {
                       <h4>{item.name}</h4>
                       <p>{item.description}</p>
                       {idx === 0 && (
-                         <Link href="/pricing">
+                         <Link href="/quotation">
                          <span className="purchase-button">Get Started →</span>
                        </Link>
                       )}

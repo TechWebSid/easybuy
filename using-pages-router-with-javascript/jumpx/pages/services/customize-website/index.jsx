@@ -448,7 +448,7 @@ const CustomizeWebsite = () => {
                     <div className="service-item" key={idx}>
                       <h4>{item.name}</h4>
                       <p>{item.description}</p>
-                      <Link href="/pricing">
+                      <Link href="/quotation">
                           <span className="purchase-button">Get Started →</span>
                         </Link>
                     </div>

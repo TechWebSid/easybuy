@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import emailjs from '@emailjs/browser';
 
 const Quotation = () => {
   const [formData, setFormData] = useState({
@@ -14,12 +15,51 @@ const Quotation = () => {
   });
 
   const [submitMessage, setSubmitMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
-    setSubmitMessage('Thank you for your request! We will get back to you with a quotation shortly.');
+    setIsLoading(true);
+    setError('');
+    
+    try {
+      const templateParams = {
+        to_name: 'Admin', // Your name
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        plan: formData.plan,
+        requirements: formData.requirements,
+        budget: formData.budget,
+        timeline: formData.timeline
+      };
+
+      await emailjs.send(
+        'service_m9nqqmu', // Replace with your Service ID
+        'template_89ypt0l', // Replace with your Template ID
+        templateParams,
+        'x8tvxZ1IMAJ2vTafu' // Replace with your Public Key
+      );
+
+      setSubmitMessage('Thank you for your request! We will get back to you with a quotation shortly.');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        plan: 'basic',
+        requirements: '',
+        budget: '',
+        timeline: ''
+      });
+    } catch (error) {
+      setError('Failed to send message. Please try again later.');
+      console.error('EmailJS Error:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -149,10 +189,20 @@ const Quotation = () => {
               </div>
             </div>
 
-            <button type="submit" className="submit-btn">
-              Request Quotation
+            <button 
+              type="submit" 
+              className="submit-btn" 
+              disabled={isLoading}
+            >
+              {isLoading ? 'Sending...' : 'Request Quotation'}
             </button>
           </form>
+
+          {error && (
+            <div className="error-message">
+              {error}
+            </div>
+          )}
 
           {submitMessage && (
             <div className="success-message">
@@ -301,6 +351,24 @@ const Quotation = () => {
               opacity: 1;
               transform: translateY(0);
             }
+          }
+
+          .error-message {
+            margin-top: 24px;
+            padding: 16px;
+            background-color: #fed7d7;
+            color: #c53030;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            animation: fadeIn 0.5s ease-in;
+          }
+
+          .submit-btn:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
           }
         `}</style>
       </div>
