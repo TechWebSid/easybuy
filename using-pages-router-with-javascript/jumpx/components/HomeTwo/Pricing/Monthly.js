@@ -80,7 +80,7 @@ const Monthly = () => {
               </li>
             </ul>
 
-            <Link href="/payment" className="default-btn">
+            <Link href="/quotation" className="default-btn">
               Get Started
             </Link>
           </div>
@@ -163,7 +163,7 @@ const Monthly = () => {
               </li>
             </ul>
 
-            <Link href="/payment" className="default-btn">
+            <Link href="/quotation" className="default-btn">
               Get Started
             </Link>
           </div>
@@ -245,7 +245,7 @@ const Monthly = () => {
               </li>
             </ul>
 
-            <Link href="/payment" className="default-btn">
+            <Link href="/quotation" className="default-btn">
               Get Started
             </Link>
           </div>

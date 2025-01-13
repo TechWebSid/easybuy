@@ -46,7 +46,7 @@ const partnerData = [
     image: "/images/brands/b10updated.png",
     url: "#",
     aosDelay: "900",
-  },  
+  },
   {
     image: "/images/brands/b11.jpg",
     url: "#",
@@ -57,7 +57,7 @@ const partnerData = [
 const Partner = () => {
   return (
     <>
-   
+      <h1 className="partners-heading">Recognized by</h1>
       <div className="brand-area">
         <div className="container">
           <div className="brand-list">
@@ -76,6 +76,7 @@ const Partner = () => {
                       alt="Image"
                       width={130}
                       height={80}
+                      layout="intrinsic" // This maintains the aspect ratio
                     />
                   </a>
                 </div>
@@ -83,6 +84,38 @@ const Partner = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .partners-heading {
+          text-align: center;
+          color: #301934; 
+          font-size: 37px; /* Adjust the font size */
+          font-weight: bold;
+          margin-bottom: 30px; /* Space below the heading */
+        }
+
+        .brand-area {
+          margin-top: 40px;
+        }
+
+        .brand-list {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+        }
+
+        .single-brand {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          max-width: 150px;
+        }
+
+        .single-brand a {
+          display: block;
+        }
+      `}</style>
     </>
   );
 };

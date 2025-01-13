@@ -175,67 +175,7 @@ const Navbar = () => {
       </nav>
 
       <style jsx>{`
-        /* Remove Bootstrap's default hamburger styles */
-        .navbar-toggler {
-          padding: 0 !important;
-          border: none !important;
-          background: transparent !important;
-        }
-
-        .navbar-toggler:focus {
-          outline: none !important;
-          box-shadow: none !important;
-        }
-
-        /* Custom Hamburger Icon */
-        .navbar-toggler-icon {
-          position: relative;
-          width: 30px;
-          height: 3px;
-          background-color: #ffffff;
-          border-radius: 2px;
-          transition: all 0.3s ease;
-          display: block;
-        }
-
-        .navbar-toggler-icon::before,
-        .navbar-toggler-icon::after {
-          content: '';
-          position: absolute;
-          height: 3px;
-          width: 30px;
-          background-color: #ffffff;
-          border-radius: 2px;
-          transition: all 0.3s ease;
-        }
-
-        .navbar-toggler-icon::before {
-          top: -8px;
-        }
-
-        .navbar-toggler-icon::after {
-          top: 8px;
-        }
-
-        /* Hamburger to X transformation */
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-          background-color: transparent;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-          transform: rotate(45deg);
-          top: 0;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-          transform: rotate(-45deg);
-          top: 0;
-        }
-
-        /* Optional: Add transition effects for smooth animation */
-        .navbar-toggler .navbar-toggler-icon {
-          transition: transform 0.3s ease, opacity 0.3s ease;
-        }
+      
       `}</style>
     </div>
   );
