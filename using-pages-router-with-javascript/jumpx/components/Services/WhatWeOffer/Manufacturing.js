@@ -12,15 +12,12 @@ const Manufacturing = () => {
           <div className="industries-content">
             <h3>Manufacturing</h3>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
-              atque recusandae esse alias reprehenderit.
-            </p>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-              doloribus molestias illo ad aperiam quo natus voluptatum, eos
-              laboriosam vel deserunt? Ab rerum eaque aperiam sequi dolore minus
-              itaque eos!
-            </p>
+  The manufacturing industry is the backbone of global production, driving innovation and delivering high-quality products to meet diverse consumer needs. It encompasses advanced technologies and sustainable practices to enhance efficiency.
+</p>
+<p>
+  Our solutions are tailored to streamline manufacturing processes, reduce costs, and improve output. By embracing modern technologies and automation, we help manufacturers stay competitive in an ever-evolving marketplace.
+</p>
+
 
             <div className="row">
               <div className="col-lg-6 col-sm-6">
@@ -59,7 +56,7 @@ const Manufacturing = () => {
             </div>
 
             <div className="text-center">
-              <Link href="/services" className="default-btn">
+              <Link href="/services/style-2" className="default-btn">
                 Discover More
               </Link>
             </div>

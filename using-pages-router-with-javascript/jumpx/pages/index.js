@@ -6,6 +6,7 @@ import MainBanner from "../components/HomeTwo/MainBanner";
 import Features from "../components/HomeTwo/Features";
 import About from "../components/HomeTwo/About";
 import Services from "../components/HomeTwo/Services";
+import Pricing from "../components/HomeTwo/Pricing";
 import Newsletter from "../components/Common/Newsletter";
 import MakeYourBusiness from "../components/Common/MakeYourBusiness";
 import Testimonials from "../components/Common/Testimonials";
@@ -151,6 +152,7 @@ export default function HomePage() {
         <About />
         <Services />
         <Newsletter />
+        <Pricing />
         <MakeYourBusiness />
         <Testimonials />
         <WhatWeOffer />

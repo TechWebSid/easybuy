@@ -12,15 +12,12 @@ const Transportation = () => {
           <div className="industries-content">
             <h3>Transportation</h3>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
-              atque recusandae esse alias reprehenderit.
-            </p>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-              doloribus molestias illo ad aperiam quo natus voluptatum, eos
-              laboriosam vel deserunt? Ab rerum eaque aperiam sequi dolore minus
-              itaque eos!
-            </p>
+  The transportation industry is vital for connecting people, goods, and services across the globe. It drives economic growth, enhances mobility, and fosters global trade through efficient and reliable networks.
+</p>
+<p>
+  Our focus is on delivering innovative transportation solutions that prioritize safety, sustainability, and efficiency. By leveraging modern technologies and smart logistics, we help businesses and individuals move forward seamlessly.
+</p>
+
 
             <div className="row">
               <div className="col-lg-6 col-sm-6">
@@ -59,7 +56,7 @@ const Transportation = () => {
             </div>
 
             <div className="text-center">
-              <Link href="/services" className="default-btn">
+              <Link href="/services/style-2" className="default-btn">
                 Discover More
               </Link>
             </div>

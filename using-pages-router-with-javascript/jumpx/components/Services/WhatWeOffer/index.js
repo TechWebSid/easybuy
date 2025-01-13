@@ -29,9 +29,7 @@ const WhatWeOffer = () => {
             <span>What We Offer</span>
             <h2>Industries We Serve</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-              eos ea obcaecati et similique incidunt animi, sed, quos officiis
-              placeat. Id ipsa molestias.
+              We offer a wide range of services to meet the needs of our clients. 
             </p>
           </div>
 

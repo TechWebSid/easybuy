@@ -131,12 +131,12 @@ const Navbar = () => {
                 </ul>
               </li>
               <li className="nav-item">
-                <Link href="/blog/" className="nav-link">
+                <Link href="/news" className="nav-link">
                   Blog <i className="bx bx-chevron-down"></i>
                 </Link>
                 <ul className="dropdown-menu">
                   <li className="nav-item">
-                    <Link href="/blog/post-1/" className="nav-link">
+                    <Link href="/news" className="nav-link">
                       Blog Grid
                     </Link>
                   </li>

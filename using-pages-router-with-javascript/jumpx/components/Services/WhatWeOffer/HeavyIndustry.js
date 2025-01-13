@@ -18,14 +18,12 @@ const HeavyIndustry = () => {
           <div className="industries-content">
             <h3>Heavy Industry</h3>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
-              atque recusandae esse alias reprehenderit.
-            </p>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-              doloribus molestias illo ad aperiam quo natus voluptatum, eos
-              laboriosam vel deserunt?
-            </p>
+  The heavy industry sector is a cornerstone of global infrastructure, driving advancements in manufacturing, construction, and energy production. It plays a pivotal role in building the backbone of modern economies.
+</p>
+<p>
+  Our focus is on delivering innovative solutions that enhance efficiency, safety, and sustainability in heavy industries. From cutting-edge machinery to streamlined processes, we empower industries to achieve their full potential.
+</p>
+
 
             <div className="row">
               <div className="col-lg-6 col-sm-6">
@@ -64,7 +62,7 @@ const HeavyIndustry = () => {
             </div>
 
             <div className="text-center">
-              <Link href="/services" className="default-btn">
+              <Link href="/services/style-2" className="default-btn">
                 Discover More
               </Link>
             </div>

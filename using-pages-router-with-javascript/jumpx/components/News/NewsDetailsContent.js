@@ -27,77 +27,63 @@ const NewsDetailsContent = () => {
                   <div className="entry-meta">
                     <ul>
                       <li>
-                        <span>Posted On:</span> February 20 , 2020
+                        <span>Posted On:</span> March 15, 2024
                       </li>
                       <li>
                         <span>Posted By:</span>
-                        <Link href="#">John Anderson</Link>
+                        <Link href="#">Tech Insights Team</Link>
                       </li>
                     </ul>
                   </div>
 
-                  <h3>
-                    Web development the best work in the future for the world
-                  </h3>
+                  <h3>The Evolution and Future of Web Development: A 2024 Perspective</h3>
 
                   <p>
-                    Quuntur magni dolores eos qui ratione voluptatem sequi
-                    nesciunt. Neque porro quia non numquam eius modi tempora
-                    incidunt ut labore et dolore magnam dolor sit, consectetur.
+                    Web development continues to evolve at an unprecedented pace, 
+                    with new frameworks, tools, and methodologies emerging regularly. 
+                    As we progress through 2024, the focus has shifted towards creating 
+                    more performant, accessible, and sustainable web applications.
                   </p>
 
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in sed quia non
-                    numquam eius modi tempora incidunt ut labore et dolore
-                    magnam aliquam quaerat.
+                    Modern web development has transcended traditional boundaries, 
+                    embracing concepts like JAMstack, serverless architecture, and 
+                    AI-powered development tools. Full-stack developers now work with 
+                    an extensive ecosystem of technologies, from React and Next.js to 
+                    GraphQL and containerization platforms.
                   </p>
 
                   <blockquote className="flaticon-quote">
                     <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Repellendus aliquid praesentium eveniet illum asperiores,
-                      quidem, ipsum voluptatum numquam ducimus nisi
-                      exercitationem dolorum facilis.
+                      "The future of web development lies in creating seamless, 
+                      performant experiences that prioritize user needs while 
+                      maintaining robust security and accessibility standards."
                     </p>
                   </blockquote>
 
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in sed quia non
-                    numquam eius modi tempora incidunt ut labore et dolore
-                    magnam aliquam quaerat. Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in sed quia non numquam eius modi tempora
-                    incidunt ut labore et dolore magnam aliquam quaerat.
+                    One of the most significant shifts in recent years has been the 
+                    adoption of edge computing and distributed systems. These technologies 
+                    enable developers to deploy applications closer to end-users, 
+                    resulting in faster load times and improved user experiences. 
+                    Additionally, the rise of Web3 technologies and decentralized 
+                    applications has opened new possibilities for creating more 
+                    transparent and user-centric platforms.
                   </p>
 
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in sed quia non
-                    numquam eius modi tempora incidunt ut labore et dolore
-                    magnam aliquam quaerat.
+                    Artificial Intelligence and Machine Learning integration have 
+                    become increasingly important in web development. From automated 
+                    testing and code generation to intelligent user interfaces and 
+                    predictive analytics, AI is reshaping how we build and maintain 
+                    web applications.
                   </p>
 
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in sed quia non
-                    numquam.
+                    As we look to the future, sustainability and environmental impact 
+                    are becoming key considerations in web development. Green hosting, 
+                    efficient code practices, and optimized asset delivery are no 
+                    longer optional but essential aspects of modern web development.
                   </p>
                 </div>
 

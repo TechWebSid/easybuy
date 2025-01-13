@@ -18,14 +18,10 @@ const HealthCare = () => {
           <div className="industries-content">
             <h3>Health Care</h3>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
-              atque recusandae esse alias reprehenderit.
+              The healthcare industry is evolving rapidly with advancements in technology, personalized medicine, and innovative treatment options. At the forefront of this transformation, we aim to deliver better patient outcomes and redefine the future of care.
             </p>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
-              doloribus molestias illo ad aperiam quo natus voluptatum, eos
-              laboriosam vel deserunt? Ab rerum eaque aperiam sequi dolore minus
-              itaque eos!
+              From improving access to healthcare services to leveraging data-driven insights, we focus on creating solutions that address the unique challenges of the industry. Together, we can build a healthier tomorrow for everyone.
             </p>
 
             <div className="row">
@@ -65,7 +61,7 @@ const HealthCare = () => {
             </div>
 
             <div className="text-center">
-              <Link href="/services" className="default-btn">
+              <Link href="/services/style-2" className="default-btn">
                 Discover More
               </Link>
             </div>

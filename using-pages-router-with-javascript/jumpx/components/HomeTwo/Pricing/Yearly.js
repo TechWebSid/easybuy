@@ -24,7 +24,7 @@ const Yearly = () => {
             <ul>
               <li>
                 <i className="bx bx-check"></i>
-                Simple Website Creation 
+                 Website Creation 
               </li>
               <li>
                 <i className="bx bx-check"></i>
@@ -40,7 +40,7 @@ const Yearly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                Custom Logo Designs
+                Custom Logo Design
               </li>
               <li>
                 <i className="bx bx-check"></i>
@@ -124,7 +124,7 @@ const Yearly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                Custom Logo Designs
+                Custom Logo Design
               </li>
               <li>
                 <i className="bx bx-check"></i>
@@ -206,7 +206,7 @@ const Yearly = () => {
               </li>
               <li>
                 <i className="bx bx-check"></i>
-                Custom Logo Designs
+                Custom Logo Design
               </li>
               <li>
                 <i className="bx bx-check"></i>

@@ -126,12 +126,12 @@ const Footer = () => {
                       Services
                     </Link>
                   </li>
-                  {/* <li>
+                  <li>
                     <Link href="/pricing">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       Pricing
                     </Link>
-                  </li> */}
+                  </li>
                 
                   <li>
                     <Link href="/contact-2">
