@@ -23,7 +23,7 @@ const ContactInfo = () => {
                 <i className="bx bx-phone-call"></i>
                 <h3>Call Us:</h3>
                 <p>
-                 <a href="tel:12318005678990">+91 8299585163, +91 6387945717 </a>
+                 <a href="tel:12318005678990">+91 8317068532, +91 9648873424 </a>
                 </p>
              
               </div>

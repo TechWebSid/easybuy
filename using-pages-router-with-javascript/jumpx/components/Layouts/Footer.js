@@ -168,8 +168,8 @@ const Footer = () => {
                 <li className="address">
   <i className="flaticon-call"></i>
   <span>Phone</span>
-  <a href="tel:+918299585163">+91 8299585163</a>, 
-  <a href="tel:+916387945717">+91 6387945717</a>
+  <a href="tel:+918299585163">+91 8317068532</a>, 
+  <a href="tel:+916387945717">+91 9648873424</a>
 </li>
 
                   <li className="address">

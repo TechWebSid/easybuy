@@ -159,7 +159,7 @@ const Navbar = () => {
               </li>
             </ul>
 
-            <div className="others-options">
+            {/* <div className="others-options">
               {isLoggedIn ? (
                 <button onClick={handleLogout} className="default-btn">
                   Logout <i className="bx bx-log-out-circle"></i>
@@ -169,7 +169,7 @@ const Navbar = () => {
                   Log In <i className="bx bx-log-in-circle"></i>
                 </Link>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       </nav>

@@ -59,7 +59,7 @@ const Newsletter = () => {
                 data-aos-delay="900"
               >
                 <h2>Sign Up To The Free Newsletter</h2>
-                <span>+91 8299585163</span>
+                <span>+91 8317068532</span>
               </div>
             </div>
           </div>

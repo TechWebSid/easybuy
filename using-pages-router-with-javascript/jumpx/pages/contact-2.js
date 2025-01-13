@@ -13,7 +13,7 @@ export default function Contact2Page() {
       <PageBanner
         pageTitle="Contact"
         
-        activePageText="For any assistance, reach out to us at customercare@easy2buyhub.com or call us at +91 8299585163. We’re here to help!"
+        activePageText="For any assistance, reach out to us at customercare@easy2buyhub.com or call us at +91 8317068532 , We’re here to help!"
       />
 
       <ContactInfo />
