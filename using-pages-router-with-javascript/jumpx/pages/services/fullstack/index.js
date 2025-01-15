@@ -144,7 +144,7 @@ const FullStackServices = () => {
         <meta property="og:image" content="https://www.easy2buyhub.com/images/fullstack-development.jpg" />
         <meta property="og:url" content="https://www.easy2buyhub.com/services/fullstack" />
         
-        <link rel="canonical" href="https://www.easy2buyhub.com/services/fullstack" />
+
 
         {/* Structured Data for Service */}
         <script

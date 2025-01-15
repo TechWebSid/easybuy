@@ -22,7 +22,7 @@ export default function HomePage() {
         <title>Easy2BuyHub - Leading IT Solutions & Digital Services Company | Web Development, SEO, Digital Marketing</title>
         <meta 
           name="description" 
-          content="Easy2BuyHub offers comprehensive IT solutions including web development, SEO, digital marketing, and full-stack development. Transform your business with our innovative tech solutions. Get a free consultation today!" 
+          content="Easy2BuyHub offers comprehensive IT solutions" 
         />
         <meta 
           name="keywords" 

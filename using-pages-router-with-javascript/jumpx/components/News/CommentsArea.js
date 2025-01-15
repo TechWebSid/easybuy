@@ -24,27 +24,25 @@ const CommentsArea = () => {
                     width={70}
                     height={70}
                   />
-                  <b className="fn">John Jones</b>
+                  <b className="fn">Aarav</b>
                   <span className="says">says:</span>
                 </div>
 
                 <div className="comment-metadata">
-                  <span>January 24, 2020 at 10:59 am</span>
+                  <span>March 15, 2024 at 10:59 am</span>
                 </div>
               </footer>
 
               <div className="comment-content">
                 <p>
-                  Lorem Ipsum has been the industry’s standard dummy text ever
-                  since the 1500s, when an unknown printer took a galley of type
-                  and scrambled it to make a type.
+                  Great insights on the evolution of web development! The section about edge computing 
+                  particularly resonates with my experience. We've seen significant performance improvements 
+                  after implementing edge functions in our latest project.
                 </p>
               </div>
 
               <div className="reply">
-                <Link href="#" className="comment-reply-link">
-                  Reply
-                </Link>
+               
               </div>
             </div>
 
@@ -60,29 +58,26 @@ const CommentsArea = () => {
                         width={70}
                         height={70}
                       />
-                      <b className="fn">Steven Smith</b>
+                      <b className="fn">Prakhar</b>
                       <span className="says">says:</span>
                     </div>
 
                     <div className="comment-metadata">
-                      <span>January 24, 2020 at 10:59 am</span>
+                      <span>March 15, 2024 at 11:15 am</span>
                     </div>
                   </footer>
 
                   <div className="comment-content">
                     <p>
-                      Sed ut perspiciatis unde omnis iste natus error sit
-                      voluptatem accusantium doloremque laudantium, totam rem
-                      aperiam, eaque ipsa quae ab illo inventore veritatis et
-                      quasi architecto beatae vitae dicta sunt explicabo. Nemo
-                      enim
+                      I agree with your point about edge computing. Have you explored using 
+                      Vercel's Edge Functions or Cloudflare Workers? We've found them incredibly 
+                      powerful for handling real-time data processing while maintaining low latency 
+                      across different regions.
                     </p>
                   </div>
 
                   <div className="reply">
-                    <Link href="#" className="comment-reply-link">
-                      Reply
-                    </Link>
+                  
                   </div>
                 </div>
               </li>
@@ -100,27 +95,26 @@ const CommentsArea = () => {
                     width={70}
                     height={70}
                   />
-                  <b className="fn">John Doe</b>
+                  <b className="fn">Shreya</b>
                   <span className="says">says:</span>
                 </div>
 
                 <div className="comment-metadata">
-                  <span>January 24, 2020 at 10:59 am</span>
+                  <span>March 15, 2024 at 11:45 am</span>
                 </div>
               </footer>
 
               <div className="comment-content">
                 <p>
-                  Lorem Ipsum has been the industry’s standard dummy text ever
-                  since the 1500s, when an unknown printer took a galley of type
-                  and scrambled it to make a type.
+                  The emphasis on sustainability in web development is crucial. We've recently 
+                  started implementing green hosting solutions and optimizing our image delivery 
+                  pipeline. It's amazing to see how these changes not only benefit the environment 
+                  but also improve our site's performance.
                 </p>
               </div>
 
               <div className="reply">
-                <Link href="#" className="comment-reply-link">
-                  Reply
-                </Link>
+              
               </div>
             </div>
           </li>

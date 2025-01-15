@@ -82,8 +82,7 @@ const EcommerceServices = () => {
         <meta property="og:description" content="Build your online store with our expert e-commerce development services. Custom solutions, Shopify, WooCommerce, and mobile commerce development." />
         <meta property="og:image" content="https://www.easy2buyhub.com/images/services/ecommerce/og-image.jpg" />
         <meta property="og:url" content="https://www.easy2buyhub.com/services/ecommerce" />
-        
-        <link rel="canonical" href="https://www.easy2buyhub.com/services/ecommerce" />
+      
 
         {/* Structured Data */}
         <script

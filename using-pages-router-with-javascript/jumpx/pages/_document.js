@@ -11,6 +11,8 @@ class MyDocument extends Document {
           <meta name="description" content="Easy2BuyHub - Premier IT Solutions & Digital Services Company. Expert Web Development, SEO, Digital Marketing, Full Stack Development & Business Solutions. Transform your business with our innovative tech solutions." />
           <meta name="keywords" content="web development company, IT services, digital marketing agency, SEO services India, full stack development, website design company, ecommerce development, React.js development, Node.js development, business IT solutions, affordable web development, digital transformation services, mobile app development, cloud solutions, UI/UX design, IT consulting services, digital marketing strategy, local SEO services, content marketing, social media marketing" />
           <meta name="author" content="Easy2BuyHub" />
+          <link rel="manifest" href="/manifest.json" />
+
           
           {/* Canonical URL */}
           <link rel="canonical" href="https://www.easy2buyhub.com" />
@@ -96,14 +98,7 @@ class MyDocument extends Document {
           />
           
           {/* Favicon Tags - Comprehensive Setup */}
-          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-          <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-          <link rel="manifest" href="/site.webmanifest" />
-          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-          <meta name="msapplication-TileColor" content="#2d89ef" />
-          <meta name="theme-color" content="#ffffff" />
+          <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
 
           {/* For iOS */}
           <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />

@@ -1059,7 +1059,7 @@ jumpx Nav Area Style
 .navbar-toggler-icon::before {
   transform: translateY(-8px);
 }
-
+a 
 .navbar-toggler-icon::after {
   transform: translateY(8px);
 }

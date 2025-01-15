@@ -131,7 +131,7 @@ const SEOServices = () => {
         <meta property="og:image" content="https://www.easy2buyhub.com/images/seo-services.jpg" />
         <meta property="og:url" content="https://www.easy2buyhub.com/services/seo" />
         
-        <link rel="canonical" href="https://www.easy2buyhub.com/services/seo" />
+        <link rel="canonical" href="https://www.easy2buyhub.com" />
 
         <script
           type="application/ld+json"
