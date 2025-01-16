@@ -176,20 +176,310 @@ const SEOServices = () => {
 
       <Navbar />
 
+      <style jsx>{`
+        .seo-services {
+          padding: 120px 20px 80px;
+          background: linear-gradient(to bottom, #f8f9ff, #ffffff);
+        }
+
+        .container {
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+
+        .section-title {
+          text-align: center;
+          margin-bottom: 60px;
+        }
+
+        .section-title h1 {
+          font-size: 3rem;
+          font-weight: 800;
+          background: linear-gradient(45deg, #2563eb, #4f46e5);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin-bottom: 20px;
+        }
+
+        .section-title p {
+          font-size: 1.25rem;
+          color: #64748b;
+          max-width: 700px;
+          margin: 0 auto;
+          line-height: 1.8;
+        }
+
+        .services-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 2rem;
+          padding: 1rem;
+        }
+
+        .service-card {
+          background: #ffffff;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+          overflow: hidden;
+          transition: all 0.4s ease;
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .service-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card img {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+          transition: transform 0.6s ease;
+        }
+
+        .service-card:hover img {
+          transform: scale(1.05);
+        }
+
+        .service-card-content {
+          padding: 2rem;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .service-card-content h2 {
+          font-size: 1.75rem;
+          font-weight: 700;
+          color: #1e293b;
+          margin-bottom: 1.5rem;
+        }
+
+        .service-item {
+          background: #f8fafc;
+          padding: 1.5rem;
+          border-radius: 12px;
+          margin-bottom: 1rem;
+          transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+          background: #f1f5f9;
+          transform: translateX(5px);
+        }
+
+        .service-item h3 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #3b82f6;
+          margin-bottom: 0.75rem;
+        }
+
+        .service-item p {
+          color: #64748b;
+          line-height: 1.6;
+          margin-bottom: 1rem;
+        }
+
+        .purchase-button {
+          display: inline-block;
+          padding: 0.75rem 1.5rem;
+          background: linear-gradient(
+            45deg,
+            #ff6b6b,
+            #ff8e53,
+            #ffd700,
+            #ff6b6b
+          );
+          background-size: 300% 300%;
+          color: white;
+          font-weight: 600;
+          border-radius: 50px;
+          text-decoration: none;
+          transition: all 0.5s ease;
+          animation: gradient 5s ease infinite;
+          text-align: center;
+          box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+          min-width: 160px;
+        }
+
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        .purchase-button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+          background-position: right center;
+        }
+
+        .faq-section {
+          margin-top: 4rem;
+          padding: 2rem;
+          background: #ffffff;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-section h2 {
+          font-size: 2rem;
+          font-weight: 700;
+          color: #1e293b;
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+
+        .faq-grid {
+          display: grid;
+          gap: 1.5rem;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        details {
+          background: #f8fafc;
+          padding: 1.5rem;
+          border-radius: 12px;
+          transition: all 0.3s ease;
+        }
+
+        details:hover {
+          background: #f1f5f9;
+        }
+
+        summary {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #3b82f6;
+          cursor: pointer;
+          padding-right: 2rem;
+          position: relative;
+        }
+
+        summary::-webkit-details-marker {
+          display: none;
+        }
+
+        summary::after {
+          content: '→';
+          position: absolute;
+          right: 0;
+          transform: rotate(90deg);
+          transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+          transform: rotate(-90deg);
+        }
+
+        details p {
+          margin-top: 1rem;
+          color: #64748b;
+          line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+          .services-grid {
+            grid-template-columns: 1fr;
+            padding: 1rem;
+          }
+
+          .section-title h1 {
+            font-size: 2rem;
+          }
+
+          .service-card-content {
+            padding: 1.5rem;
+          }
+
+          .seo-services {
+            padding: 140px 10px 40px;
+          }
+
+          .purchase-button {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
+          }
+
+          .service-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .faq-section {
+            margin-top: 2rem;
+            padding: 1rem;
+          }
+
+          .faq-section h2 {
+            font-size: 1.5rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .seo-services {
+            padding: 120px 10px 30px;
+          }
+
+          .section-title {
+            margin-bottom: 40px;
+          }
+
+          .section-title h1 {
+            font-size: 1.75rem;
+          }
+
+          .service-card img {
+            height: 200px;
+          }
+
+          .service-card-content {
+            padding: 1rem;
+          }
+
+          .purchase-button {
+            font-size: 1rem;
+            padding: 0.75rem 1.5rem;
+          }
+
+          .faq-section {
+            padding: 1rem;
+          }
+
+          summary {
+            font-size: 1.1rem;
+          }
+        }
+      `}</style>
+
       <main className="seo-services">
         <div className="container">
-          <header className="section-title">
+          <div className="section-title">
             <h1>SEO Services & Solutions</h1>
             <p>
               Boost your online visibility and drive organic traffic with our comprehensive 
               SEO services. From technical optimization to content strategy, we help you 
               achieve sustainable search engine rankings.
             </p>
-          </header>
+          </div>
 
-          <section className="services-grid" aria-label="SEO Services">
+          <div className="services-grid">
             {services.map((service, index) => (
-              <article className="service-card" key={index}>
+              <div className="service-card" key={index}>
                 <img 
                   src={service.image} 
                   alt={`${service.title} - Easy2BuyHub SEO Services`}
@@ -204,16 +494,16 @@ const SEOServices = () => {
                       <h3>{item.name}</h3>
                       <p>{item.description}</p>
                       {idx === 0 && (
-                        <Link href="/quotation" className="purchase-button">
-                          Get Started <span className="sr-only">with {service.title}</span> →
+                        <Link href="/quotation">
+                          <span className="purchase-button">Get Started →</span>
                         </Link>
                       )}
                     </div>
                   ))}
                 </div>
-              </article>
+              </div>
             ))}
-          </section>
+          </div>
 
           <section className="faq-section" aria-label="Frequently Asked Questions">
             <h2>Frequently Asked Questions About SEO Services</h2>
@@ -230,239 +520,6 @@ const SEOServices = () => {
           </section>
         </div>
       </main>
-
-      <style jsx>{`
-        .seo-services {
-          padding: 80px 20px;
-          background: linear-gradient(to bottom, #f8f9ff, #ffffff);
-        }
-
-        .container {
-          max-width: 1400px;
-          margin: 0 auto;
-        }
-
-        .section-title {
-          text-align: center;
-          margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-          font-size: 3rem;
-          font-weight: 800;
-          background: linear-gradient(45deg, #2563eb, #4f46e5);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          margin-bottom: 20px;
-        }
-
-        .section-title p {
-          font-size: 1.25rem;
-          color: #64748b;
-          max-width: 800px;
-          margin: 0 auto;
-          line-height: 1.8;
-        }
-
-        .services-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-          gap: 30px;
-          padding: 20px;
-        }
-
-        .service-card {
-          background: #ffffff;
-          border-radius: 24px;
-          box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
-          overflow: hidden;
-          transition: all 0.4s ease;
-          border: 1px solid rgba(0, 0, 0, 0.05);
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-
-        .service-card:hover {
-          transform: translateY(-12px);
-          box-shadow: 0 22px 45px rgba(0, 0, 0, 0.12);
-        }
-
-        .service-card img {
-          aspect-ratio: 16/9;
-          object-fit: cover;
-          width: 100%;
-          height: auto;
-        }
-
-        .service-card:hover img {
-          transform: scale(1.05);
-        }
-
-        .service-card-content {
-          padding: 35px;
-          flex-grow: 1;
-          display: flex;
-          flex-direction: column;
-        }
-
-        .service-card-content h3 {
-          font-size: 1.85rem;
-          font-weight: 700;
-          color: #1e293b;
-          margin-bottom: 28px;
-          line-height: 1.3;
-        }
-
-        .service-item {
-          padding: 25px;
-          margin-bottom: 22px;
-          border-radius: 16px;
-          background: #f8fafc;
-          transition: all 0.3s ease;
-          flex-grow: 1;
-        }
-
-        .service-item:hover {
-          background: #f1f5f9;
-          transform: translateX(8px);
-        }
-
-        .service-item h4 {
-          font-size: 1.3rem;
-          font-weight: 600;
-          color: #3b82f6;
-          margin-bottom: 12px;
-        }
-
-        .service-item p {
-          font-size: 1.1rem;
-          color: #64748b;
-          line-height: 1.7;
-          margin-bottom: 18px;
-        }
-
-        .analyze-button {
-          display: inline-flex;
-          align-items: center;
-          padding: 14px 28px;
-          background: linear-gradient(45deg, #3b82f6, #2563eb);
-          color: #fff;
-          font-size: 1.1rem;
-          font-weight: 500;
-          border-radius: 12px;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
-        }
-
-        .analyze-button:hover {
-          background: linear-gradient(45deg, #2563eb, #1d4ed8);
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
-        }
-
-        .purchase-button {
-          display: inline-flex;
-          align-items: center;
-          padding: 12px 24px;
-          background: linear-gradient(45deg, #3b82f6, #2563eb);
-          color: #ffffff;
-          font-size: 1rem;
-          font-weight: 500;
-          border-radius: 10px;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
-          cursor: pointer;
-        }
-
-        .purchase-button:hover {
-          background: linear-gradient(45deg, #2563eb, #1d4ed8);
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
-        }
-
-        @media (max-width: 768px) {
-          .seo-services {
-            padding: 120px 10px 40px;
-          }
-          
-          .section-title h2 {
-            font-size: 2rem;
-            padding: 0 10px;
-          }
-          
-          .service-card-content {
-            padding: 20px;
-          }
-          
-          .service-item {
-            padding: 15px;
-            margin-bottom: 15px;
-          }
-          
-          .purchase-button {
-            padding: 10px 20px;
-            font-size: 14px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .section-title h2 {
-            font-size: 1.8rem;
-          }
-          
-          .section-title p {
-            font-size: 1rem;
-            padding: 0 10px;
-          }
-          
-          .service-card img {
-            height: 180px;
-          }
-          
-          .service-card-content h3 {
-            font-size: 1.4rem;
-          }
-        }
-
-        .faq-section {
-          margin-top: 60px;
-          padding: 40px;
-          background: #f8fafc;
-          border-radius: 20px;
-        }
-
-        .faq-grid {
-          display: grid;
-          gap: 20px;
-          margin-top: 30px;
-        }
-
-        details {
-          padding: 20px;
-          background: white;
-          border-radius: 10px;
-          box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        summary {
-          font-weight: 600;
-          cursor: pointer;
-        }
-
-        .sr-only {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0,0,0,0);
-          border: 0;
-        }
-      `}</style>
     </>
   );
 };

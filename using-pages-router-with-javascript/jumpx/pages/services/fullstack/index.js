@@ -190,86 +190,9 @@ const FullStackServices = () => {
 
       <Navbar />
 
-      <main className="fullstack-services">
-        <div className="container">
-          <header className="section-title">
-            <h1>Full Stack Development Services</h1>
-            <p>
-              Transform your digital vision into reality with our comprehensive full-stack 
-              development solutions. From frontend excellence to robust backend systems, 
-              we deliver scalable and efficient applications.
-            </p>
-            <Link href="/quotation" className="get-started-link">
-              Get Started with Frontend Development →
-            </Link>
-          </header>
-
-          <section className="services-grid" aria-label="Full Stack Development Services">
-            {services.map((service, index) => (
-              <article className="service-card" key={index}>
-                <div className="image-wrapper">
-                  <Image 
-                    src={service.image}
-                    alt={`${service.title} - Easy2BuyHub Development Services`}
-                    width={400}
-                    height={300}
-                    loading={index <= 2 ? "eager" : "lazy"}
-                    quality={85}
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC08MTAxMTIwPURCNz5GPjIxTU9HRVBVWFFQT05jbnNmUVBZYV3/2wBDARUXFx4aHR4eHV1CJzwnQl1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV3/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                    className="service-image"
-                  />
-                </div>
-                <div className="service-card-content">
-                  <h2>{service.title}</h2>
-                  {service.items.map((item, idx) => (
-                    <div className="service-item" key={idx}>
-                      <h3>{item.name}</h3>
-                      <p>{item.description}</p>
-                      {idx === 0 && (
-                        <Link href="/quotation" className="purchase-button">
-                          Get Started <span className="sr-only">with {service.title}</span> →
-                        </Link>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </section>
-
-          {/* Technologies Section */}
-          <section className="technologies-section">
-            <h2>Technologies We Excel In</h2>
-            <div className="tech-grid">
-              {/* Add your technology icons/logos here */}
-              <div className="tech-item">
-            
-              
-              </div>
-              {/* Add more technology items */}
-            </div>
-          </section>
-
-          {/* FAQ Section */}
-          <section className="faq-section" aria-label="Frequently Asked Questions">
-            <h2>Common Questions About Full Stack Development</h2>
-            <div className="faq-grid">
-              <details>
-                <summary>What is Full Stack Development?</summary>
-                <p>Full Stack Development involves both frontend (client-side) and backend (server-side) development. Our developers are proficient in all aspects of web application development, from user interfaces to database management.</p>
-              </details>
-              {/* Add more FAQs */}
-            </div>
-          </section>
-
-        
-        </div>
-      </main>
-
       <style jsx>{`
         .fullstack-services {
-          padding: 80px 20px;
+          padding: 120px 20px 80px;
           background: linear-gradient(to bottom, #f8f9ff, #ffffff);
         }
 
@@ -281,13 +204,9 @@ const FullStackServices = () => {
         .section-title {
           text-align: center;
           margin-bottom: 60px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 20px;
         }
 
-        .section-title h2 {
+        .section-title h1 {
           font-size: 3rem;
           font-weight: 800;
           background: linear-gradient(45deg, #2563eb, #4f46e5);
@@ -299,22 +218,45 @@ const FullStackServices = () => {
         .section-title p {
           font-size: 1.25rem;
           color: #64748b;
-          max-width: 800px;
+          max-width: 700px;
           margin: 0 auto;
           line-height: 1.8;
         }
 
+        .get-started-link {
+          display: inline-block;
+          padding: 0.75rem 1.5rem;
+          background: linear-gradient(
+            45deg,
+            #ff6b6b,
+            #ff8e53,
+            #ffd700,
+            #ff6b6b
+          );
+          background-size: 300% 300%;
+          color: white;
+          font-weight: 600;
+          border-radius: 50px;
+          text-decoration: none;
+          transition: all 0.5s ease;
+          animation: gradient 5s ease infinite;
+          text-align: center;
+          box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+          min-width: 160px;
+          margin-top: 2rem;
+        }
+
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-          gap: 30px;
-          padding: 20px;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 2rem;
+          padding: 1rem;
         }
 
         .service-card {
           background: #ffffff;
-          border-radius: 24px;
-          box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
           overflow: hidden;
           transition: all 0.4s ease;
           border: 1px solid rgba(0, 0, 0, 0.05);
@@ -324,265 +266,229 @@ const FullStackServices = () => {
         }
 
         .service-card:hover {
-          transform: translateY(-12px);
-          box-shadow: 0 22px 45px rgba(0, 0, 0, 0.12);
-        }
-
-        .service-card img {
-          width: 100%;
-          height: 250px;
-          object-fit: cover;
-          transition: transform 0.6s ease;
-        }
-
-        .service-card:hover img {
-          transform: scale(1.05);
-        }
-
-        .service-card-content {
-          padding: 35px;
-          flex-grow: 1;
-          display: flex;
-          flex-direction: column;
-        }
-
-        .service-card-content h3 {
-          font-size: 1.85rem;
-          font-weight: 700;
-          color: #1e293b;
-          margin-bottom: 28px;
-          line-height: 1.3;
-        }
-
-        .service-item {
-          padding: 25px;
-          margin-bottom: 22px;
-          border-radius: 16px;
-          background: #f8fafc;
-          transition: all 0.3s ease;
-          flex-grow: 1;
-        }
-
-        .service-item:hover {
-          background: #f1f5f9;
-          transform: translateX(8px);
-        }
-
-        .service-item h4 {
-          font-size: 1.3rem;
-          font-weight: 600;
-          color: #3b82f6;
-          margin-bottom: 12px;
-        }
-
-        .service-item p {
-          font-size: 1.1rem;
-          color: #64748b;
-          line-height: 1.7;
-          margin-bottom: 18px;
-        }
-
-        .contact-button {
-          display: inline-flex;
-          align-items: center;
-          padding: 14px 28px;
-          background: linear-gradient(45deg, #3b82f6, #2563eb);
-          color: #fff;
-          font-size: 1.1rem;
-          font-weight: 500;
-          border-radius: 12px;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
-        }
-
-        .contact-button:hover {
-          background: linear-gradient(45deg, #2563eb, #1d4ed8);
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
-        }
-
-         .purchase-button {
-   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff8e72, #ffc85e);
-  color: black;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 15px rgba(255, 116, 142, 0.3);
-  position: relative;
-  overflow: hidden;
-  gap: 8px;
-  width: fit-content;
-}
-
-.purchase-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(255, 116, 142, 0.4);
-  background: linear-gradient(135deg, #ffc85e, #ff8e72, #ff758c, #ff7eb3);
-}
-
-.purchase-button:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 10px rgba(255, 116, 142, 0.3);
-}
-
-/* Add shine effect */
-.purchase-button::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: rgba(255, 255, 255, 0.2);
-  transform: rotate(45deg);
-  transition: all 0.6s ease;
-  opacity: 0;
-  border-radius: 50%;
-}
-
-.purchase-button:hover::before {
-  opacity: 1;
-  transform: rotate(45deg) translateX(-50%);
-}
-
-
-        @media (max-width: 768px) {
-          .fullstack-services {
-            padding: 120px 10px 40px;
-          }
-          
-          .section-title h2 {
-            font-size: 2rem;
-            padding: 0 10px;
-          }
-          
-          .service-card-content {
-            padding: 20px;
-          }
-          
-          .service-item {
-            padding: 15px;
-            margin-bottom: 15px;
-          }
-          
-          .service-item h4 {
-            font-size: 1.1rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .section-title h2 {
-            font-size: 1.8rem;
-          }
-          
-          .section-title p {
-            font-size: 1rem;
-            padding: 0 10px;
-          }
-          
-          .service-card img {
-            height: 200px;
-          }
-          
-          .service-card-content h3 {
-            font-size: 1.4rem;
-          }
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .image-wrapper {
           position: relative;
           width: 100%;
-          height: 300px;
+          height: 250px;
           overflow: hidden;
-          border-radius: 12px 12px 0 0;
         }
 
         .service-image {
+          width: 100%;
+          height: 100%;
           object-fit: cover;
-          transition: transform 0.3s ease;
+          transition: transform 0.6s ease;
         }
 
-        .technologies-section {
-          margin-top: 80px;
-          text-align: center;
+        .service-card:hover .service-image {
+          transform: scale(1.05);
         }
 
-        .tech-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-          gap: 30px;
-          margin-top: 40px;
-        }
-
-        .tech-item {
+        .service-card-content {
+          padding: 2rem;
+          flex-grow: 1;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          gap: 10px;
         }
 
-        .cta-section {
-          margin-top: 80px;
-          text-align: center;
-          padding: 60px;
-          background: linear-gradient(135deg, #2563eb, #4f46e5);
-          border-radius: 20px;
-          color: white;
+        .service-card-content h2 {
+          font-size: 1.75rem;
+          font-weight: 700;
+          color: #1e293b;
+          margin-bottom: 1.5rem;
         }
 
-        .cta-button {
-          display: inline-block;
-          padding: 15px 30px;
-          background: white;
-          color: #2563eb;
-          border-radius: 30px;
-          font-weight: 600;
-          margin-top: 20px;
-          transition: transform 0.3s ease;
-        }
-
-        .cta-button:hover {
-          transform: translateY(-2px);
-        }
-
-        .get-started-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          color: #4070f4;
-          font-size: 18px;
-          font-weight: 500;
-          text-decoration: none;
+        .service-item {
+          background: #f8fafc;
+          padding: 1.5rem;
+          border-radius: 12px;
+          margin-bottom: 1rem;
           transition: all 0.3s ease;
-          margin-top: 20px;
         }
 
-        .get-started-link:hover {
+        .service-item:hover {
+          background: #f1f5f9;
           transform: translateX(5px);
-          color: #2d5be3;
+        }
+
+        .service-item h3 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #3b82f6;
+          margin-bottom: 0.75rem;
+        }
+
+        .service-item p {
+          color: #64748b;
+          line-height: 1.6;
+          margin-bottom: 1rem;
+        }
+
+        .purchase-button {
+          display: inline-block;
+          padding: 0.75rem 1.5rem;
+          background: linear-gradient(
+            45deg,
+            #ff6b6b,
+            #ff8e53,
+            #ffd700,
+            #ff6b6b
+          );
+          background-size: 300% 300%;
+          color: white;
+          font-weight: 600;
+          border-radius: 50px;
+          text-decoration: none;
+          transition: all 0.5s ease;
+          animation: gradient 5s ease infinite;
+          text-align: center;
+          box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+          min-width: 160px;
+        }
+
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        .purchase-button:hover,
+        .get-started-link:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+          background-position: right center;
+        }
+
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          border: 0;
         }
 
         @media (max-width: 768px) {
+          .services-grid {
+            grid-template-columns: 1fr;
+            padding: 1rem;
+          }
+
+          .section-title h1 {
+            font-size: 2rem;
+          }
+
+          .service-card-content {
+            padding: 1.5rem;
+          }
+
+          .fullstack-services {
+            padding: 140px 10px 40px;
+          }
+
+          .purchase-button,
           .get-started-link {
-            font-size: 16px;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
+          }
+
+          .service-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
           }
         }
 
         @media (max-width: 480px) {
+          .fullstack-services {
+            padding: 120px 10px 30px;
+          }
+
+          .section-title {
+            margin-bottom: 40px;
+          }
+
+          .section-title h1 {
+            font-size: 1.75rem;
+          }
+
+          .image-wrapper {
+            height: 200px;
+          }
+
+          .service-card-content {
+            padding: 1rem;
+          }
+
+          .purchase-button,
           .get-started-link {
-            font-size: 15px;
+            font-size: 1rem;
+            padding: 0.75rem 1.5rem;
           }
         }
-
-        /* Add responsive styles */
       `}</style>
+
+      <main className="fullstack-services">
+        <div className="container">
+          <div className="section-title">
+            <h1>Full Stack Development Services</h1>
+            <p>
+              Transform your digital vision into reality with our comprehensive full-stack 
+              development solutions. From frontend excellence to robust backend systems, 
+              we deliver scalable and efficient applications.
+            </p>
+            <Link href="/quotation" className="get-started-link">
+              Get Started with Full Stack Development →
+            </Link>
+          </div>
+
+          <div className="services-grid">
+            {services.map((service, index) => (
+              <div className="service-card" key={index}>
+                <div className="image-wrapper">
+                  <Image 
+                    src={service.image}
+                    alt={`${service.title} - Full Stack Development Services`}
+                    width={400}
+                    height={300}
+                    loading={index <= 2 ? "eager" : "lazy"}
+                    quality={85}
+                    className="service-image"
+                  />
+                </div>
+                <div className="service-card-content">
+                  <h2>{service.title}</h2>
+                  {service.items.map((item, idx) => (
+                    <div className="service-item" key={idx}>
+                      <h3>{item.name}</h3>
+                      <p>{item.description}</p>
+                      {idx === 0 && (
+                        <Link href="/quotation">
+                          <span className="purchase-button">Get Started →</span>
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
     </>
   );
 };

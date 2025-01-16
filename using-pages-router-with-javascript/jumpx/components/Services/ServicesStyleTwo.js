@@ -45,6 +45,13 @@ const servicesData = [
       "Accelerating growth through customized strategies and powerful digital solutions designed to elevate your business and maximize results.",
     viewDetails: "/services/digital-marketing/",
   },
+  {
+    iconName: "flaticon-deep-learning",
+    title: "Mobile App Development",
+    shortText:
+      "Developing mobile applications that are both functional and user-friendly, ensuring a seamless experience across different devices and platforms.",
+    viewDetails: "/services/mobile-app/",
+  },
 ];
 
 const ServicesStyleTwo = () => {

@@ -98,8 +98,14 @@ const Footer = () => {
                     <Link href="/services/api/">
                       <i className="right-icon bx bx-chevrons-right"></i>
                       API Integration
-                    </Link>
-                  </li>
+                      </Link>
+                    </li>
+                    <li>
+                    <Link href="/services/mobile-app/">
+                      <i className="right-icon bx bx-chevrons-right"></i>
+                      Mobile App Development
+                      </Link>
+                    </li>
                 </ul>
               </div>
             </div>
