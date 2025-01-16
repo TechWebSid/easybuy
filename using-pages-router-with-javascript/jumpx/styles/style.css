@@ -1033,48 +1033,50 @@ jumpx Nav Area Style
 }
 
 /* Create the lines */
+/* Base styling for the hamburger icon */
 .navbar-toggler-icon {
-  background-image: none !important;
   position: relative;
-  height: 2px !important;
-  width: 30px !important;
-  background: #ffffff !important;
+  width: 30px; /* Set the width of the icon */
+  height: 2px; /* Set the height of the middle line */
+  background: #ffffff; /* Middle line color */
   border-radius: 1px;
   transition: all 0.3s ease;
-  display: block !important;
+  display: block; /* Ensure it is displayed */
 }
 
-/* Create the pseudo-elements for top and bottom lines */
+/* Create the pseudo-elements for the top and bottom lines */
 .navbar-toggler-icon::before,
 .navbar-toggler-icon::after {
   content: '';
   position: absolute;
-  height: 2px;
-  width: 30px;
-  background: #ffffff;
+  height: 2px; /* Height of the lines */
+  width: 30px; /* Width of the lines */
+  background: #ffffff; /* Color of the lines */
   border-radius: 1px;
   transition: all 0.3s ease;
 }
 
+/* Position the top line */
 .navbar-toggler-icon::before {
-  transform: translateY(-8px);
-}
-a 
-.navbar-toggler-icon::after {
-  transform: translateY(8px);
+  transform: translateY(-8px); /* Move it above the middle line */
 }
 
-/* Animation for the hamburger to X */
+/* Position the bottom line */
+.navbar-toggler-icon::after {
+  transform: translateY(8px); /* Move it below the middle line */
+}
+
+/* Hamburger to X animation when toggled */
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-  background: transparent !important;
+  background: transparent; /* Hide the middle line */
 }
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-  transform: rotate(45deg);
+  transform: rotate(45deg); /* Rotate top line to form part of the X */
 }
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-  transform: rotate(-45deg);
+  transform: rotate(-45deg); /* Rotate bottom line to form part of the X */
 }
 
 /*
