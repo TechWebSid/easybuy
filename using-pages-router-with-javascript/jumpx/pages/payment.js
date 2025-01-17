@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
 
 const PaymentPage = () => {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+  const router = useRouter();
+  const { amount = "5000", course = "Course" } = router.query;
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -21,10 +24,10 @@ const PaymentPage = () => {
     try {
       const options = {
         key: "rzp_test_KyJVvNWUBa5 ",
-        amount: 50000,
+        amount: parseInt(amount) * 100, // Convert to paise
         currency: "INR",
         name: "Easy2BuyHub",
-        description: "Seamless E-commerce Experience",
+        description: `Payment for ${course}`,
         handler: function (response) {
           alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
           window.location.href = "/";
@@ -54,7 +57,7 @@ const PaymentPage = () => {
           <div className="payment-header">
             <div className="header-content">
               <h1>Complete Your Payment</h1>
-              <p>Secure payment gateway for your transaction</p>
+              <p>{course}</p>
             </div>
           </div>
           
@@ -63,13 +66,13 @@ const PaymentPage = () => {
               <h2>Order Summary</h2>
               <div className="summary-items">
                 <div className="summary-item">
-                  <span>Product Total</span>
-                  <span>₹8999.00</span>
+                  <span>Course Fee</span>
+                  <span>₹{amount}.00</span>
                 </div>
             
                 <div className="summary-total">
                   <span>Total Amount</span>
-                  <span>₹8999.00</span>
+                  <span>₹{amount}.00</span>
                 </div>
               </div>
             </div>
@@ -95,10 +98,8 @@ const PaymentPage = () => {
               </div>
             </div>
 
-            
-
             <button onClick={handlePayment} className="pay-button">
-              Pay ₹8999.00 Securely
+              Pay ₹{amount}.00 Securely
             </button>
 
             <div className="payment-footer">

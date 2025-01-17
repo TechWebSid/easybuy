@@ -52,6 +52,21 @@ const servicesData = [
       "Developing mobile applications that are both functional and user-friendly, ensuring a seamless experience across different devices and platforms.",
     viewDetails: "/services/mobile-app/",
   },
+  {
+    iconName: "flaticon-choice",
+    title: "IT Consultancy",
+    shortText:
+      "Providing expert guidance and solutions to enhance your business's digital capabilities and drive growth.",
+    viewDetails: "/services/it-consultancy/",
+  },
+  {
+    iconName: "flaticon-target",
+    title: "Ed Tech",
+    shortText:
+      "Empowering learners with hands-on training in live projects, bridging the gap between education and industry. Gain real-world experience and the opportunity to secure a developer position at SNT Rudra Tech LLP.",
+    viewDetails: "/services/ed-tech/",
+  }
+  
 ];
 
 const ServicesStyleTwo = () => {
