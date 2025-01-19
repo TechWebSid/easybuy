@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Navbar from "../components/Layouts/Navbar";
@@ -14,8 +14,32 @@ import WhatWeOffer from "../components/HomeTwo/WhatWeOffer";
 import News from "../components/Common/News";
 import Partner from "../components/Common/Partner";
 import Footer from "../components/Layouts/Footer";
+import InternshipPopup from "../components/Common/InternshipPopup";
+import InternshipButton from "../components/Common/InternshipButton";
 
 export default function HomePage() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [hasClosedOnce, setHasClosedOnce] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!hasClosedOnce) {
+        setIsPopupOpen(true);
+      }
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [hasClosedOnce]);
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+    setHasClosedOnce(true);
+  };
+
+  const handleOpenPopup = () => {
+    setIsPopupOpen(true);
+  };
+
   return (
     <>
       <Head>
@@ -147,6 +171,7 @@ export default function HomePage() {
 
       <main>
         <Navbar />
+        <InternshipButton onClick={handleOpenPopup} />
         <MainBanner />
         <Features />
         <About />
@@ -162,6 +187,10 @@ export default function HomePage() {
         </div>
         <Footer />
       </main>
+
+      <div>
+        <InternshipPopup isOpen={isPopupOpen} onClose={handleClosePopup} />
+      </div>
 
       <style jsx>{`
         main {
