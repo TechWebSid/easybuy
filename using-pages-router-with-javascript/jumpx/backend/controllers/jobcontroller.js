@@ -60,7 +60,7 @@ export const submitApplication = async (req, res, next) => {
             position,
             experience,
             portfolio: portfolio || '',
-            resume: req.file.path, // Save the file path
+            resume: req.file.filename, // Store only the filename
             message
         });
 

@@ -29,84 +29,56 @@ const Chatbot = () => {
   }, [messages]);
 
   const getContextBasedResponse = (userMessage) => {
-    // Convert user message to lowercase for easier matching
     const message = userMessage.toLowerCase();
 
-    // Define response categories
     const responses = {
-      // Greetings
-      greetings: {
-        patterns: ['hello', 'hi', 'hey', 'good morning', 'good evening', 'good afternoon'],
+      website: {
+        patterns: ['website', 'web', 'make websites', 'create website', 'build website', 'development'],
         replies: [
-          "Hello! How can I assist you today?",
-          "Hi there! What can I help you with?",
-          "Hey! What brings you here today?"
-        ]
-      },
-      
-      // Services Related
-      services: {
-        patterns: ['services', 'offer', 'provide', 'help', 'solution'],
-        replies: [
-          "We offer various services including: \n• Full Stack Development\n• E-commerce Solutions\n• API Integration\n• SEO Services\nWhat would you like to know more about?",
-          "Our main services include web development, e-commerce, API integration, and SEO. Which area interests you?",
+          "I can help you create a professional website! Here's what we offer:\n\n• Custom Website Development\n• Modern, Responsive Design\n• E-commerce Integration\n• SEO Optimization\n• Fast Loading Speed\n\nWhat type of website would you like to build?",
+          "For website development, we provide:\n\n• Professional UI/UX Design\n• Mobile-First Approach\n• Content Management System\n• Security Features\n• 24/7 Support\n\nWould you like to discuss your website requirements?"
         ]
       },
 
-      // E-commerce Related
       ecommerce: {
-        patterns: ['ecommerce', 'shop', 'store', 'selling', 'online store', 'payment'],
+        patterns: ['e-commerce', 'ecommerce', 'online store', 'shop', 'selling online', 'help in e-commerce'],
         replies: [
-          "Our e-commerce solutions include:\n• Custom online stores\n• Payment gateway integration\n• Inventory management\n• Multi-vendor marketplaces\nWould you like more details about any of these?",
-          "We can help you set up a complete e-commerce platform with secure payments, inventory management, and more. What's your specific requirement?"
+          "I'll help you set up your e-commerce store! We offer:\n\n• Custom Online Store Development\n• Payment Gateway Integration\n• Inventory Management\n• Order Processing System\n• Mobile Shopping Experience\n\nWhat features do you need for your online store?",
+          "Our e-commerce solutions include:\n\n• User-Friendly Shopping Cart\n• Secure Payment Processing\n• Product Management\n• Customer Analytics\n• Marketing Tools\n\nWould you like to know more about any specific feature?"
         ]
       },
 
-      // API Related
-      api: {
-        patterns: ['api', 'integration', 'connect', 'webhook'],
+      marketing: {
+        patterns: ['marketing', 'digital marketing', 'promote', 'seo', 'social media'],
         replies: [
-          "We specialize in API integration services including:\n• Payment gateway APIs\n• Social media APIs\n• Custom API development\n• Third-party integrations\nWhat type of integration are you looking for?",
-          "Our API services cover everything from custom development to third-party integrations. What would you like to integrate?"
+          "Our digital marketing services include:\n\n• Search Engine Optimization (SEO)\n• Social Media Marketing\n• Content Marketing\n• Email Campaigns\n• Analytics & Reporting\n\nWhat marketing goals would you like to achieve?",
+          "We can boost your online presence with:\n\n• Keyword Optimization\n• Social Media Management\n• PPC Advertising\n• Content Strategy\n• Performance Tracking\n\nHow can we help grow your business online?"
         ]
       },
 
-      // SEO Related
-      seo: {
-        patterns: ['seo', 'ranking', 'google', 'search engine', 'traffic'],
+      internship: {
+        patterns: ['internship', 'intern', 'training', 'learn'],
         replies: [
-          "Our SEO services include:\n• On-page optimization\n• Technical SEO\n• Content strategy\n• Local SEO\nWould you like to know more about any of these?",
-          "We can help improve your search engine rankings with our comprehensive SEO solutions. What's your current SEO challenge?"
+          "We offer three exciting internship programs:\n\n• Frontend Development (₹6,000)\n• Backend Development (₹6,000)\n• Full Stack Development (₹9,500)\n\nAll programs include mentorship and real projects. Which one interests you?",
+          "Our internship programs feature:\n\n• Expert Mentorship\n• Hands-on Projects\n• Industry Certification\n• Job Placement Support\n• Flexible Learning\n\nWould you like details about a specific program?"
         ]
       },
 
-      // Pricing Related
-      pricing: {
-        patterns: ['price', 'cost', 'pricing', 'package', 'budget'],
-        replies: [
-          "Our pricing varies based on project requirements. Would you like to schedule a consultation for a detailed quote?",
-          "We offer customized pricing based on your specific needs. Shall we discuss your requirements in detail?"
-        ]
-      },
-
-      // Contact Related
       contact: {
-        patterns: ['contact', 'reach', 'call', 'email', 'phone'],
+        patterns: ['contact', 'reach', 'support', 'phone', 'email'],
         replies: [
-          "You can reach us through:\n• Email: contact@example.com\n• Phone: +1 234 567 8900\n• Or fill our contact form\nHow would you prefer to connect?",
-          "Would you like to schedule a call with our team? We can discuss your requirements in detail."
+          "You can reach us through:\n\n• Email: customercare@easy2buyhub.com\n• Phone: +91-8317068532\n• Location: Industrial Area Near Sitapur City Mall\n\nOur team is available Mon-Fri, 9 AM to 6 PM IST. How would you like to connect?",
+          "Let's get in touch! Contact us via:\n\n• Email: customercare@easy2buyhub.com\n• Phone: +91-8317068532\n• Visit: Sitapur City Mall\n\nWould you like to schedule a consultation?"
         ]
       },
 
-      // Default Response
       default: [
-        "I understand you're interested in this. Could you provide more details about your requirements?",
-        "That's interesting! Could you tell me more about what you're looking for specifically?",
-        "I'd be happy to help. Could you elaborate on your needs?"
+        "I'd be happy to help! We specialize in:\n\n• Website Development\n• E-commerce Solutions\n• Digital Marketing\n• Internship Programs\n\nWhat service are you interested in?",
+        "Thanks for reaching out! We offer:\n\n• Custom Websites\n• Online Stores\n• Digital Marketing\n• Professional Training\n\nWhat would you like to know more about?"
       ]
     };
 
-    // Find matching category
+    // Check for matches
     for (const category in responses) {
       if (category === 'default') continue;
       
@@ -120,7 +92,6 @@ const Chatbot = () => {
       }
     }
 
-    // Return default response if no category matches
     return responses.default[Math.floor(Math.random() * responses.default.length)];
   };
 

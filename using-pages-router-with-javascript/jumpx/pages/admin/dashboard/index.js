@@ -586,7 +586,7 @@ const AdminDashboard = () => {
                                     )}
                                     <div className="detail-item">
                                         <span className="label">Resume:</span>
-                                        <a href={`https://easybuy-7rtx.onrender.com/${application.resume}`} target="_blank" rel="noopener noreferrer">
+                                        <a href={`https://easybuy-7rtx.onrender.com/uploads/${application.resume.replace('uploads/', '')}`} target="_blank" rel="noopener noreferrer">
                                             Download Resume
                                         </a>
                                     </div>
