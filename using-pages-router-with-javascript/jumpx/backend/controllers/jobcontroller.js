@@ -39,12 +39,13 @@ export const submitApplication = async (req, res, next) => {
             phone,
             position,
             experience,
+            resume,
             portfolio,
             message
         } = req.body;
 
         // Validate required fields
-        if (!name || !email || !phone || !position || !experience || !message) {
+        if (!name || !email || !phone || !position || !experience || !resume || !message) {
             return next(errorHandler(400, "All required fields must be filled"));
         }
 

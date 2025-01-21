@@ -50,11 +50,10 @@ app.use(cors({
     "http://easy2hub.com", 
     "https://easy2hub.com",
     "https://www.easy2buyhub.com",
-    "http://www.easy2buyhub.com"
+    "http://www.easy2buyhub.com",
+    "http://localhost:3000",
   ],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+
 })); 
 
 // Error handling middleware

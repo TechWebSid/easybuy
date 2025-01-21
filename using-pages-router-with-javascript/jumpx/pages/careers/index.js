@@ -150,11 +150,7 @@ const Careers = () => {
         const response = await fetch('https://easybuy-7rtx.onrender.com/api/job/submit', {
             method: 'POST',
             body: formDataToSend,
-            credentials: 'include',
-            headers: {
-                // Don't set Content-Type header when sending FormData
-                // It will be automatically set with the correct boundary
-            },
+          
         });
 
         if (!response.ok) {
