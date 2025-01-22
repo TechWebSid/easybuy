@@ -18,7 +18,8 @@ const app = express();
 
 // IMPORTANT: Move CORS configuration before any routes or middleware
 app.use(cors({
-  origin: 'http://localhost:3000', // Specifically allow your frontend origin
+  origin: ['http://localhost:3000', 'easy2buyhub.com', 'https://easy2buyhub.com', 'https://www.easy2buyhub.com', 'http://www.easy2buyhub.com'],
+   // Specifically allow your frontend origin
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
