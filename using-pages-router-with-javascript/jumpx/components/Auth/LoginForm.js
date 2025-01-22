@@ -29,28 +29,39 @@ const LoginForm = () => {
 
     setLoading(true);
     try {
-      const response = await axios({
-        method: 'post',
-        url: 'https://easyback.vercel.app/api/user/signin',
-        data: {
-          email: formData.email,
-          password: formData.password,
-        },
+      // Use axios.create to ensure consistent configuration
+      const api = axios.create({
+        baseURL: 'https://easyback.vercel.app',
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json',
-        }
+        },
+        // Important: Add this to handle credentials properly
+        validateStatus: status => status >= 200 && status < 500
       });
 
-      if (response.status === 200) {
+      const response = await api.post('/api/user/signin', {
+        email: formData.email,
+        password: formData.password,
+      });
+
+      if (response.data.success) {
         toast.success("Login successful!");
+        // Store user data if needed
+        localStorage.setItem('user', JSON.stringify(response.data.user));
         setTimeout(() => {
           router.push("/index-2");
         }, 500);
+      } else {
+        toast.error(response.data.message || "Login failed");
       }
     } catch (error) {
       console.error("Login error:", error);
-      toast.error(error.response?.data?.message || "Login failed. Please try again.");
+      if (error.response) {
+        toast.error(error.response.data.message || "Invalid credentials");
+      } else {
+        toast.error("Network error. Please try again.");
+      }
     } finally {
       setLoading(false);
     }

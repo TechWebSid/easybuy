@@ -44,27 +44,23 @@ export const signin = async (req, res, next) => {
     try {
         const { email, password } = req.body;
 
-        // Validate input fields
         if (!email || !password) {
             return next(errorHandler(400, 'All fields are required'));
         }
 
-        // Check if the user exists
         const user = await User.findOne({ email });
         if (!user) {
             return next(errorHandler(401, 'Invalid email or password'));
         }
 
-        // Validate password
         const validPassword = await bcrypt.compare(password, user.password);
         if (!validPassword) {
             return next(errorHandler(401, 'Invalid email or password'));
         }
 
-        // Generate JWT token
         const token = jwt.sign(
             { id: user._id, isAdmin: user.isAdmin },
-            process.env.JWT_SECRET || 'fallback_secret',
+            process.env.JWT_SECRET,
             { expiresIn: '15d' }
         );
 
@@ -72,20 +68,20 @@ export const signin = async (req, res, next) => {
         const { password: pass, ...userWithoutPassword } = user._doc;
 
         // Set cookie with proper configuration
-        res
-            .cookie('access_token', token, {
-                httpOnly: true, // Set to true for security
-                secure: process.env.NODE_ENV === 'production',
-                sameSite: 'lax',
-                path: '/',
-                maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days
-            })
-            .status(200)
-            .json({
-                success: true,
-                message: 'Login successful',
-                user: userWithoutPassword,
-            });
+        res.cookie('access_token', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // true in production
+            sameSite: 'lax',
+            maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days
+            path: '/',
+            domain: process.env.NODE_ENV === 'production' ? '.easy2buyhub.com' : 'localhost'
+        });
+
+        return res.status(200).json({
+            success: true,
+            message: 'Login successful',
+            user: userWithoutPassword
+        });
 
     } catch (error) {
         console.error('Signin error:', error);

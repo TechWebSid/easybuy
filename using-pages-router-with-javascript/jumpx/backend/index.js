@@ -18,15 +18,34 @@ const app = express();
 
 // IMPORTANT: Move CORS configuration before any routes or middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'easy2buyhub.com', 'https://easy2buyhub.com', 'https://www.easy2buyhub.com', 'http://www.easy2buyhub.com'],
-   // Specifically allow your frontend origin
+  origin: function(origin, callback) {
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'https://easy2buyhub.com',
+      'https://www.easy2buyhub.com',
+      'http://www.easy2buyhub.com',
+      'http://easy2buyhub.com'
+    ];
+    
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) === -1) {
+      return callback(null, false);
+    }
+    return callback(null, true);
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']   
+  allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],
+  exposedHeaders: ['set-cookie']
 }));
 
+// Add this middleware to handle preflight requests
+app.options('*', cors());
+
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Connect to MongoDB with proper options
