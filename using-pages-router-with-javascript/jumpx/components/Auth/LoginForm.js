@@ -22,34 +22,24 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Basic validation
     if (!formData.email || !formData.password) {
       toast.error("All fields are required");
       return;
     }
 
-    // Email format validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast.error("Please enter a valid email address");
-      return;
-    }
-
     setLoading(true);
     try {
-      // Create axios instance with default config
-      const axiosInstance = axios.create({
-        baseURL: 'https://easyback.vercel.app',
+      const response = await axios({
+        method: 'post',
+        url: 'https://easyback.vercel.app/api/user/signin',
+        data: {
+          email: formData.email,
+          password: formData.password,
+        },
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-      });
-
-      const response = await axiosInstance.post('/api/user/signin', {
-        email: formData.email,
-        password: formData.password,
+        }
       });
 
       if (response.status === 200) {
@@ -60,15 +50,7 @@ const LoginForm = () => {
       }
     } catch (error) {
       console.error("Login error:", error);
-      
-      if (error.response) {
-        const errorMessage = error.response.data.message;
-        toast.error(errorMessage || "Login failed");
-      } else if (error.request) {
-        toast.error("Cannot connect to server. Please check your internet connection");
-      } else {
-        toast.error("Error in making request. Please try again");
-      }
+      toast.error(error.response?.data?.message || "Login failed. Please try again.");
     } finally {
       setLoading(false);
     }

@@ -16,7 +16,17 @@ dotenv.config();
 
 const app = express();
 
-app.use(express.urlencoded({extended:true}))
+// IMPORTANT: Move CORS configuration before any routes or middleware
+app.use(cors({
+  origin: 'http://localhost:3000', // Specifically allow your frontend origin
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(cookieParser());
 
 // Connect to MongoDB with proper options
 mongoose.connect(process.env.MONGO, {
@@ -40,40 +50,6 @@ mongoose.connection.on('error', err => {
 
 mongoose.connection.on('disconnected', () => {
   console.log('MongoDB disconnected');
-});
-
-// Move CORS middleware before other middleware
-app.use(express.json());
-app.use(cookieParser());
-
-// Simplified CORS configuration
-app.use(cors({
-  origin: true, // This allows all origins in development
-  credentials: true,
-  exposedHeaders: ['set-cookie'],
-}));
-
-// Ensure CORS headers are set properly
-app.use((req, res, next) => {
-  const origin = req.headers.origin;
-  res.setHeader('Access-Control-Allow-Origin', origin || '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
-  next();
-});
-
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({
-    message: "Internal server error",
-    error: process.env.NODE_ENV === 'development' ? err.message : undefined
-  });
 });
 
 // Routes
