@@ -30,7 +30,7 @@ const AdminDashboard = () => {
   const fetchAnalyticsData = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('https://easybuy-7rtx.onrender.com/api/job/analytics');
+      const response = await fetch('https://easyback.vercel.app/api/job/analytics');
       const data = await response.json();
       
       if (data.success) {
@@ -65,7 +65,7 @@ const AdminDashboard = () => {
   const fetchApplications = async () => {
     try {
         setIsLoading(true);
-        const response = await fetch('https://easybuy-7rtx.onrender.com/api/job/applications-list');
+        const response = await fetch('https://easyback.vercel.app/api/job/applications-list');
         const data = await response.json();
         
         if (data.success) {
@@ -586,7 +586,7 @@ const AdminDashboard = () => {
                                     )}
                                     <div className="detail-item">
                                         <span className="label">Resume:</span>
-                                        <a href={`https://easybuy-7rtx.onrender.com/uploads/${application.resume.replace('uploads/', '')}`} target="_blank" rel="noopener noreferrer">
+                                        <a href={`https://easyback.vercel.app/uploads/${application.resume.replace('uploads/', '')}`} target="_blank" rel="noopener noreferrer">
                                             Download Resume
                                         </a>
                                     </div>

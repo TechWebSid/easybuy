@@ -147,7 +147,7 @@ const Careers = () => {
         formDataToSend.append('message', formData.message);
         formDataToSend.append('resume', formData.resume);
 
-        const response = await fetch('https://easybuy-7rtx.onrender.com/api/job/submit', {
+        const response = await fetch('https://easyback.vercel.app/api/job/submit', {
             method: 'POST',
             body: formDataToSend,
           

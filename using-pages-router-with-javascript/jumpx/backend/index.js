@@ -42,19 +42,30 @@ mongoose.connection.on('disconnected', () => {
   console.log('MongoDB disconnected');
 });
 
-// Middleware to parse JSON
+// Move CORS middleware before other middleware
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-  origin: [
-    "http://easy2hub.com", 
-    "https://easy2hub.com",
-    "https://www.easy2buyhub.com",
-    "http://www.easy2buyhub.com",
-    "http://localhost:3000",
-  ],
 
-})); 
+// Simplified CORS configuration
+app.use(cors({
+  origin: true, // This allows all origins in development
+  credentials: true,
+  exposedHeaders: ['set-cookie'],
+}));
+
+// Ensure CORS headers are set properly
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  res.setHeader('Access-Control-Allow-Origin', origin || '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  next();
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {

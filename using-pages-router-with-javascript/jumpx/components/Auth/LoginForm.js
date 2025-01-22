@@ -37,11 +37,19 @@ const LoginForm = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post("https://easybuy-7rtx.onrender.com/api/user/signin", {
+      // Create axios instance with default config
+      const axiosInstance = axios.create({
+        baseURL: 'https://easyback.vercel.app',
+        withCredentials: true,
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+      });
+
+      const response = await axiosInstance.post('/api/user/signin', {
         email: formData.email,
         password: formData.password,
-      }, {
-        withCredentials: true
       });
 
       if (response.status === 200) {
@@ -54,28 +62,8 @@ const LoginForm = () => {
       console.error("Login error:", error);
       
       if (error.response) {
-        // Server responded with an error
         const errorMessage = error.response.data.message;
-        
-        // Check if the error response contains HTML (indicating a server crash)
-        if (typeof error.response.data === 'string' && 
-            error.response.data.includes('<!DOCTYPE html>')) {
-          toast.error("Server error: Database connection failed. Please try again later.");
-        } else {
-          switch (error.response.status) {
-            case 400:
-              toast.error(errorMessage || "Invalid credentials");
-              break;
-            case 401:
-              toast.error("Invalid email or password");
-              break;
-            case 500:
-              toast.error("Server error. Please try again later");
-              break;
-            default:
-              toast.error(errorMessage || "Login failed");
-          }
-        }
+        toast.error(errorMessage || "Login failed");
       } else if (error.request) {
         toast.error("Cannot connect to server. Please check your internet connection");
       } else {

@@ -17,7 +17,7 @@ const Navbar = () => {
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const response = await axios.get('https://easybuy-7rtx.onrender.com/api/user/check-session', {
+        const response = await axios.get('https://easyback.vercel.app/api/user/check-session', {
           withCredentials: true,
         });
         setIsLoggedIn(response.data.isLoggedIn);
@@ -44,7 +44,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        'https://easybuy-7rtx.onrender.com/api/user/logout',
+        'https://easyback.vercel.app/api/user/logout',
         {},
         { withCredentials: true }
       );
@@ -159,7 +159,7 @@ const Navbar = () => {
               </li>
             </ul>
 
-            {/* <div className="others-options">
+            <div className="others-options">
               {isLoggedIn ? (
                 <button onClick={handleLogout} className="default-btn">
                   Logout <i className="bx bx-log-out-circle"></i>
@@ -169,7 +169,7 @@ const Navbar = () => {
                   Log In <i className="bx bx-log-in-circle"></i>
                 </Link>
               )}
-            </div> */}
+            </div>
           </div>
         </div>
       </nav>

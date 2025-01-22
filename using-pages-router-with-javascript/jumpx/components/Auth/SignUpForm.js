@@ -53,7 +53,7 @@ const SignUpForm = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post("https://easybuy-7rtx.onrender.com/api/user/signup", {
+      const response = await axios.post("https://easyback.vercel.app/api/user/signup", {
         firstName: formData.firstName,
         lastName: formData.lastName,
         Username: formData.Username,
