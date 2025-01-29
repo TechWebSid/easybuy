@@ -17,6 +17,7 @@ import "../styles/responsive.css";
 
 import Head from "next/head";
 import GoTop from "../components/Shared/GoTop";
+import WhatsAppButton from '../components/HomeTwo/WhatsAppButton';
 
 function MyApp({ Component, pageProps }) {
   React.useEffect(() => {
@@ -31,7 +32,7 @@ function MyApp({ Component, pageProps }) {
 
       <Component {...pageProps} />
 
-      {/* Go Top Button */}
+      <WhatsAppButton />
       <GoTop scrollStepInPx="100" delayInMs="10.50" />
       <ToastContainer position="top-right" />
     </>
